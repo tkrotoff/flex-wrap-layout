@@ -1,0 +1,30 @@
+{
+  "name": "flexform",
+  "description": "Experiments with flexbox layout",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/tkrotoff/flexform.git"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+
+  "dependencies": {
+    "babel": "latest",
+
+    "bootstrap-sass": "^3.3",
+
+    "gulp": "latest",
+    "gulp-debug": "latest",
+    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-sourcemaps": "latest",
+    "del": "latest",
+    "browser-sync": "latest"
+  },
+
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "serve": "gulp serve"
+  }
+}

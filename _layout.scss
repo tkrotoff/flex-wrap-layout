@@ -1,0 +1,63 @@
+%layout {
+  box-sizing: border-box;
+  display: flex;
+
+  // Always wrap layout items
+  flex-wrap: wrap;
+}
+
+[layout=column] {
+  @extend %layout;
+  flex-direction: column;
+}
+
+[layout=row] {
+  @extend %layout;
+  flex-direction: row;
+}
+
+[vspace] {
+  //margin-top: -$layout-item-margin;
+  margin-bottom: -$layout-item-margin;
+
+  // Vertical space between form inputs when wrapped (flex-wrap: wrap)
+  > * {
+    //margin-top: $layout-item-margin;
+    margin-bottom: $layout-item-margin;
+  }
+
+  > [vspace] {
+    margin-bottom: 0;
+  }
+}
+
+[hspace] {
+  // Trick: like removing the margin from the last form input on the wrapped line
+  // See http://plnkr.co/edit/oElC5u?p=preview
+  //margin-left: -$layout-item-margin;
+  margin-right: -$layout-item-margin;
+  //margin: -$layout-item-margin;
+
+  // Horizontal space between form inputs
+  > * {
+    //margin-left: $layout-item-margin;
+    margin-right: $layout-item-margin;
+    //margin: $layout-item-margin;
+  }
+
+  > [hspace] {
+    margin-right: 0;
+  }
+}
+
+// Clear margin-right: -$layout-item-margin from [layout=row-with-hspace]
+//[clear-layout-margin] {
+  //margin-right: 0;
+  //margin-bottom: 0;
+//}
+
+// See flex-grow vs flex https://github.com/angular/material/issues/2632
+[grow] {
+  box-sizing: border-box;
+  flex: auto;
+}
