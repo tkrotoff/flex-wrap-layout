@@ -27,10 +27,13 @@ form {
   }
 }
 
-// Align labels with inputs
 [layout=row] {
+  // Vertically align labels with inputs
+  align-items: center;
   label {
     //padding-top: $padding-base-vertical + 1; // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L575
+    //margin-bottom: $layout-item-margin + 5; // Instead of $layout-item-margin, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L35
+  }
   }
 }
 
