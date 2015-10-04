@@ -3,8 +3,9 @@
 // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L208
 //$layout-item-margin: $form-group-margin-bottom;
 $layout-item-margin: 4px;
-
 @import '_layout';
+
+@import '_bootstrap3';
 
 [offset-with-content] {
   min-width: 115px;
@@ -13,34 +14,4 @@ $layout-item-margin: 4px;
 [offset-no-content] {
   @extend [offset-with-content];
   margin-bottom: 0;
-}
-
-.help-block {
-  font-size: $font-size-small; // Instead of 14px
-  margin-top: 0; // Instead of 5px, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L451
-}
-
-form {
-  // Buttons should have the same height as other inputs
-  .btn {
-    //height: $input-height-base;
-  }
-}
-
-[layout=row] {
-  // Vertically align labels with inputs
-  align-items: center;
-  label {
-    //padding-top: $padding-base-vertical + 1; // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L575
-    //margin-bottom: $layout-item-margin + 5; // Instead of $layout-item-margin, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L35
-  }
-
-  // Remove the need for Bootstrap <div class="form-group"></div>
-  .form-control {
-    width: auto; // Instead of 100%, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L116
-  }
-}
-
-.radio, .checkbox {
-  margin-top: 0; // Instead of 10px, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L220
 }
