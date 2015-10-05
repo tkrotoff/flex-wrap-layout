@@ -14,15 +14,16 @@
 [layout=row] {
   @extend %layout;
   flex-direction: row;
+
+  // Vertically align labels with inputs
+  align-items: flex-start;
 }
 
 [vspace] {
-  //margin-top: -$layout-item-margin;
   margin-bottom: -$layout-item-margin;
 
   // Vertical space between form inputs when wrapped (flex-wrap: wrap)
   > * {
-    //margin-top: $layout-item-margin;
     margin-bottom: $layout-item-margin;
   }
 
@@ -34,27 +35,20 @@
 [hspace] {
   // Trick: like removing the margin from the last form input on the wrapped line
   // See http://plnkr.co/edit/oElC5u?p=preview
-  //margin-left: -$layout-item-margin;
-  margin-right: -$layout-item-margin;
-  //margin: -$layout-item-margin;
+  margin-left: -$layout-item-margin / 2;
+  margin-right: -$layout-item-margin / 2;
 
   // Horizontal space between form inputs
   > * {
-    //margin-left: $layout-item-margin;
-    margin-right: $layout-item-margin;
-    //margin: $layout-item-margin;
+    margin-left: $layout-item-margin / 2;
+    margin-right: $layout-item-margin / 2;
   }
 
   > [hspace] {
+    margin-left: 0;
     margin-right: 0;
   }
 }
-
-// Clear margin-right: -$layout-item-margin from [layout=row-with-hspace]
-//[clear-layout-margin] {
-  //margin-right: 0;
-  //margin-bottom: 0;
-//}
 
 // See flex-grow vs flex https://github.com/angular/material/issues/2632
 [grow] {

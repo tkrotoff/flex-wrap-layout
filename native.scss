@@ -9,3 +9,14 @@ $layout-item-margin: 4px;
   @extend [offset-with-content];
   margin-bottom: 0;
 }
+
+.has-error {
+  input {
+    border-color: red;
+  }
+
+  .help-block {
+    color: red;
+    font-size: small;
+  }
+}

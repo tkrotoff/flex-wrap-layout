@@ -13,13 +13,14 @@
   </head>
 
   <body class="container-fluid">
+    <br>
     <div class="checkbox">
       <label>
         <input type="checkbox" onchange="toggleBorders(this)"> Show borders?
       </label>
     </div>
 
-    <h3 id="1">Rows with labels above</h3>
+    <h3 id="1">#1 Rows with labels above</h3>
     <form vspace>
       <div layout="column">
         <label for="title_1">Title</label>
@@ -34,6 +35,11 @@
       <div layout="column">
         <label for="firstname_1">First Name</label>
         <input id="firstname_1" class="form-control" grow>
+      </div>
+
+      <div layout="column">
+        <label for="middlename_1">Middle Name</label>
+        <input id="middlename_1" class="form-control" grow>
       </div>
 
       <div layout="column">
@@ -93,14 +99,17 @@
       </div>
 
       <div layout="row" hspace vspace>
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary">
+          <span class="glyphicon glyphicon-floppy-disk"></span>
+          Save
+        </button>
         <button class="btn btn-default">Cancel</button>
       </div>
     </form>
 
-    <h3 id="2">Rows with labels on the left</h3>
+    <h3 id="2">#2 Rows with labels on the left</h3>
     <form hspace vspace>
-      <div layout="row" vspace>
+      <div layout="row">
         <label for="title_2" offset-with-content>Title</label>
         <select id="title_2" class="form-control" grow>
           <option>Miss</option>
@@ -110,17 +119,22 @@
         </select>
       </div>
 
-      <div layout="row" vspace>
+      <div layout="row">
         <label for="firstname_2" offset-with-content>First Name</label>
         <input id="firstname_2" class="form-control" grow>
       </div>
 
-      <div layout="row" vspace>
+      <div layout="row">
+        <label for="middlename_2" offset-with-content>Middle Name</label>
+        <input id="middlename_2" class="form-control" grow>
+      </div>
+
+      <div layout="row">
         <label for="lastname_2" offset-with-content>Last Name</label>
         <input id="lastname_2" class="form-control" grow>
       </div>
 
-      <div layout="row" vspace>
+      <div layout="row">
         <label for="email_2" offset-with-content>Email</label>
         <input type="email" id="email_2" class="form-control" grow>
       </div>
@@ -181,7 +195,10 @@
       <div layout="row">
         <div offset-no-content></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Save
+          </button>
           <button class="btn btn-default">Cancel</button>
         </div>
       </div>
@@ -189,7 +206,7 @@
 
     <hr>
 
-    <h3 id="3">1 row</h3>
+    <h3 id="3">#3 1 row</h3>
     <form layout="row" hspace vspace class="center-labels">
       <label for="name_3">Name</label>
       <input id="name_3" placeholder="Jane Doe" class="form-control" grow>
@@ -200,7 +217,7 @@
 
     <hr>
 
-    <h3 id="4">2 columns with labels above</h3>
+    <h3 id="4">#4 2 columns with labels above</h3>
     <form vspace>
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
@@ -216,12 +233,12 @@
         </div>
 
         <div layout="column" vspace grow>
-          <div layout="column" vspace>
+          <div layout="column">
             <label for="arrival_4">Arrival</label>
             <input type="date" id="arrival_4" class="form-control" grow>
           </div>
 
-          <div layout="column" vspace>
+          <div layout="column">
             <label for="departure_4">Departure</label>
             <input type="date" id="departure_4" class="form-control" grow>
           </div>
@@ -231,7 +248,10 @@
       <div layout="row">
         <div grow></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Save
+          </button>
           <button class="btn btn-default">Cancel</button>
         </div>
         <div grow></div>
@@ -240,28 +260,28 @@
 
     <hr>
 
-    <h3 id="5">2 columns with labels on the left</h3>
+    <h3 id="5">#5 2 columns with labels on the left</h3>
     <form vspace>
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
-          <div layout="row" vspace>
+          <div layout="row">
             <label for="firstname_5" offset-with-content>First Name</label>
             <input id="firstname_5" class="form-control" grow>
           </div>
 
-          <div layout="row" vspace>
+          <div layout="row">
             <label for="lastname_5" offset-with-content>Last Name</label>
             <input id="lastname_5" class="form-control" grow>
           </div>
         </div>
 
         <div layout="column" vspace grow>
-          <div layout="row" vspace>
+          <div layout="row">
             <label for="arrival_5" offset-with-content>Arrival</label>
             <input type="date" id="arrival_5" class="form-control" grow>
           </div>
 
-          <div layout="row" vspace>
+          <div layout="row">
             <label for="departure_5" offset-with-content>Departure</label>
             <input type="date" id="departure_5" class="form-control" grow>
           </div>
@@ -271,46 +291,155 @@
       <div layout="row">
         <div grow></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Save
+          </button>
           <button class="btn btn-default">Cancel</button>
         </div>
         <div grow></div>
       </div>
     </form>
 
-    <h3 id="6">Rows with labels above + error messages</h3>
+    <h3 id="6">#6 Rows with labels above + error messages</h3>
     <form vspace>
-      <div layout="column" vspace class="has-error">
+      <div layout="column" class="has-error">
         <label for="firstname_6">First Name</label>
-        <input id="firstname_6" class="form-control" grow>
-        <p class="help-block">Cannot be empty</p>
+        <div layout="column" class="has-error">
+          <input id="firstname_6" class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
       </div>
 
-      <div layout="column" vspace class="has-error">
+      <div layout="column">
+        <label for="middlename_6">Middle Name</label>
+        <div layout="column">
+          <input id="middlename_6" class="form-control">
+        </div>
+      </div>
+
+      <div layout="column" class="has-error">
         <label for="lastname_6">Last Name</label>
-        <input id="lastname_6" class="form-control" grow>
-        <p class="help-block">Cannot be empty</p>
+        <div layout="column" class="has-error">
+          <input id="lastname_6" class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="column">
+        <label for="email_6">Email</label>
+        <div layout="column">
+          <input type="email" id="email_6" class="form-control">
+        </div>
       </div>
     </form>
 
-    <h3>Rows with labels on the left + error messages</h3>
+    <h3 id="7">#7 Rows with labels on the left + error messages</h3>
     <form vspace>
-      <div layout="row" class="has-error">
+      <div layout="row">
         <label for="firstname_7" offset-with-content>First Name</label>
-        <div layout="column" vspace grow>
-          <input id="firstname_7" class="form-control" grow>
-          <p class="help-block">Cannot be empty</p>
+        <div layout="column" class="has-error" grow>
+          <input id="firstname_7" class="form-control">
+          <div class="help-block">Cannot be empty</div>
         </div>
       </div>
 
-      <div layout="row" class="has-error">
+      <div layout="row">
+        <label for="middlename_7" offset-with-content>Middle Name</label>
+        <div layout="column" grow>
+          <input id="middlename_7" class="form-control">
+        </div>
+      </div>
+
+      <div layout="row">
         <label for="lastname_7" offset-with-content>Last Name</label>
-        <div layout="column" vspace grow>
-          <input id="lastname_7" class="form-control" grow>
-          <p class="help-block">Cannot be empty</p>
+        <div layout="column" class="has-error" grow>
+          <input id="lastname_7" class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row">
+        <label for="email_7" offset-with-content>Email</label>
+        <div layout="column" grow>
+          <input id="email_7" class="form-control">
         </div>
       </div>
     </form>
+
+    <h3 id="8">#8 Rows with buttons on the left + error messages</h3>
+    <form vspace>
+      <div layout="row" hspace vspace>
+        <button class="btn btn-default btn-xs">
+          <span class="glyphicon glyphicon-trash"></span>
+          Delete
+        </button>
+        <div layout="column" grow>
+          <input class="form-control">
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-trash"></span>
+          Delete
+        </button>
+        <div layout="column" class="has-error" grow>
+          <input class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+          Delete
+        </button>
+        <div layout="column" grow>
+          <input class="form-control">
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-trash"></span>
+          Delete
+        </button>
+        <div layout="column" class="has-error" grow>
+          <input class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+    </form>
+
+    <h3 id="9">#9 Multiple forms</h3>
+    <div vspace>
+      <form layout="row" hspace vspace>
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+        <div layout="column" grow>
+          <input class="form-control">
+        </div>
+      </form>
+      <form layout="row" hspace vspace>
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+        <div layout="column" class="has-error" grow>
+          <input class="form-control">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </form>
+      <form layout="row" hspace vspace>
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+        <div layout="column" grow>
+          <input class="form-control">
+        </div>
+      </form>
+    </div>
   </body>
 
 </html>

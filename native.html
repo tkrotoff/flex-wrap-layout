@@ -13,11 +13,12 @@
   </head>
 
   <body>
+    <br>
     <label>
       <input type="checkbox" onchange="toggleBorders(this)"> Show borders?
     </label>
 
-    <h3 id="1">Rows with labels above</h3>
+    <h3 id="1">#1 Rows with labels above</h3>
     <form vspace>
       <div layout="column">
         <label for="title_1">Title</label>
@@ -32,6 +33,11 @@
       <div layout="column">
         <label for="firstname_1">First Name</label>
         <input id="firstname_1" grow>
+      </div>
+
+      <div layout="column">
+        <label for="middlename_1">Middle Name</label>
+        <input id="middlename_1" grow>
       </div>
 
       <div layout="column">
@@ -96,7 +102,7 @@
       </div>
     </form>
 
-    <h3 id="2">Rows with labels on the left</h3>
+    <h3 id="2">#2 Rows with labels on the left</h3>
     <form hspace vspace>
       <div layout="row">
         <label for="title_2" offset-with-content>Title</label>
@@ -111,6 +117,11 @@
       <div layout="row">
         <label for="firstname_2" offset-with-content>First Name</label>
         <input id="firstname_2" grow>
+      </div>
+
+      <div layout="row">
+        <label for="middlename_2" offset-with-content>Middle Name</label>
+        <input id="middlename_2" grow>
       </div>
 
       <div layout="row">
@@ -187,7 +198,7 @@
 
     <hr>
 
-    <h3 id="3">1 row</h3>
+    <h3 id="3">#3 1 row</h3>
     <form layout="row" hspace vspace>
       <label for="name_3">Name</label>
       <input id="name_3" placeholder="Jane Doe" grow>
@@ -198,7 +209,7 @@
 
     <hr>
 
-    <h3 id="4">2 columns with labels above</h3>
+    <h3 id="4">#4 2 columns with labels above</h3>
     <form vspace>
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
@@ -238,7 +249,7 @@
 
     <hr>
 
-    <h3 id="5">2 columns with labels on the left</h3>
+    <h3 id="5">#5 2 columns with labels on the left</h3>
     <form vspace>
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
@@ -275,6 +286,120 @@
         <div grow></div>
       </div>
     </form>
+
+    <h3 id="6">#6 Rows with labels above + error messages</h3>
+    <form vspace>
+      <div layout="column">
+        <label for="firstname_6">First Name</label>
+        <div layout="column" class="has-error">
+          <input id="firstname_6">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="column">
+        <label for="middlename_6">Middle Name</label>
+        <div layout="column">
+          <input id="middlename_6">
+        </div>
+      </div>
+
+      <div layout="column">
+        <label for="lastname_6">Last Name</label>
+        <div layout="column" class="has-error">
+          <input id="lastname_6">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="column">
+        <label for="email_6">Email</label>
+        <div layout="column">
+          <input type="email" id="email_6">
+        </div>
+      </div>
+    </form>
+
+    <h3 id="7">#7 Rows with labels on the left + error messages</h3>
+    <form vspace>
+      <div layout="row">
+        <label for="firstname_7" offset-with-content>First Name</label>
+        <div layout="column" class="has-error" grow>
+          <input id="firstname_7">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row">
+        <label for="middlename_7" offset-with-content>Middle Name</label>
+        <div layout="column" grow>
+          <input id="middlename_7">
+        </div>
+      </div>
+
+      <div layout="row">
+        <label for="lastname_7" offset-with-content>Last Name</label>
+        <div layout="column" class="has-error" grow>
+          <input id="lastname_7">
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row">
+        <label for="email_7" offset-with-content>Email</label>
+        <div layout="column" grow>
+          <input id="email_7">
+        </div>
+      </div>
+    </form>
+
+    <h3 id="8">#8 Rows with buttons on the left + error messages</h3>
+    <form vspace>
+      <div layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" grow>
+          <input>
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" class="has-error" grow>
+          <input>
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" grow>
+          <input>
+        </div>
+      </div>
+    </form>
+
+    <h3 id="9">#9 Multiple forms</h3>
+    <div vspace>
+      <form layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" grow>
+          <input>
+        </div>
+      </form>
+      <form layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" class="has-error" grow>
+          <input>
+          <div class="help-block">Cannot be empty</div>
+        </div>
+      </form>
+      <form layout="row" hspace vspace>
+        <button>Delete</button>
+        <div layout="column" grow>
+          <input>
+        </div>
+      </form>
+    </div>
   </body>
 
 </html>

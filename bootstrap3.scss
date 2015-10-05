@@ -1,3 +1,4 @@
+$icon-font-path: 'node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 
 // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L208
@@ -14,4 +15,9 @@ $layout-item-margin: 4px;
 [offset-no-content] {
   @extend [offset-with-content];
   margin-bottom: 0;
+}
+
+.help-block {
+  font-size: $font-size-small; // Instead of 14px
+  //margin-top: 0; // Instead of 5px, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L451
 }

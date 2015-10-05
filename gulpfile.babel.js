@@ -12,7 +12,8 @@ gulp.task('styles', () =>
       'bootstrap3.scss'
     ])
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    // See input-group: button is one pixel too small in bootstrap-sass (but not when using Less) https://github.com/twbs/bootstrap-sass/issues/595
+    .pipe(sass({precision: 10}))
     .pipe(autoprefixer({browsers: ['last 2 versions']}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('.'))
