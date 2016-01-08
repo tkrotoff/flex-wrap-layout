@@ -6,6 +6,6 @@
 
   // Remove the need for Bootstrap <div class="form-group"></div>
   .form-control {
-    width: auto; // Instead of 100%, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L116
+    width: initial; // Instead of 100%, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L116
   }
 }
