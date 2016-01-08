@@ -4,9 +4,9 @@ Experimentations with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS
 
 Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs (web apps vs web sites). Desktop tools and libraries like [Qt](http://www.qt.io/) have elegantly solved [the problem](http://doc.qt.io/qt-5/layout.html) for decades.
 
-## Example
+## Demo
 
-![demo](demo.gif)
+![Basic demo](demo.gif)
 
 ```HTML
 <form vspace>
@@ -134,6 +134,5 @@ This would also solve other problems (all of them?).
 
 ```Shell
 npm run serve
-open http://localhost:9001/native.html
-open http://localhost:9001/bootstrap3.html
+open http://localhost:9001
 ```
