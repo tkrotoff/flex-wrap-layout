@@ -9,7 +9,8 @@
   "license": "MIT",
 
   "dependencies": {
-    "babel": "latest",
+    "babel-core": "latest",
+    "babel-preset-es2015": "latest",
 
     "bootstrap-sass": "^3.3",
 
