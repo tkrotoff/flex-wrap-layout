@@ -43,6 +43,6 @@ function browserSyncInit(port, baseDir) {
 
 gulp.task('serve', ['styles'], () => {
   const browser = browserSyncInit(9001, ['.']);
-  gulp.watch(['**/*.html', '**/*.js'], browser.reload);
-  gulp.watch(['**/*.scss'], ['styles', browser.reload]);
+  gulp.watch(['*.html', '*.js'], browser.reload);
+  gulp.watch(['*.scss'], ['styles', browser.reload]);
 });
