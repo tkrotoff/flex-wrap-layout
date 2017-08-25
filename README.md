@@ -6,7 +6,7 @@ Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs 
 
 ## Demo
 
-![Basic demo](demo.gif)
+![Basic demo](examples/demo.gif)
 
 ```HTML
 <form vspace>
