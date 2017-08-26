@@ -21,7 +21,6 @@
     "gulp": "latest",
     "gulp-debug": "latest",
     "gulp-sass": "latest",
-    "gulp-autoprefixer": "latest",
     "gulp-sourcemaps": "latest",
     "del": "latest",
     "browser-sync": "latest"
