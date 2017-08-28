@@ -1,6 +1,7 @@
-# npm
+# Node.js
 node_modules
 
 # Generated files
 examples/*.css
 examples/*.css.map
+lib/
