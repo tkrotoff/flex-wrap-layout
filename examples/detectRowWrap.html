@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>detectRowWrap() example</title>
+
+    <link rel="stylesheet" href="detectRowWrap.css">
+
+    <script src="../lib/toggleBorders.js"></script>
+    <script src="../lib/detectRowWrap.js"></script>
+  </head>
+
+  <body>
+    <p>
+      <label>
+        <input type="checkbox" onchange="toggleBorders(); callDetectRowWrap()"> Show borders
+      </label>
+      <label>
+        <input type="checkbox" onchange="toggleDetectRowWrap()" checked> Enable detectRowWrap()
+      </label>
+    </p>
+
+    <div layout="row" hspace vspace>
+      <div layout="row" hspace vspace>
+        <div class="box blue"></div>
+        <div class="box yellow" grow></div>
+        <div class="box grey"></div>
+      </div>
+      <div layout="row" grow hspace vspace>
+        <div class="box green"></div>
+        <div class="box green" grow></div>
+        <div class="box green"></div>
+      </div>
+      <div layout="row" hspace vspace>
+        <div class="box green"></div>
+        <div class="box green" grow></div>
+        <div class="box green"></div>
+      </div>
+    </div>
+
+    <script>
+      let detectRowWrapEnabled = true;
+      enableDetectRowWrap();
+
+      function enableDetectRowWrap() {
+        document.addEventListener('DOMContentLoaded', detectRowWrap);
+        window.addEventListener('resize', detectRowWrap);
+      }
+
+      function disableDetectRowWrap() {
+        document.removeEventListener('DOMContentLoaded', detectRowWrap);
+        window.removeEventListener('resize', detectRowWrap);
+        document.querySelectorAll('.wrapped').forEach(el => el.classList.remove('wrapped'));
+        document.querySelectorAll('.next-is-wrapped').forEach(el => el.classList.remove('next-is-wrapped'));
+      }
+
+      function callDetectRowWrap() {
+        if (detectRowWrapEnabled) {
+          detectRowWrap();
+        }
+      }
+
+      function toggleDetectRowWrap() {
+        detectRowWrapEnabled = !detectRowWrapEnabled;
+        if (detectRowWrapEnabled) {
+          enableDetectRowWrap();
+          callDetectRowWrap();
+        } else {
+          disableDetectRowWrap();
+        }
+      }
+    </script>
+
+  </body>
+</html>

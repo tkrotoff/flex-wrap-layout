@@ -14,6 +14,7 @@
   },
 
   "files": [
+    "src/detectRowWrap.ts",
     "src/toggleBorders.ts"
   ]
 }

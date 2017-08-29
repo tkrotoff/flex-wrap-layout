@@ -9,7 +9,8 @@ import * as child_process from 'child_process';
 gulp.task('styles', () =>
   gulp.src([
       'examples/native.scss',
-      'examples/bootstrap3.scss'
+      'examples/bootstrap3.scss',
+      'examples/detectRowWrap.scss'
     ])
     .pipe(sourcemaps.init())
     // See input-group: button is one pixel too small in bootstrap-sass (but not when using Less) https://github.com/twbs/bootstrap-sass/issues/595

@@ -123,7 +123,7 @@ I would like to [right-align the labels](http://doc.qt.io/qt-5/qformlayout.html#
 | <    label> <input> |              | <label    > <input> |
 ```
 
-Unfortunately, to my knowledge, it is not possible to detect when an element is wrapped in CSS:
+Unfortunately it is not possible to detect when an element is wrapped in CSS:
 ```
 | <    label> |  instead of  | <label    > |
 | <input>     |              | <input>     |
@@ -131,6 +131,8 @@ Unfortunately, to my knowledge, it is not possible to detect when an element is 
 | <input>     |              | <input>     |
 ```
 This would also solve other problems (all of them?).
+
+To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you define the CSS that goes with it.
 
 ## Build and run
 

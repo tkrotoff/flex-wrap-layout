@@ -1,0 +1,17 @@
+$layout-item-margin: 4px;
+@import '../src/_layout';
+@import '../src/_detectRowWrap-grow';
+@import '../src/_toggleBorders';
+
+.box {
+  height: 100px;
+
+  &::before {
+    content: '\a0\a0Lorem ipsum\a0\a0';
+  }
+
+  &.blue { background: lightblue }
+  &.yellow { background: lightyellow }
+  &.grey { background: lightgrey }
+  &.green { background: lightgreen }
+}
