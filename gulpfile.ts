@@ -19,8 +19,8 @@ gulp.task('styles', () =>
     .pipe(debug({title: 'styles:'}))
 );
 
-function tsc(dir: string, done: (error?: Error) => void) {
-  child_process.exec(`tsc -p ${dir}`, (error, stdout, stderr) => {
+function tsc(args: string, done: (error?: Error) => void) {
+  child_process.exec(`tsc ${args}`, (error, stdout, stderr) => {
     //console.log(error);
     console.log(stdout);
     //console.log(stderr);
@@ -31,7 +31,7 @@ function tsc(dir: string, done: (error?: Error) => void) {
     }
   });
 }
-gulp.task('scripts', done => tsc('.', done));
+gulp.task('scripts', done => tsc('--project .', done));
 
 gulp.task('build', ['styles', 'scripts']);
 
