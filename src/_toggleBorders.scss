@@ -1,0 +1,17 @@
+.showBorders {
+  [layout] {
+    margin: 10px;
+    border: 3px solid black;
+  }
+  [layout][grow] {
+    border-style: dashed;
+  }
+
+  [layout] > :not([layout]) {
+    margin: 10px;
+    border: 1.5px solid black;
+  }
+  [layout] > :not([layout])[grow] {
+    border-style: dashed;
+  }
+}

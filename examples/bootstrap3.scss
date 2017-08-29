@@ -5,6 +5,7 @@ $icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 //$layout-item-margin: $form-group-margin-bottom;
 $layout-item-margin: 4px;
 @import '../src/_layout';
+@import '../src/_toggleBorders';
 
 @import '../src/_bootstrap3';
 
