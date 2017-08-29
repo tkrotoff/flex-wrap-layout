@@ -7,10 +7,15 @@
     <title>flexform simple demo</title>
 
     <link rel="stylesheet" href="bootstrap3.css">
+    <script src="../lib/toggleBorders.js"></script>
   </head>
 
   <body class="container-fluid">
-    <br>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" onchange="toggleBorders()"> Show borders
+      </label>
+    </div>
 
     <form vspace>
       <div layout="row" hspace vspace>
