@@ -1,7 +1,5 @@
 # Node.js
-node_modules
+node_modules/
 
 # Generated files
-examples/*.css
-examples/*.css.map
-lib/
+build/

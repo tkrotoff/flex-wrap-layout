@@ -1,4 +1,4 @@
-function toggleBorders() {
+export default function toggleBorders() {
   const classList = document.body.classList;
   if (classList.contains('showBorders')) {
     classList.remove('showBorders');

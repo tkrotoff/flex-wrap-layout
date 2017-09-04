@@ -13,7 +13,7 @@ function position(elem: Element) {
 }
 
 // See How to detect CSS flex wrap event http://stackoverflow.com/questions/40012428
-function detectRowWrap() {
+export default function detectRowWrap() {
   // For each child of [layout=row]
   //   - find its previous sibling
   //   - check its sibling is not at the same position

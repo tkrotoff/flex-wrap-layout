@@ -1,13 +1,13 @@
-$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
-@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
 
 // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L208
 //$layout-item-margin: $form-group-margin-bottom;
 $layout-item-margin: 4px;
-@import '../src/_layout';
-@import '../src/_toggleBorders';
+@import '../src/layout';
+@import '../src/toggleBorders';
 
-@import '../src/_bootstrap3';
+@import '../src/bootstrap3';
 
 [offset-with-content] {
   min-width: 115px;

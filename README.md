@@ -137,6 +137,6 @@ To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript f
 ## Build and run
 
 ```Shell
-npm run serve
-open http://localhost:9001
+npm run build:watch
+open build/examples/demo.html
 ```

@@ -8,6 +8,13 @@
   "version": "0.0.1",
   "license": "MIT",
 
+  "scripts": {
+    "clean": "del-cli build",
+    "build": "webpack -d --env.development",
+    "build:watch": "webpack -d --env.development --watch",
+    "test": "npm run build"
+  },
+
   "dependencies": {
     "node-sass": ">=3.4.2"
   },
@@ -19,24 +26,14 @@
 
     "bootstrap-sass": "^3.3",
 
-    "gulp": "latest",
-    "@types/gulp": "^3",
-    "gulp-debug": "latest",
-    "@types/gulp-debug": "latest",
-    "gulp-sass": "latest",
-    "@types/gulp-sass": "latest",
-    "gulp-sourcemaps": "latest",
-    "@types/gulp-sourcemaps": "latest",
-    "del": "latest",
-    "@types/del": "latest",
-    "browser-sync": "latest",
-    "@types/browser-sync": "latest"
-  },
+    "webpack": "latest",
+    "@types/webpack": "latest",
+    "ts-loader": "latest",
+    "style-loader": "latest",
+    "css-loader": "latest",
+    "sass-loader": "latest",
+    "file-loader": "latest",
 
-  "scripts": {
-    "test": "gulp build",
-    "build": "gulp build",
-    "clean": "gulp clean",
-    "serve": "gulp serve"
+    "del-cli": "latest"
   }
 }

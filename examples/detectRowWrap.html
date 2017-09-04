@@ -6,10 +6,8 @@
 
     <title>detectRowWrap() example</title>
 
-    <link rel="stylesheet" href="detectRowWrap.css">
-
-    <script src="../lib/toggleBorders.js"></script>
-    <script src="../lib/detectRowWrap.js"></script>
+    <script src="../manifest.js"></script>
+    <script src="detectRowWrap.js"></script>
   </head>
 
   <body>
@@ -39,39 +37,5 @@
         <div class="box green"></div>
       </div>
     </div>
-
-    <script>
-      let detectRowWrapEnabled = true;
-      enableDetectRowWrap();
-
-      function enableDetectRowWrap() {
-        document.addEventListener('DOMContentLoaded', detectRowWrap);
-        window.addEventListener('resize', detectRowWrap);
-      }
-
-      function disableDetectRowWrap() {
-        document.removeEventListener('DOMContentLoaded', detectRowWrap);
-        window.removeEventListener('resize', detectRowWrap);
-        document.querySelectorAll('.wrapped').forEach(el => el.classList.remove('wrapped'));
-        document.querySelectorAll('.next-is-wrapped').forEach(el => el.classList.remove('next-is-wrapped'));
-      }
-
-      function callDetectRowWrap() {
-        if (detectRowWrapEnabled) {
-          detectRowWrap();
-        }
-      }
-
-      function toggleDetectRowWrap() {
-        detectRowWrapEnabled = !detectRowWrapEnabled;
-        if (detectRowWrapEnabled) {
-          enableDetectRowWrap();
-          callDetectRowWrap();
-        } else {
-          disableDetectRowWrap();
-        }
-      }
-    </script>
-
   </body>
 </html>

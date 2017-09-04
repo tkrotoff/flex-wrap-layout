@@ -1,7 +1,7 @@
 $layout-item-margin: 4px;
-@import '../src/_layout';
-@import '../src/_detectRowWrap-grow';
-@import '../src/_toggleBorders';
+@import '../src/layout';
+@import '../src/detectRowWrap-grow';
+@import '../src/toggleBorders';
 
 .box {
   height: 100px;
