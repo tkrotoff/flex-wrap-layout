@@ -4,6 +4,7 @@ import { Configuration, optimize } from 'webpack';
 const config: Configuration = {
   entry: {
     'examples/bootstrap3': './examples/bootstrap3.ts',
+    'examples/cssgrid': './examples/cssgrid.ts',
     'examples/demo': './examples/demo.ts',
     'examples/detectRowWrap': './examples/detectRowWrap.ts',
     'examples/native': './examples/native.ts',
