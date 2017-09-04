@@ -15,11 +15,9 @@
     "test": "npm run build"
   },
 
-  "dependencies": {
-    "node-sass": ">=3.4.2"
-  },
-
   "devDependencies": {
+    "node-sass": "latest",
+
     "typescript": "latest",
     "tslint": "latest",
     "ts-node": "latest",
