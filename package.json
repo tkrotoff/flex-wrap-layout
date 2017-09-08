@@ -8,10 +8,17 @@
   "version": "0.0.1",
   "license": "MIT",
 
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+
   "scripts": {
-    "clean": "del-cli build",
+    "clean": "del-cli build lib",
+
+    "prepare": "tsc",
+
     "build": "webpack -d",
     "build:watch": "webpack -d --watch",
+
     "test": "npm run build"
   },
 

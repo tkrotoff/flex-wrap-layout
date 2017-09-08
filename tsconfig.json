@@ -6,6 +6,7 @@
     "noLib": false,
     "lib": ["dom.iterable", "es2017"],
     "sourceMap": true,
+    "declaration": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -15,7 +16,6 @@
   },
 
   "files": [
-    "src/detectRowWrap.ts",
-    "src/toggleBorders.ts"
+    "src/index.ts"
   ]
 }

@@ -1,4 +1,4 @@
-import toggleBorders from '../src/toggleBorders';
+import { toggleBorders } from '../src/index';
 
 import './demo.html';
 import './bootstrap3.scss';

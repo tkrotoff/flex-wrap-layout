@@ -1,5 +1,4 @@
-import toggleBorders from '../src/toggleBorders';
-import { enableDetectRowWrap, callDetectRowWrap, toggleDetectRowWrap } from '../src/toggleDetectRowWrap';
+import { toggleBorders, enableDetectRowWrap, callDetectRowWrap, toggleDetectRowWrap } from '../src/index';
 
 import './detectRowWrap.html';
 import './detectRowWrap.scss';

@@ -8,6 +8,8 @@ const config: Configuration = {
     'examples/demo': './examples/demo.ts',
     'examples/detectRowWrap': './examples/detectRowWrap.ts',
     'examples/native': './examples/native.ts',
+
+    'flex-wrap-layout': './src/index.ts'
   },
 
   output: {
@@ -17,7 +19,8 @@ const config: Configuration = {
   },
 
   plugins: [
-    new optimize.CommonsChunkPlugin({names: ['manifest']})
+    // common = css-loader + style-loader
+    new optimize.CommonsChunkPlugin({names: ['common', 'flex-wrap-layout', 'manifest']})
   ],
 
   resolve: {
