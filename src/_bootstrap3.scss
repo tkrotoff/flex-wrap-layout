@@ -1,3 +1,4 @@
+[data-layout=row],
 [layout=row] {
   label {
     padding-top: $padding-base-vertical + 1; // See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L575
@@ -5,6 +6,7 @@
   }
 }
 
+[data-layout],
 [layout] {
   .form-control {
     width: initial; // Instead of 100%, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L116

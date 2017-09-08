@@ -6,11 +6,13 @@
   flex-wrap: wrap;
 }
 
+[data-layout=column],
 [layout=column] {
   @extend %layout;
   flex-direction: column;
 }
 
+[data-layout=row],
 [layout=row] {
   @extend %layout;
   flex-direction: row;
@@ -19,6 +21,7 @@
   align-items: flex-start;
 }
 
+[data-vspace],
 [vspace] {
   margin-bottom: -$layout-item-margin;
 
@@ -27,11 +30,13 @@
     margin-bottom: $layout-item-margin;
   }
 
+  > [data-vspace],
   > [vspace] {
     margin-bottom: 0;
   }
 }
 
+[data-hspace],
 [hspace] {
   // Trick: like removing the margin from the last form input on the wrapped line
   // See http://plnkr.co/edit/oElC5u?p=preview
@@ -44,6 +49,7 @@
     margin-right: $layout-item-margin / 2;
   }
 
+  > [data-hspace],
   > [hspace] {
     margin-left: 0;
     margin-right: 0;
@@ -51,6 +57,7 @@
 }
 
 // See flex-grow vs flex https://github.com/angular/material/issues/2632
+[data-grow],
 [grow] {
   box-sizing: border-box;
   flex: auto;
