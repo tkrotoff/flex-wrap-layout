@@ -7,7 +7,8 @@
     "lib": ["dom.iterable", "es2017"],
     "sourceMap": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": false,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "lib"
