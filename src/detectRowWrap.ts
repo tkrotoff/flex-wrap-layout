@@ -21,9 +21,7 @@ export default function detectRowWrap() {
   //     - if same position, remove classes
 
   const rowChilds = document.querySelectorAll('[layout=row] > *');
-  for (let i = 0; i < rowChilds.length; i++) {
-    const el = rowChilds[i];
-
+  for (const el of rowChilds) {
     // With jQuery:
     //const top = $(el).position().top;
     const top = position(el).top;
