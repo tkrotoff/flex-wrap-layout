@@ -5,6 +5,7 @@
     border: 3px solid black;
   }
   [data-layout][data-grow],
+  [data-layout][grow], // Not needed, special case due to _detectRowWrap-grow.scss that extends [grow] and not [data-grow]
   [layout][grow] {
     border-style: dashed;
   }
@@ -15,6 +16,7 @@
     border: 1.5px solid black;
   }
   [data-layout] > :not([data-layout])[data-grow],
+  [data-layout] > :not([data-layout])[grow], // Not needed, special case due to _detectRowWrap-grow.scss that extends [grow] and not [data-grow]
   [layout] > :not([layout])[grow] {
     border-style: dashed;
   }
