@@ -1,13 +1,13 @@
-import { toggleBorders } from '../src/index';
+import { Borders } from '../src/index';
 
 import './bootstrap3.html';
 import './bootstrap3.scss';
 
 declare global {
   interface Window {
-    toggleBorders: () => void;
+    Borders: Borders;
   }
 }
 
 // See Calling webpacked code from outside (HTML script tag) https://stackoverflow.com/a/34358513/990356
-window.toggleBorders = toggleBorders;
+window.Borders = Borders;

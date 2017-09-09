@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2016",
+    "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
     "noLib": false,
@@ -16,6 +17,7 @@
   },
 
   "files": [
-    "src/index.ts"
+    "src/index.ts",
+    "src/DevTools.tsx"
   ]
 }

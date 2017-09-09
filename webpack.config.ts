@@ -8,8 +8,10 @@ const config: Configuration = {
     'examples/demo': './examples/demo.ts',
     'examples/detectRowWrap': './examples/detectRowWrap.ts',
     'examples/native': './examples/native.ts',
+    'examples/DetectRowWrapWithDevTools': './examples/DetectRowWrapWithDevTools.tsx',
 
-    'flex-wrap-layout': './src/index.ts'
+    'flex-wrap-layout': './src/index.ts',
+    react: ['react', 'react-dom']
   },
 
   output: {
@@ -20,11 +22,11 @@ const config: Configuration = {
 
   plugins: [
     // common = css-loader + style-loader
-    new optimize.CommonsChunkPlugin({names: ['common', 'flex-wrap-layout', 'manifest']})
+    new optimize.CommonsChunkPlugin({names: ['common', 'flex-wrap-layout', 'react', 'manifest']})
   ],
 
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts', '.tsx']
   },
 
   devtool: 'source-map',

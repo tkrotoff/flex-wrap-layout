@@ -1,9 +1,8 @@
 import detectRowWrap from './detectRowWrap';
-import toggleBorders from './toggleBorders';
-import { enableDetectRowWrap, callDetectRowWrap, toggleDetectRowWrap } from './toggleDetectRowWrap';
+import { Borders, DetectRowWrap } from './Utils';
 
 export {
   detectRowWrap,
-  toggleBorders,
-  enableDetectRowWrap, callDetectRowWrap, toggleDetectRowWrap
+  Borders,
+  DetectRowWrap
 };

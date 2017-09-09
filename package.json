@@ -29,6 +29,10 @@
     "tslint": "latest",
     "tslint-react": "latest",
 
+    "react": "latest",
+    "@types/react": "latest",
+    "react-dom": "latest",
+    "@types/react-dom": "latest",
 
     "node-sass": "latest",
 
