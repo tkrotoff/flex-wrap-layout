@@ -19,17 +19,23 @@
     "build": "webpack -d",
     "build:watch": "webpack -d --watch",
 
-    "test": "npm run build"
+    "test": "npm run build",
+
+    "tslint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/node_modules/**' --exclude 'lib/**'"
   },
 
   "devDependencies": {
-    "node-sass": "latest",
-
     "typescript": "latest",
     "tslint": "latest",
-    "ts-node": "latest",
+    "tslint-react": "latest",
+
+
+    "node-sass": "latest",
 
     "bootstrap-sass": "^3.3",
+
+    "ts-node": "latest",
+    "@types/node": "latest",
 
     "webpack": "latest",
     "@types/webpack": "latest",
