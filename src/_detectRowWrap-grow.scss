@@ -1,6 +1,3 @@
-.next-is-wrapped {
-  @extend [grow];
-}
-.wrapped:last-child {
+.next-is-wrapped, .wrapped:last-child {
   @extend [grow];
 }
