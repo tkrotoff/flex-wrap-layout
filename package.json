@@ -10,8 +10,8 @@
 
   "scripts": {
     "clean": "del-cli build",
-    "build": "webpack -d --env.development",
-    "build:watch": "webpack -d --env.development --watch",
+    "build": "webpack -d",
+    "build:watch": "webpack -d --watch",
     "test": "npm run build"
   },
 
