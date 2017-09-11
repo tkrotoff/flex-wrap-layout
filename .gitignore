@@ -4,3 +4,4 @@ node_modules/
 # Generated files
 build/
 lib/
+dist/

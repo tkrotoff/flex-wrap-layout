@@ -12,14 +12,17 @@
   "types": "lib/index.d.ts",
 
   "scripts": {
-    "clean": "del-cli build lib",
+    "clean": "del-cli build lib dist/*.js",
 
-    "prepare": "tsc",
+    "dist": "webpack --config webpack.dist.config.ts",
 
     "build": "webpack -d",
     "build:watch": "webpack -d --watch",
 
-    "test": "npm run build",
+    "tsc": "tsc",
+    "prepublishOnly": "npm run clean && npm run build && npm run tsc && npm run dist",
+
+    "test": "npm run prepublishOnly",
 
     "tslint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/node_modules/**' --exclude 'lib/**'"
   },
