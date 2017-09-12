@@ -5,7 +5,7 @@
     "type" : "git",
     "url" : "https://github.com/tkrotoff/flex-wrap-layout.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
 
   "main": "lib/index.js",
