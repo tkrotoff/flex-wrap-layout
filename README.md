@@ -1,12 +1,19 @@
 # flex-wrap-layout
 
+[![npm version](https://badge.fury.io/js/flex-wrap-layout.svg)](https://badge.fury.io/js/flex-wrap-layout)
 [![Build Status](https://travis-ci.org/tkrotoff/flex-wrap-layout.svg?branch=master)](https://travis-ci.org/tkrotoff/flex-wrap-layout)
 
 Experimentations with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) and [`flex-wrap: wrap`](http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property) to get rid of the classic and limited [12 columns grid](https://gist.github.com/tkrotoff/e15da98129e46db39bf6) (e.g. things like `.col-md-6 { width: 50% }`).
 
 Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs (web apps vs web sites). Desktop tools and libraries like [Qt](http://www.qt.io/) have elegantly solved [the problem](http://doc.qt.io/qt-5/layout.html) for decades.
 
-## Demo
+## Examples
+
+### detectRowWrap() example
+
+https://codepen.io/tkrotoff/pen/pWzKqZ
+
+### HTML form example
 
 ![Basic demo](examples/demo.gif)
 
@@ -49,7 +56,7 @@ Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs 
 </form>
 ```
 
-## Primitives
+## API
 
 ### layout="row"
 
@@ -132,7 +139,7 @@ Unfortunately it is not possible to detect when an element is wrapped in CSS:
 ```
 This would also solve other problems (all of them?).
 
-To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you define the CSS that goes with it.
+To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you [define the CSS](src/_detectRowWrap-grow.scss) that goes with it.
 
 ## Build and run
 
