@@ -21,8 +21,8 @@ const config: Configuration = {
   },
 
   plugins: [
-    // common = css-loader + style-loader
-    new optimize.CommonsChunkPlugin({names: ['common', 'flex-wrap-layout', 'react', 'manifest']})
+    // webpack-loaders = css-loader + style-loader
+    new optimize.CommonsChunkPlugin({names: ['webpack-loaders', 'flex-wrap-layout', 'react', 'manifest']})
   ],
 
   resolve: {
