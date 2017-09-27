@@ -33,7 +33,7 @@ const config: Configuration = {
 
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'ts-loader', options: {compilerOptions: {declaration: false}} },
+      { test: /\.tsx?$/, loader: 'ts-loader', options: {compilerOptions: {module: 'esnext', declaration: false}} },
       {
         test: /\.scss$/,
         use: [

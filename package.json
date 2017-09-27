@@ -12,9 +12,9 @@
   "types": "lib/index.d.ts",
 
   "scripts": {
-    "clean": "del-cli build lib dist/*.css* dist/*.js",
+    "clean": "del-cli build lib dist/* !dist/.gitkeep",
 
-    "dist:js": "webpack --config webpack.dist.config.ts",
+    "dist:js": "webpack -p --config webpack.dist.config.ts",
     "dist:css": "node-sass --output-style expanded --source-map true --source-map-contents true src/flex-wrap-layout.scss dist/flex-wrap-layout.css",
     "dist": "npm run dist:js && npm run dist:css",
 
