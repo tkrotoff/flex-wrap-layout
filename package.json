@@ -26,7 +26,7 @@
 
     "test": "npm run prepublishOnly",
 
-    "tslint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/node_modules/**' --exclude 'lib/**'"
+    "tslint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/node_modules/**' --exclude '**/lib/**"
   },
 
   "devDependencies": {
