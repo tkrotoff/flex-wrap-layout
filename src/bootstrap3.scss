@@ -1,5 +1,5 @@
-[data-layout=row],
-[layout=row] {
+[data-layout='row'],
+[layout='row'] {
   label {
     padding-top: $padding-base-vertical + 1; // See https://github.com/twbs/bootstrap/blob/v3.4.1/less/forms.less#L571
     //margin-bottom: $layout-item-margin + 5px; // Instead of $layout-item-margin, see https://github.com/twbs/bootstrap/blob/v3.4.1/less/forms.less#L37

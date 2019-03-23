@@ -22,8 +22,7 @@ export default (_env: any, _argv: any) => {
       filename: '[name].js'
     },
 
-    plugins: [
-    ],
+    plugins: [],
 
     resolve: {
       extensions: ['.js', '.ts', '.tsx']
@@ -40,8 +39,8 @@ export default (_env: any, _argv: any) => {
           test: /\.scss$/,
           use: [
             { loader: 'style-loader' },
-            { loader: 'css-loader', options: {sourceMap: true} },
-            { loader: 'sass-loader', options: {sourceMap: true} }
+            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } }
           ]
         },
         {
@@ -52,7 +51,11 @@ export default (_env: any, _argv: any) => {
             outputPath: '/examples/fonts/'
           }
         },
-        { test: /\.html$/, loader: 'file-loader', options: {name: '[path][name].[ext]'} }
+        {
+          test: /\.html$/,
+          loader: 'file-loader',
+          options: { name: '[path][name].[ext]' }
+        }
       ]
     }
   };

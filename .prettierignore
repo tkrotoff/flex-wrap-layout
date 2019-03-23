@@ -1,0 +1,12 @@
+.git/
+.gitignore
+.prettierignore
+.eslintignore
+.editorconfig
+.browserslistrc
+dist/
+build/
+*.gif
+yarn.lock
+yarn-error.log
+LICENSE

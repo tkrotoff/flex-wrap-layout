@@ -41,7 +41,9 @@ export class DetectRowWrap {
     window.removeEventListener('load', detectRowWrap);
     window.removeEventListener('resize', detectRowWrap);
     document.querySelectorAll('.wrapped').forEach(el => el.classList.remove('wrapped'));
-    document.querySelectorAll('.next-is-wrapped').forEach(el => el.classList.remove('next-is-wrapped'));
+    document
+      .querySelectorAll('.next-is-wrapped')
+      .forEach(el => el.classList.remove('next-is-wrapped'));
   }
 
   static run() {

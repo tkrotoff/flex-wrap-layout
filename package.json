@@ -30,6 +30,7 @@
     "build:examples": "webpack -d",
     "build:examples:watch": "webpack -d --watch",
     "tsc": "tsc",
+    "prettier": "prettier --write \"**/*\"",
     "prepublishOnly": "yarn clean && yarn tsc && yarn build",
     "publish:beta": "yarn publish --tag next --no-git-tag-version --no-push # Custom example: 0.1.0-beta.1"
   },
@@ -43,6 +44,7 @@
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
     "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "rollup": "^1.7.0",

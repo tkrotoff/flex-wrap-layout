@@ -12,8 +12,16 @@ $layout-item-margin-x: 4px;
     content: '\a0\a0Lorem ipsum\a0\a0';
   }
 
-  &.blue { background: lightblue }
-  &.yellow { background: lightyellow }
-  &.grey { background: lightgrey }
-  &.green { background: lightgreen }
+  &.blue {
+    background: lightblue;
+  }
+  &.yellow {
+    background: lightyellow;
+  }
+  &.grey {
+    background: lightgrey;
+  }
+  &.green {
+    background: lightgreen;
+  }
 }

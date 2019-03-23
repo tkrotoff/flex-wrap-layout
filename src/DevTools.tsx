@@ -68,17 +68,23 @@ export class DevTools extends React.Component<Props, State> {
     const { position } = this.props;
 
     return (
-      <div style={{...panel, ...position}}>
+      <div style={{ ...panel, ...position }}>
         <label title="Dotted line: growing block, solid line: fixed block">
-          <input type="checkbox"
-                 checked={this.state.bordersDisplayed}
-                 onChange={this.handleToggleBordersChange.bind(this)} /> Borders
+          <input
+            type="checkbox"
+            checked={this.state.bordersDisplayed}
+            onChange={this.handleToggleBordersChange.bind(this)}
+          />{' '}
+          Borders
         </label>
         {'  '}
         <label title="Make previous and next blocks grow">
-          <input type="checkbox"
-                 checked={this.state.detectRowWrapEnabled}
-                 onChange={this.handleToggleDetectRowWrapChange.bind(this)} /> detectRowWrap()
+          <input
+            type="checkbox"
+            checked={this.state.detectRowWrapEnabled}
+            onChange={this.handleToggleDetectRowWrapChange.bind(this)}
+          />{' '}
+          detectRowWrap()
         </label>
       </div>
     );

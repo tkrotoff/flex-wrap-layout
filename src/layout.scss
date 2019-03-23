@@ -6,14 +6,14 @@
   flex-wrap: wrap;
 }
 
-[data-layout=column],
-[layout=column] {
+[data-layout='column'],
+[layout='column'] {
   @extend %layout;
   flex-direction: column;
 }
 
-[data-layout=row],
-[layout=row] {
+[data-layout='row'],
+[layout='row'] {
   @extend %layout;
   flex-direction: row;
 

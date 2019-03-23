@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>"native" example</title>
 
@@ -11,7 +11,7 @@
 
   <body>
     <label>
-      <input type="checkbox" onchange="Borders.toggle()">
+      <input type="checkbox" onchange="Borders.toggle()" />
       Borders
       <small>(dotted line: growing block, solid line: fixed block)</small>
     </label>
@@ -30,53 +30,65 @@
 
       <div layout="column">
         <label for="firstname_1">First Name</label>
-        <input id="firstname_1" grow>
+        <input id="firstname_1" grow />
       </div>
 
       <div layout="column">
         <label for="middlename_1">Middle Name</label>
-        <input id="middlename_1" grow>
+        <input id="middlename_1" grow />
       </div>
 
       <div layout="column">
         <label for="lastname_1">Last Name</label>
-        <input id="lastname_1" grow>
+        <input id="lastname_1" grow />
       </div>
 
       <div layout="column">
         <label for="email_1">Email</label>
-        <input type="email" id="email_1" grow>
+        <input type="email" id="email_1" grow />
       </div>
 
       <div layout="column">
         <label for="address_1">Address</label>
         <div layout="row" hspace vspace>
-          <input id="address_1" placeholder="Street" grow>
-          <input placeholder="City" grow>
-          <input placeholder="Country" grow>
+          <input id="address_1" placeholder="Street" grow />
+          <input placeholder="City" grow />
+          <input placeholder="Country" grow />
         </div>
       </div>
 
       <div>You must be over 18 to register</div>
 
       <div>
-        <label><input type="checkbox"> Over 18?</label>
+        <label>
+          <input type="checkbox" />
+          Over 18?
+        </label>
       </div>
 
       <div layout="row" hspace>
-        <label><input type="radio" name="bed_1" value="single"> Single bed</label>
-        <label><input type="radio" name="bed_1" value="double"> Double bed</label>
-        <label><input type="radio" name="bed_1" value="twin"> Twin beds</label>
+        <label>
+          <input type="radio" name="bed_1" value="single" />
+          Single bed
+        </label>
+        <label>
+          <input type="radio" name="bed_1" value="double" />
+          Double bed
+        </label>
+        <label>
+          <input type="radio" name="bed_1" value="twin" />
+          Twin beds
+        </label>
       </div>
 
       <div layout="column">
         <label for="arrival_1">Arrival</label>
-        <input type="date" id="arrival_1" grow>
+        <input type="date" id="arrival_1" grow />
       </div>
 
       <div layout="column">
         <label for="departure_1">Departure</label>
-        <input type="date" id="departure_1" grow>
+        <input type="date" id="departure_1" grow />
       </div>
 
       <div layout="column">
@@ -114,30 +126,30 @@
 
       <div layout="row">
         <label for="firstname_2" offset>First Name</label>
-        <input id="firstname_2" grow>
+        <input id="firstname_2" grow />
       </div>
 
       <div layout="row">
         <label for="middlename_2" offset>Middle Name</label>
-        <input id="middlename_2" grow>
+        <input id="middlename_2" grow />
       </div>
 
       <div layout="row">
         <label for="lastname_2" offset>Last Name</label>
-        <input id="lastname_2" grow>
+        <input id="lastname_2" grow />
       </div>
 
       <div layout="row">
         <label for="email_2" offset>Email</label>
-        <input type="email" id="email_2" grow>
+        <input type="email" id="email_2" grow />
       </div>
 
       <div layout="row">
         <label for="address_2" offset>Address</label>
         <div layout="row" hspace vspace grow>
-          <input id="address_2" placeholder="Street" grow>
-          <input placeholder="City" grow>
-          <input placeholder="Country" grow>
+          <input id="address_2" placeholder="Street" grow />
+          <input placeholder="City" grow />
+          <input placeholder="Country" grow />
         </div>
       </div>
 
@@ -148,26 +160,35 @@
 
       <div layout="row">
         <label for="over18_2" offset>Over 18?</label>
-        <input type="checkbox" id="over18_2">
+        <input type="checkbox" id="over18_2" />
       </div>
 
       <div layout="row">
         <div offset></div>
         <div layout="row" hspace>
-          <label><input type="radio" name="bed_2" value="single"> Single bed</label>
-          <label><input type="radio" name="bed_2" value="double"> Double bed</label>
-          <label><input type="radio" name="bed_2" value="twin"> Twin beds</label>
+          <label>
+            <input type="radio" name="bed_2" value="single" />
+            Single bed
+          </label>
+          <label>
+            <input type="radio" name="bed_2" value="double" />
+            Double bed
+          </label>
+          <label>
+            <input type="radio" name="bed_2" value="twin" />
+            Twin beds
+          </label>
         </div>
       </div>
 
       <div layout="row">
         <label for="arrival_2" offset>Arrival</label>
-        <input type="date" id="arrival_2" grow>
+        <input type="date" id="arrival_2" grow />
       </div>
 
       <div layout="row">
         <label for="departure_2" offset>Departure</label>
-        <input type="date" id="departure_2" grow>
+        <input type="date" id="departure_2" grow />
       </div>
 
       <div layout="row">
@@ -194,18 +215,18 @@
       </div>
     </form>
 
-    <hr>
+    <hr />
 
     <h3 id="3">#3 1 row</h3>
     <form layout="row" hspace vspace>
       <label for="name_3">Name</label>
-      <input id="name_3" placeholder="Jane Doe" grow>
+      <input id="name_3" placeholder="Jane Doe" grow />
       <label for="email_3">Email</label>
-      <input type="email" id="email_3" placeholder="jane.doe@example.com" grow>
+      <input type="email" id="email_3" placeholder="jane.doe@example.com" grow />
       <button>Send invitation</button>
     </form>
 
-    <hr>
+    <hr />
 
     <h3 id="4">#4 2 columns with labels above</h3>
     <form vspace>
@@ -213,24 +234,24 @@
         <div layout="column" vspace grow>
           <div layout="column">
             <label for="firstname_4">First Name</label>
-            <input id="firstname_4" grow>
+            <input id="firstname_4" grow />
           </div>
 
           <div layout="column">
             <label for="lastname_4">Last Name</label>
-            <input id="lastname_4" grow>
+            <input id="lastname_4" grow />
           </div>
         </div>
 
         <div layout="column" vspace grow>
           <div layout="column">
             <label for="arrival_4">Arrival</label>
-            <input type="date" id="arrival_4" grow>
+            <input type="date" id="arrival_4" grow />
           </div>
 
           <div layout="column">
             <label for="departure_4">Departure</label>
-            <input type="date" id="departure_4" grow>
+            <input type="date" id="departure_4" grow />
           </div>
         </div>
       </div>
@@ -245,7 +266,7 @@
       </div>
     </form>
 
-    <hr>
+    <hr />
 
     <h3 id="5">#5 2 columns with labels on the left</h3>
     <form vspace>
@@ -253,24 +274,24 @@
         <div layout="column" vspace grow>
           <div layout="row">
             <label for="firstname_5" offset>First Name</label>
-            <input id="firstname_5" grow>
+            <input id="firstname_5" grow />
           </div>
 
           <div layout="row">
             <label for="lastname_5" offset>Last Name</label>
-            <input id="lastname_5" grow>
+            <input id="lastname_5" grow />
           </div>
         </div>
 
         <div layout="column" vspace grow>
           <div layout="row">
             <label for="arrival_5" offset>Arrival</label>
-            <input type="date" id="arrival_5" grow>
+            <input type="date" id="arrival_5" grow />
           </div>
 
           <div layout="row">
             <label for="departure_5" offset>Departure</label>
-            <input type="date" id="departure_5" grow>
+            <input type="date" id="departure_5" grow />
           </div>
         </div>
       </div>
@@ -290,7 +311,7 @@
       <div layout="column">
         <label for="firstname_6">First Name</label>
         <div layout="column" class="has-error">
-          <input id="firstname_6">
+          <input id="firstname_6" />
           <div class="help-block">Cannot be empty</div>
         </div>
       </div>
@@ -298,14 +319,14 @@
       <div layout="column">
         <label for="middlename_6">Middle Name</label>
         <div layout="column">
-          <input id="middlename_6">
+          <input id="middlename_6" />
         </div>
       </div>
 
       <div layout="column">
         <label for="lastname_6">Last Name</label>
         <div layout="column" class="has-error">
-          <input id="lastname_6">
+          <input id="lastname_6" />
           <div class="help-block">Cannot be empty</div>
         </div>
       </div>
@@ -313,7 +334,7 @@
       <div layout="column">
         <label for="email_6">Email</label>
         <div layout="column">
-          <input type="email" id="email_6">
+          <input type="email" id="email_6" />
         </div>
       </div>
     </form>
@@ -323,7 +344,7 @@
       <div layout="row">
         <label for="firstname_7" offset>First Name</label>
         <div layout="column" class="has-error" grow>
-          <input id="firstname_7">
+          <input id="firstname_7" />
           <div class="help-block">Cannot be empty</div>
         </div>
       </div>
@@ -331,14 +352,14 @@
       <div layout="row">
         <label for="middlename_7" offset>Middle Name</label>
         <div layout="column" grow>
-          <input id="middlename_7">
+          <input id="middlename_7" />
         </div>
       </div>
 
       <div layout="row">
         <label for="lastname_7" offset>Last Name</label>
         <div layout="column" class="has-error" grow>
-          <input id="lastname_7">
+          <input id="lastname_7" />
           <div class="help-block">Cannot be empty</div>
         </div>
       </div>
@@ -346,7 +367,7 @@
       <div layout="row">
         <label for="email_7" offset>Email</label>
         <div layout="column" grow>
-          <input id="email_7">
+          <input id="email_7" />
         </div>
       </div>
     </form>
@@ -356,14 +377,14 @@
       <div layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" grow>
-          <input>
+          <input />
         </div>
       </div>
 
       <div layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" class="has-error" grow>
-          <input>
+          <input />
           <div class="help-block">Cannot be empty</div>
         </div>
       </div>
@@ -371,7 +392,7 @@
       <div layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" grow>
-          <input>
+          <input />
         </div>
       </div>
     </form>
@@ -381,23 +402,22 @@
       <form layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" grow>
-          <input>
+          <input />
         </div>
       </form>
       <form layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" class="has-error" grow>
-          <input>
+          <input />
           <div class="help-block">Cannot be empty</div>
         </div>
       </form>
       <form layout="row" hspace vspace>
         <button>Delete</button>
         <div layout="column" grow>
-          <input>
+          <input />
         </div>
       </form>
     </div>
   </body>
-
 </html>

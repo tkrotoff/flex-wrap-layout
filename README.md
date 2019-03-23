@@ -20,6 +20,7 @@ $layout-item-margin-x: $form-group-margin-bottom;
 ```
 
 If you need to detect CSS flex wrap:
+
 ```JS
 import { detectRowWrap } from 'flex-wrap-layout';
 ```
@@ -96,20 +97,25 @@ Lines up child elements vertically ([QVBoxLayout](http://doc.qt.io/qt-5/qvboxlay
 Grows the element if extra space is available, the element won't shrink below its natural width ([QSizePolicy](http://doc.qt.io/qt-5/qsizepolicy.html#details) equivalent).
 
 - Without `grow`:
+
 ```
 | <1> <2> <3>         |
 ```
 
 - Element 1 with `grow` attribute:
+
 ```
 | <    1    > <2> <3> |
 ```
+
 Element 1 fills the extra space if any
 
 - Elements 2 and 3 with `grow` attribute:
+
 ```
 | <1> <  2  > <  3  > |
 ```
+
 Elements 2 and 3 share the extra space if any
 
 ### vspace
@@ -142,18 +148,21 @@ Stretchable blank space ([QSpacerItem](http://doc.qt.io/qt-5/qspaceritem.html#de
 ## Limitations
 
 I would like to [right-align the labels](http://doc.qt.io/qt-5/qformlayout.html#details) of a form:
+
 ```
 | <    label> <input> |  instead of  | <label    > <input> |
 | <    label> <input> |              | <label    > <input> |
 ```
 
 Unfortunately it is not possible to detect when an element is wrapped in CSS:
+
 ```
 | <    label> |  instead of  | <label    > |
 | <input>     |              | <input>     |
 | <    label> |              | <label    > |
 | <input>     |              | <input>     |
 ```
+
 This would also solve other problems (all of them?).
 
 To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you [define the CSS](src/detectRowWrap-grow.scss) that goes with it.
