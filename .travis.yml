@@ -5,5 +5,6 @@ node_js:
 script:
   - yarn clean
   - yarn tsc
+  - yarn eslint
   - yarn build
   - yarn build:examples
