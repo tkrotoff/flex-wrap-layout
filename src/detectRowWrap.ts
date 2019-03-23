@@ -1,8 +1,8 @@
-// See jQuery.position() equivalent is wrong https://github.com/HubSpot/youmightnotneedjquery/issues/172
-function position(elem: Element) {
-  const rect = elem.getBoundingClientRect();
+// See [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
+function position(el: Element) {
+  const rect = el.getBoundingClientRect();
 
-  const style = getComputedStyle(elem);
+  const style = window.getComputedStyle(el);
   const marginTop = style.marginTop !== null ? parseInt(style.marginTop, 10) : 0;
   const marginLeft = style.marginLeft !== null ? parseInt(style.marginLeft, 10) : 0;
 
@@ -12,16 +12,15 @@ function position(elem: Element) {
   };
 }
 
-// See How to detect CSS flex wrap event http://stackoverflow.com/questions/40012428
-export default function detectRowWrap() {
-  // For each child of [layout=row]
+// See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
+export function detectRowWrap() {
+  // For each child of [layout="row"]
   //   - find its previous sibling
   //   - check its sibling is not at the same position
   //     - if it's not, add classes
   //     - if same position, remove classes
 
-  const rowChilds = document.querySelectorAll('[data-layout=row] > *, [layout=row] > *');
-  for (const el of rowChilds) {
+  document.querySelectorAll('[data-layout="row"] > *, [layout="row"] > *').forEach(el => {
     // With jQuery:
     //const top = $(el).position().top;
     const top = position(el).top;
@@ -35,7 +34,7 @@ export default function detectRowWrap() {
         el.classList.add('wrapped');
 
         // There is no way to CSS style an element given a match on its next sibling
-        // See Is there a "previous sibling" CSS selector? http://stackoverflow.com/questions/1817792
+        // See [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
         prev.classList.add('next-is-wrapped');
       }
 
@@ -44,5 +43,5 @@ export default function detectRowWrap() {
         prev.classList.remove('next-is-wrapped');
       }
     }
-  }
+  });
 }

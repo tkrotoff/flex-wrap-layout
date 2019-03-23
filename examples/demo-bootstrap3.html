@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Simple demo - Bootstrap 4</title>
+    <title>Simple demo - Bootstrap 3</title>
 
-    <script src="bootstrap4.js"></script>
+    <script src="demo.js"></script>
   </head>
 
   <body class="container-fluid">
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="toggleBorders" onchange="Borders.toggle()">
-      <label class="form-check-label" for="toggleBorders">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" onchange="Borders.toggle()">
         Borders
         <small>(dotted line: growing block, solid line: fixed block)</small>
       </label>
@@ -48,8 +48,11 @@
       <div layout="row">
         <div grow></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">Save</button>
-          <button class="btn btn-secondary">Cancel</button>
+          <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+            Save
+          </button>
+          <button class="btn btn-default">Cancel</button>
         </div>
         <div grow></div>
       </div>

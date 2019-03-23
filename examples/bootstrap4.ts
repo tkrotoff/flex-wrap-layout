@@ -1,7 +1,7 @@
 import { Borders } from '../src/index';
 
-import './bootstrap3.html';
-import './bootstrap3.scss';
+import './bootstrap4.html';
+import './bootstrap4.scss';
 
 declare global {
   interface Window {

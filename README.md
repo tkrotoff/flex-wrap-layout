@@ -7,6 +7,23 @@ Experimentations with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS
 
 Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs (web apps vs web sites). Desktop tools and libraries like [Qt](http://www.qt.io/) have elegantly solved [the problem](http://doc.qt.io/qt-5/layout.html) for decades.
 
+## Usage
+
+`yarn add flex-wrap-layout` or `npm install flex-wrap-layout`
+
+Import [layout.scss](src/layout.scss) or [flex-wrap-layout.scss](src/flex-wrap-layout.scss):
+
+```SCSS
+$layout-item-margin-y: $form-group-margin-bottom;
+$layout-item-margin-x: $form-group-margin-bottom;
+@import '~flex-wrap-layout/src/layout';
+```
+
+If you need to detect CSS flex wrap:
+```JS
+import { detectRowWrap } from 'flex-wrap-layout';
+```
+
 ## Examples
 
 ### detectRowWrap() example
@@ -139,11 +156,11 @@ Unfortunately it is not possible to detect when an element is wrapped in CSS:
 ```
 This would also solve other problems (all of them?).
 
-To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you [define the CSS](src/_detectRowWrap-grow.scss) that goes with it.
+To work around this, [`detectRowWrap()`](src/detectRowWrap.ts) is a JavaScript function that detects when an element is wrapped and lets you [define the CSS](src/detectRowWrap-grow.scss) that goes with it.
 
 ## Build and run
 
 ```Shell
-npm run build:watch
+yarn build:examples:watch
 open build/examples/demo.html
 ```

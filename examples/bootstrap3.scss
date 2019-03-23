@@ -1,24 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// See https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L208
-//$layout-item-margin: $form-group-margin-bottom;
-$layout-item-margin: 4px;
+// See https://github.com/twbs/bootstrap/blob/v3.4.1/less/forms.less#L223
+// There is no margin-right between form-group in Bootstrap 3
+//$layout-item-margin-y: $form-group-margin-bottom;
+//$layout-item-margin-x: $form-group-margin-bottom;
+$layout-item-margin-y: 4px;
+$layout-item-margin-x: 4px;
 @import '../src/layout';
 @import '../src/showBorders';
 
 @import '../src/bootstrap3';
 
-[offset-with-content] {
+[offset] {
   min-width: 115px;
-}
-
-[offset-no-content] {
-  @extend [offset-with-content];
-  margin-bottom: 0;
 }
 
 .help-block {
   font-size: $font-size-small; // Instead of 14px
-  //margin-top: 0; // Instead of 5px, see https://github.com/twbs/bootstrap/blob/v3.3.5/less/forms.less#L451
+  //margin-top: 0; // Instead of 5px, see https://github.com/twbs/bootstrap/blob/v3.4.1/less/forms.less#L449
 }

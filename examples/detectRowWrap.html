@@ -6,19 +6,20 @@
 
     <title>detectRowWrap() example</title>
 
-    <script src="../manifest.js"></script>
-    <script src="../webpack-loaders.js"></script>
-    <script src="../flex-wrap-layout.js"></script>
     <script src="detectRowWrap.js"></script>
   </head>
 
   <body>
     <p>
       <label>
-        <input type="checkbox" onchange="Borders.toggle(); DetectRowWrap.run()"> Borders
+        <input type="checkbox" onchange="Borders.toggle(); DetectRowWrap.run()">
+        Borders
+        <small>(dotted line: growing block, solid line: fixed block)</small>
       </label>
       <label>
-        <input type="checkbox" onchange="DetectRowWrap.toggle()" checked> detectRowWrap()
+        <input type="checkbox" onchange="DetectRowWrap.toggle()" checked>
+        detectRowWrap()
+        <small>(make previous and next blocks grow)</small>
       </label>
     </p>
 

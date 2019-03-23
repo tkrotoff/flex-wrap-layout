@@ -1,4 +1,6 @@
-$layout-item-margin: 4px;
+$layout-item-margin-y: 4px;
+$layout-item-margin-x: 4px;
+
 @import '../src/layout';
 @import '../src/detectRowWrap-grow';
 @import '../src/showBorders';

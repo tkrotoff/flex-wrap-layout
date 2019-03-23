@@ -9,5 +9,5 @@ declare global {
   }
 }
 
-// See Calling webpacked code from outside (HTML script tag) https://stackoverflow.com/a/34358513/990356
+// See [Calling webpacked code from outside (HTML script tag)](https://stackoverflow.com/a/34358513/990356)
 window.Borders = Borders;

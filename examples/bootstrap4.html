@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3 example</title>
+    <title>Bootstrap 4 example</title>
 
-    <script src="bootstrap3.js"></script>
+    <script src="bootstrap4.js"></script>
   </head>
 
   <body class="container-fluid">
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" onchange="Borders.toggle()">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="toggleBorders" onchange="Borders.toggle()">
+      <label class="form-check-label" for="toggleBorders">
         Borders
         <small>(dotted line: growing block, solid line: fixed block)</small>
       </label>
     </div>
 
     <h3 id="1">#1 Rows with labels above</h3>
-    <form vspace>
+    <form vspace class="mb-3">
       <div layout="column">
         <label for="title_1">Title</label>
         <select id="title_1" class="form-control">
@@ -61,14 +61,24 @@
 
       <div>You must be over 18 to register</div>
 
-      <div class="checkbox">
-        <label><input type="checkbox"> Over 18?</label>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="over18_1">
+        <label class="form-check-label" for="over18_1"> Over 18?</label>
       </div>
 
-      <div layout="row" hspace class="radio">
-        <label><input type="radio" name="bed_1" value="single"> Single bed</label>
-        <label><input type="radio" name="bed_1" value="double"> Double bed</label>
-        <label><input type="radio" name="bed_1" value="twin"> Twin beds</label>
+      <div layout="row" hspace>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="bed_1" id="singleBed_1" value="single">
+          <label class="form-check-label" for="singleBed_1">Single bed</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="bed_1" id="doubleBed_1" value="double">
+          <label class="form-check-label" for="doubleBed_1">Double bed</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="bed_1" id="twinBeds_1" value="twin">
+          <label class="form-check-label" for="twinBeds_1">Twin beds</label>
+        </div>
       </div>
 
       <div layout="column">
@@ -97,16 +107,13 @@
       </div>
 
       <div layout="row" hspace vspace>
-        <button class="btn btn-primary">
-          <span class="glyphicon glyphicon-floppy-disk"></span>
-          Save
-        </button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-secondary">Cancel</button>
       </div>
     </form>
 
     <h3 id="2">#2 Rows with labels on the left</h3>
-    <form hspace vspace>
+    <form hspace vspace class="mb-3">
       <div layout="row">
         <label for="title_2" offset>Title</label>
         <select id="title_2" class="form-control" grow>
@@ -147,21 +154,32 @@
       </div>
 
       <div layout="row">
-        <div offset></div>
+        <div offset-no-content></div>
         <div>You must be over 18 to register</div>
       </div>
 
       <div layout="row" vspace>
         <label for="over18_2" offset>Over 18?</label>
-        <input type="checkbox" id="over18_2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="over18_2">
+        </div>
       </div>
 
       <div layout="row" vspace>
-        <div offset></div>
-        <div layout="row" hspace class="radio">
-          <label><input type="radio" name="bed_2" value="single"> Single bed</label>
-          <label><input type="radio" name="bed_2" value="double"> Double bed</label>
-          <label><input type="radio" name="bed_2" value="twin"> Twin beds</label>
+        <div offset-no-content></div>
+        <div layout="row" hspace>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="bed_2" id="singleBed_2" value="single">
+            <label class="form-check-label" for="singleBed_2">Single bed</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="bed_2" id="doubleBed_2" value="double">
+            <label class="form-check-label" for="doubleBed_2">Double bed</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="bed_2" id="twinBeds_2" value="twin">
+            <label class="form-check-label" for="twinBeds_2">Twin beds</label>
+          </div>
         </div>
       </div>
 
@@ -191,13 +209,10 @@
       </div>
 
       <div layout="row">
-        <div offset></div>
+        <div offset-no-content></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">
-            <span class="glyphicon glyphicon-floppy-disk"></span>
-            Save
-          </button>
-          <button class="btn btn-default">Cancel</button>
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary">Cancel</button>
         </div>
       </div>
     </form>
@@ -205,18 +220,18 @@
     <hr>
 
     <h3 id="3">#3 1 row</h3>
-    <form layout="row" hspace vspace>
+    <form layout="row" hspace vspace class="mb-3">
       <label for="name_3">Name</label>
       <input id="name_3" placeholder="Jane Doe" class="form-control" grow>
       <label for="email_3">Email</label>
       <input type="email" id="email_3" placeholder="jane.doe@example.com" class="form-control" grow>
-      <button class="btn btn-default">Send invitation</button>
+      <button class="btn btn-secondary">Send invitation</button>
     </form>
 
     <hr>
 
     <h3 id="4">#4 2 columns with labels above</h3>
-    <form vspace>
+    <form vspace class="mb-3">
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
           <div layout="column">
@@ -246,11 +261,8 @@
       <div layout="row">
         <div grow></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">
-            <span class="glyphicon glyphicon-floppy-disk"></span>
-            Save
-          </button>
-          <button class="btn btn-default">Cancel</button>
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary">Cancel</button>
         </div>
         <div grow></div>
       </div>
@@ -259,7 +271,7 @@
     <hr>
 
     <h3 id="5">#5 2 columns with labels on the left</h3>
-    <form vspace>
+    <form vspace class="mb-3">
       <div layout="row" hspace vspace>
         <div layout="column" vspace grow>
           <div layout="row">
@@ -289,23 +301,20 @@
       <div layout="row">
         <div grow></div>
         <div layout="row" hspace vspace>
-          <button class="btn btn-primary">
-            <span class="glyphicon glyphicon-floppy-disk"></span>
-            Save
-          </button>
-          <button class="btn btn-default">Cancel</button>
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary">Cancel</button>
         </div>
         <div grow></div>
       </div>
     </form>
 
     <h3 id="6">#6 Rows with labels above + error messages</h3>
-    <form vspace>
-      <div layout="column" class="has-error">
+    <form vspace class="mb-3">
+      <div layout="column">
         <label for="firstname_6">First Name</label>
-        <div layout="column" class="has-error">
-          <input id="firstname_6" class="form-control">
-          <div class="help-block">Cannot be empty</div>
+        <div layout="column">
+          <input id="firstname_6" class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </div>
 
@@ -316,11 +325,11 @@
         </div>
       </div>
 
-      <div layout="column" class="has-error">
+      <div layout="column">
         <label for="lastname_6">Last Name</label>
-        <div layout="column" class="has-error">
-          <input id="lastname_6" class="form-control">
-          <div class="help-block">Cannot be empty</div>
+        <div layout="column">
+          <input id="lastname_6" class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </div>
 
@@ -333,12 +342,12 @@
     </form>
 
     <h3 id="7">#7 Rows with labels on the left + error messages</h3>
-    <form vspace>
+    <form vspace class="mb-3">
       <div layout="row">
         <label for="firstname_7" offset>First Name</label>
-        <div layout="column" class="has-error" grow>
-          <input id="firstname_7" class="form-control">
-          <div class="help-block">Cannot be empty</div>
+        <div layout="column" grow>
+          <input id="firstname_7" class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </div>
 
@@ -351,9 +360,9 @@
 
       <div layout="row">
         <label for="lastname_7" offset>Last Name</label>
-        <div layout="column" class="has-error" grow>
-          <input id="lastname_7" class="form-control">
-          <div class="help-block">Cannot be empty</div>
+        <div layout="column" grow>
+          <input id="lastname_7" class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </div>
 
@@ -366,46 +375,27 @@
     </form>
 
     <h3 id="8">#8 Rows with buttons on the left + error messages</h3>
-    <form vspace>
+    <form vspace class="mb-3">
       <div layout="row" hspace vspace>
-        <button class="btn btn-default btn-xs">
-          <span class="glyphicon glyphicon-trash"></span>
-          Delete
-        </button>
+        <button class="btn btn-outline-secondary btn-sm">🗑️ Delete</button>
+        <div layout="column" grow>
+          <input class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
+        </div>
+      </div>
+
+      <div layout="row" hspace vspace>
+        <button class="btn btn-outline-secondary">🗑️ Delete</button>
         <div layout="column" grow>
           <input class="form-control">
         </div>
       </div>
 
       <div layout="row" hspace vspace>
-        <button class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-trash"></span>
-          Delete
-        </button>
-        <div layout="column" class="has-error" grow>
-          <input class="form-control">
-          <div class="help-block">Cannot be empty</div>
-        </div>
-      </div>
-
-      <div layout="row" hspace vspace>
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-trash"></span>
-          Delete
-        </button>
+        <button class="btn btn-outline-secondary btn-lg">🗑️ Delete</button>
         <div layout="column" grow>
-          <input class="form-control">
-        </div>
-      </div>
-
-      <div layout="row" hspace vspace>
-        <button class="btn btn-default btn-lg">
-          <span class="glyphicon glyphicon-trash"></span>
-          Delete
-        </button>
-        <div layout="column" class="has-error" grow>
-          <input class="form-control">
-          <div class="help-block">Cannot be empty</div>
+          <input class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </div>
     </form>
@@ -413,26 +403,20 @@
     <h3 id="9">#9 Multiple forms</h3>
     <div vspace>
       <form layout="row" hspace vspace>
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-trash"></span>
-        </button>
+        <button class="btn btn-outline-secondary">🗑️</button>
         <div layout="column" grow>
           <input class="form-control">
         </div>
       </form>
       <form layout="row" hspace vspace>
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-trash"></span>
-        </button>
-        <div layout="column" class="has-error" grow>
-          <input class="form-control">
-          <div class="help-block">Cannot be empty</div>
+        <button class="btn btn-outline-secondary">🗑️</button>
+        <div layout="column" grow>
+          <input class="form-control is-invalid">
+          <div class="invalid-feedback">Cannot be empty</div>
         </div>
       </form>
       <form layout="row" hspace vspace>
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-trash"></span>
-        </button>
+        <button class="btn btn-outline-secondary">🗑️</button>
         <div layout="column" grow>
           <input class="form-control">
         </div>

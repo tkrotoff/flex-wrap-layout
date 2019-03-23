@@ -1,59 +1,60 @@
 {
   "name": "flex-wrap-layout",
-  "description": "Experiments with flexbox layout",
+  "version": "0.1.0",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/tkrotoff/flex-wrap-layout.git"
+    "type": "git",
+    "url": "https://github.com/tkrotoff/flex-wrap-layout.git"
   },
-  "version": "0.0.2",
+  "description": "Experiments with flexbox layout",
   "license": "MIT",
-
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-
+  "keywords": [
+    "flexbox",
+    "layout",
+    "grid"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "scripts": {
-    "clean": "del-cli build lib dist/* !dist/.gitkeep",
-
-    "dist:js": "webpack -p --config webpack.dist.config.ts",
-    "dist:css": "node-sass --output-style expanded --source-map true --source-map-contents true src/flex-wrap-layout.scss dist/flex-wrap-layout.css",
-    "dist": "npm run dist:js && npm run dist:css",
-
-    "build": "webpack -d",
-    "build:watch": "webpack -d --watch",
-
+    "clean": "rm -rf dist build",
+    "clean:all": "yarn clean && rm -rf node_modules yarn.lock yarn-error.log",
+    "build:umd": "NODE_ENV=development rollup --config && NODE_ENV=production rollup --config",
+    "build:esnext": "tsc --noEmit false --outDir dist --module esnext --declaration true",
+    "build:cjs": "tsc --noEmit false --outDir dist/cjs",
+    "build:css": "node-sass --output-style expanded --source-map true --source-map-contents true src/flex-wrap-layout.scss dist/flex-wrap-layout.css",
+    "build": "yarn build:umd && yarn build:esnext && yarn build:cjs && yarn build:css",
+    "build:examples": "webpack -d",
+    "build:examples:watch": "webpack -d --watch",
     "tsc": "tsc",
-    "prepublishOnly": "npm run clean && npm run build && npm run tsc && npm run dist",
-
-    "test": "npm run prepublishOnly",
-
-    "tslint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/node_modules/**' --exclude '**/lib/**"
+    "prepublishOnly": "yarn clean && yarn tsc && yarn build",
+    "publish:beta": "yarn publish --tag next --no-git-tag-version --no-push # Custom example: 0.1.0-beta.1"
   },
-
   "devDependencies": {
-    "typescript": "latest",
-    "tslint": "latest",
-    "tslint-react": "latest",
-
-    "react": "latest",
-    "@types/react": "latest",
-    "react-dom": "latest",
-    "@types/react-dom": "latest",
-
-    "node-sass": "latest",
-
-    "bootstrap-sass": "^3.3",
-
-    "ts-node": "latest",
-    "@types/node": "latest",
-
-    "webpack": "latest",
-    "@types/webpack": "latest",
-    "ts-loader": "latest",
-    "style-loader": "latest",
-    "css-loader": "latest",
-    "sass-loader": "latest",
-    "file-loader": "latest",
-
-    "del-cli": "latest"
+    "@types/node": "^11.11.6",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "@types/webpack": "^4.4.26",
+    "bootstrap": "^4.3.1",
+    "bootstrap-sass": "^3.4.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "rollup": "^1.7.0",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "rollup-plugin-uglify": "^6.0.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }

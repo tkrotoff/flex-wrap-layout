@@ -1,6 +1,6 @@
 import { Borders } from '../src/index';
 
-import './bootstrap3.html';
+import './demo-bootstrap3.html';
 import './bootstrap3.scss';
 
 declare global {

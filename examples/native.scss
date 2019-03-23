@@ -1,14 +1,11 @@
-$layout-item-margin: 4px;
+$layout-item-margin-y: 4px;
+$layout-item-margin-x: 4px;
+
 @import '../src/layout';
 @import '../src/showBorders';
 
-[offset-with-content] {
+[offset] {
   min-width: 115px;
-}
-
-[offset-no-content] {
-  @extend [offset-with-content];
-  margin-bottom: 0;
 }
 
 .has-error {

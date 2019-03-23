@@ -1,3 +1,9 @@
 language: node_js
 node_js:
-  - "8"
+  - '8'
+
+script:
+  - yarn clean
+  - yarn tsc
+  - yarn build
+  - yarn build:examples
