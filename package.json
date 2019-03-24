@@ -21,8 +21,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist build",
-    "clean:all": "yarn clean && rm -rf node_modules yarn.lock yarn-error.log",
+    "clean": "rm -rf dist build yarn-error.log",
+    "clean:all": "yarn clean && rm -rf node_modules yarn.lock",
     "build:umd": "NODE_ENV=development rollup --config && NODE_ENV=production rollup --config",
     "build:esnext": "tsc --noEmit false --outDir dist --module esnext --declaration true",
     "build:cjs": "tsc --noEmit false --outDir dist/cjs",
