@@ -19,6 +19,7 @@
     "dist/",
     "src/"
   ],
+  "sideEffects": false,
   "scripts": {
     "clean": "rm -rf dist build",
     "clean:all": "yarn clean && rm -rf node_modules yarn.lock yarn-error.log",
