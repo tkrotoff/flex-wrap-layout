@@ -1,2 +1,3 @@
 export * from './detectRowWrap';
-export * from './Utils';
+export * from './DetectRowWrapController';
+export * from './Borders';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { DevTools } from '../src/DevTools';
@@ -7,9 +7,11 @@ import './DetectRowWrapWithDevTools.html';
 import './detectRowWrap.scss';
 
 function DetectRowWrapWithDevTools() {
+  const divRef = useRef(null);
+
   return (
     <>
-      <div data-layout="row" data-hspace data-vspace>
+      <div ref={divRef} data-layout="row" data-hspace data-vspace>
         <div data-layout="row" data-hspace data-vspace>
           <div className="box blue" />
           <div className="box yellow" data-grow />
@@ -27,7 +29,7 @@ function DetectRowWrapWithDevTools() {
         </div>
       </div>
 
-      <DevTools />
+      <DevTools rootRef={divRef} enableDetectRowWrap />
     </>
   );
 }

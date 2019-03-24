@@ -1,4 +1,4 @@
-import { Borders, DetectRowWrap } from '../src/index';
+import { Borders, DetectRowWrapController } from '../src/index';
 
 import './detectRowWrap.html';
 import './detectRowWrap.scss';
@@ -6,12 +6,14 @@ import './detectRowWrap.scss';
 declare global {
   interface Window {
     Borders: Borders;
-    DetectRowWrap: DetectRowWrap;
+
+    // FIXME ESLint is incorrect here
+    /* eslint-disable no-undef */
+
+    DetectRowWrap: typeof DetectRowWrapController;
   }
 }
 
 // See [Calling webpacked code from outside (HTML script tag)](https://stackoverflow.com/a/34358513/990356)
 window.Borders = Borders;
-window.DetectRowWrap = DetectRowWrap;
-
-DetectRowWrap.enable();
+window.DetectRowWrap = DetectRowWrapController;

@@ -13,7 +13,8 @@ export default (_env: any, _argv: any) => {
       'examples/demo-bootstrap3': './examples/demo-bootstrap3.ts',
       'examples/cssgrid': './examples/cssgrid.ts',
       'examples/detectRowWrap': './examples/detectRowWrap.ts',
-      'examples/DetectRowWrapWithDevTools': './examples/DetectRowWrapWithDevTools.tsx'
+      'examples/DetectRowWrapWithDevTools': './examples/DetectRowWrapWithDevTools.tsx',
+      'examples/UseDetectRowWrap': './examples/UseDetectRowWrap.tsx'
     },
 
     output: {

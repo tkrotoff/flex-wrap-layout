@@ -13,14 +13,14 @@ function position(el: Element) {
 }
 
 // See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
-export function detectRowWrap() {
+export function detectRowWrap(rootEl: HTMLElement) {
   // For each child of [layout="row"]
   //   - find its previous sibling
   //   - check its sibling is not at the same position
   //     - if it's not, add classes
   //     - if same position, remove classes
 
-  document.querySelectorAll('[data-layout="row"] > *, [layout="row"] > *').forEach(el => {
+  rootEl.querySelectorAll('[data-layout="row"] > *, [layout="row"] > *').forEach(el => {
     // With jQuery:
     //const top = $(el).position().top;
     const top = position(el).top;
