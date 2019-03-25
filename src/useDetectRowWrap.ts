@@ -8,7 +8,7 @@ export function useDetectRowWrap(rootRef: React.RefObject<HTMLElement>) {
     const rootEl = rootRef.current!;
 
     function run() {
-      detectRowWrap(rootEl);
+      if (rootEl) detectRowWrap(rootEl);
     }
 
     // See [Difference between DOMContentLoaded and load events](https://stackoverflow.com/q/2414750)
@@ -25,16 +25,17 @@ export function useDetectRowWrap(rootRef: React.RefObject<HTMLElement>) {
 
       // Remove all CSS classes
 
-      // Use getElementsByClassName() instead of querySelectorAll()
-      // because it is much faster, see https://stackoverflow.com/a/43967953/990356
-
-      let children = rootEl.getElementsByClassName('wrapped');
-      for (const el of children) {
-        el.classList.remove('wrapped');
-      }
-      children = rootEl.getElementsByClassName('next-is-wrapped');
-      for (const el of children) {
-        el.classList.remove('next-is-wrapped');
+      if (rootEl) {
+        // Use getElementsByClassName() instead of querySelectorAll()
+        // because it is much faster, see https://stackoverflow.com/a/43967953/990356
+        let children = rootEl.getElementsByClassName('wrapped');
+        for (const el of children) {
+          el.classList.remove('wrapped');
+        }
+        children = rootEl.getElementsByClassName('next-is-wrapped');
+        for (const el of children) {
+          el.classList.remove('next-is-wrapped');
+        }
       }
     };
   }, [rootRef]);
