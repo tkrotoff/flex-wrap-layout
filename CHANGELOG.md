@@ -1,3 +1,7 @@
+## v0.1.1 (2019/03/25)
+
+- Fix crash when testing with Jest
+
 ## v0.1.0 (2019/03/25)
 
 - Modernize build system
