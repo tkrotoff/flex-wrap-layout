@@ -11,18 +11,18 @@
 
   <body>
     <script>
-      const detectRowWrap = new DetectRowWrap(document);
-      detectRowWrap.enable();
+      const detectRowWrapController = new DetectRowWrapController(document);
+      detectRowWrapController.enable();
     </script>
 
     <p>
       <label>
-        <input type="checkbox" onchange="Borders.toggle(); detectRowWrap.run()" />
+        <input type="checkbox" onchange="Borders.toggle(); detectRowWrapController.run()" />
         Borders
         <small>(dotted line: growing block, solid line: fixed block)</small>
       </label>
       <label>
-        <input type="checkbox" onchange="detectRowWrap.toggle()" checked />
+        <input type="checkbox" onchange="detectRowWrapController.toggle()" checked />
         detectRowWrap()
         <small>(make previous and next blocks grow)</small>
       </label>
