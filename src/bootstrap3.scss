@@ -6,8 +6,8 @@
   }
 }
 
-[data-layout],
-[layout] {
+[data-layout='column'],
+[layout='column'] {
   .form-control {
     width: initial; // Instead of 100%, see https://github.com/twbs/bootstrap/blob/v3.4.1/less/forms.less#L137
   }
