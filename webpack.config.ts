@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import sass from 'sass';
 
-export default (_env: any, _argv: any) => {
+export default (_webpackEnv: any, _argv: any) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
 
   const config: webpack.Configuration = {
