@@ -1,3 +1,8 @@
+## v0.2.0 (2020/01/30)
+
+- Replace `.wrapped` by `.next-is-wrapped ~ *`
+- Specify `width: initial` only with `layout='column'`
+
 ## v0.1.2 (2020/01/30)
 
 - Update npm packages
