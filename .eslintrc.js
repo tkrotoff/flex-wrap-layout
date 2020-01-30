@@ -37,6 +37,7 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react-hooks/rules-of-hooks': 'error',
