@@ -1,5 +1,6 @@
 form {
   display: grid;
+  // stylelint-disable-next-line declaration-colon-space-after
   grid-template:
     'fields fields fields'
     '   .   actions   .  '
@@ -8,6 +9,7 @@ form {
 }
 @media (max-width: 575px) {
   form {
+    // stylelint-disable-next-line declaration-colon-space-after
     grid-template:
       'fields'
       'actions'
@@ -15,6 +17,7 @@ form {
   }
 }
 
+// stylelint-disable-next-line no-duplicate-selectors
 form {
   .fields {
     display: grid;
