@@ -33,6 +33,8 @@
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
     "lint": "npm run tsc && eslint . '**/*.{js,jsx,ts,tsx}'",
+    "precommit": "npm run format && npm run lint",
+    "prepush": "npm run precommit && npm run build && npm run build:examples",
     "prepublishOnly": "npm run clean && npm run tsc && npm run lint && npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
@@ -55,6 +57,7 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^5.0.2",
+    "husky": "^4.2.1",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
