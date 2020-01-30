@@ -1,3 +1,9 @@
+## v0.1.2 (2020/01/30)
+
+- Update npm packages
+- GitHub Actions
+- ESLint Airbnb & stylelint & Husky
+
 ## v0.1.1 (2019/03/25)
 
 - Fix crash when testing with Jest
