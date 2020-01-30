@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import sass from 'sass';
 
 export default (_env: any, _argv: any) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
@@ -41,7 +42,7 @@ export default (_env: any, _argv: any) => {
           use: [
             { loader: 'style-loader' },
             { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } }
+            { loader: 'sass-loader', options: { implementation: sass, sourceMap: true } }
           ]
         },
         {
