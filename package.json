@@ -32,8 +32,8 @@
     "build:examples:watch": "webpack -d --watch",
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
-    "eslint": "eslint . '**/*.{js,jsx,ts,tsx}'",
-    "prepublishOnly": "npm run clean && npm run tsc && npm run eslint && npm run build",
+    "lint": "npm run tsc && eslint . '**/*.{js,jsx,ts,tsx}'",
+    "prepublishOnly": "npm run clean && npm run tsc && npm run lint && npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "devDependencies": {
