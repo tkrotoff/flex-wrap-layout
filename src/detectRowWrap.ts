@@ -31,13 +31,10 @@ export function detectRowWrap(rootEl: HTMLElement) {
       const prevTop = position(prev).top;
 
       if (top > prevTop) {
-        el.classList.add('wrapped');
-
         // There is no way to CSS style an element given a match on its next sibling
         // See [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
         prev.classList.add('next-is-wrapped');
       } else if (top === prevTop) {
-        el.classList.remove('wrapped');
         prev.classList.remove('next-is-wrapped');
       }
     }

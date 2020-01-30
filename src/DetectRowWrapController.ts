@@ -36,11 +36,7 @@ export class DetectRowWrapController {
     // Use getElementsByClassName() instead of querySelectorAll()
     // because it is much faster, see https://stackoverflow.com/a/43967953/990356
 
-    let children = this.rootEl.getElementsByClassName('wrapped');
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.remove('wrapped');
-    }
-    children = this.rootEl.getElementsByClassName('next-is-wrapped');
+    const children = this.rootEl.getElementsByClassName('next-is-wrapped');
     for (let i = 0; i < children.length; i++) {
       children[i].classList.remove('next-is-wrapped');
     }

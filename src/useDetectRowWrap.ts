@@ -28,11 +28,7 @@ export function useDetectRowWrap(rootRef: React.RefObject<HTMLElement>) {
       if (rootEl) {
         // Use getElementsByClassName() instead of querySelectorAll()
         // because it is much faster, see https://stackoverflow.com/a/43967953/990356
-        let children = rootEl.getElementsByClassName('wrapped');
-        for (let i = 0; i < children.length; i++) {
-          children[i].classList.remove('wrapped');
-        }
-        children = rootEl.getElementsByClassName('next-is-wrapped');
+        const children = rootEl.getElementsByClassName('next-is-wrapped');
         for (let i = 0; i < children.length; i++) {
           children[i].classList.remove('next-is-wrapped');
         }
