@@ -22,8 +22,8 @@ export function detectRowWrap(rootEl: HTMLElement) {
 
   rootEl.querySelectorAll('[data-layout="row"] > *, [layout="row"] > *').forEach(el => {
     // With jQuery:
-    //const top = $(el).position().top;
-    const top = position(el).top;
+    //const { top } = $(el).position();
+    const { top } = position(el);
 
     const prev = el.previousElementSibling;
 

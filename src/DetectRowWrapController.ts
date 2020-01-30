@@ -7,7 +7,8 @@ export class DetectRowWrapController {
   public enabled!: boolean;
 
   constructor(private rootEl: HTMLElement, enable: boolean) {
-    enable ? this.enable() : (this.enabled = false);
+    if (enable) this.enable();
+    else this.enabled = false;
   }
 
   private detectRowWrap = () => {
@@ -36,12 +37,12 @@ export class DetectRowWrapController {
     // because it is much faster, see https://stackoverflow.com/a/43967953/990356
 
     let children = this.rootEl.getElementsByClassName('wrapped');
-    for (const el of children) {
-      el.classList.remove('wrapped');
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove('wrapped');
     }
     children = this.rootEl.getElementsByClassName('next-is-wrapped');
-    for (const el of children) {
-      el.classList.remove('next-is-wrapped');
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove('next-is-wrapped');
     }
   }
 
