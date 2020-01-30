@@ -1,7 +1,7 @@
 # flex-wrap-layout
 
 [![npm version](https://badge.fury.io/js/flex-wrap-layout.svg)](https://badge.fury.io/js/flex-wrap-layout)
-[![Build Status](https://travis-ci.org/tkrotoff/flex-wrap-layout.svg?branch=master)](https://travis-ci.org/tkrotoff/flex-wrap-layout)
+![Build status](https://github.com/tkrotoff/flex-wrap-layout/workflows/Node.js%20CI/badge.svg)
 
 Experimentations with [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) and [`flex-wrap: wrap`](http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property) to get rid of the classic and limited [12 columns grid](https://gist.github.com/tkrotoff/e15da98129e46db39bf6) (e.g. things like `.col-md-6 { width: 50% }`).
 
