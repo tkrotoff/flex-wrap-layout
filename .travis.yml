@@ -3,8 +3,8 @@ node_js:
   - '8'
 
 script:
-  - yarn clean
-  - yarn tsc
-  - yarn eslint
-  - yarn build
-  - yarn build:examples
+  - npm run clean
+  - npm run tsc
+  - npm run eslint
+  - npm run build
+  - npm run build:examples

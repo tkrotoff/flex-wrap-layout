@@ -9,7 +9,7 @@ Web technologies (HTML, CSS, JavaScript) are now used for creating complex GUIs 
 
 ## Usage
 
-`yarn add flex-wrap-layout` or `npm install flex-wrap-layout`
+`npm install flex-wrap-layout`
 
 Import [layout.scss](src/layout.scss) or [flex-wrap-layout.scss](src/flex-wrap-layout.scss):
 

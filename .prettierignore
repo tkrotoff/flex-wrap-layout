@@ -4,9 +4,8 @@
 .eslintignore
 .editorconfig
 .browserslistrc
+LICENSE
+
 dist/
 build/
 *.gif
-yarn.lock
-yarn-error.log
-LICENSE

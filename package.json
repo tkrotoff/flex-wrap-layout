@@ -21,20 +21,19 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist build yarn-error.log",
-    "clean:all": "yarn clean && rm -rf node_modules yarn.lock",
+    "clean": "rm -rf dist build",
+    "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
     "build:umd": "NODE_ENV=development rollup --config && NODE_ENV=production rollup --config",
     "build:esnext": "tsc --noEmit false --outDir dist --module esnext --declaration true",
     "build:cjs": "tsc --noEmit false --outDir dist/cjs",
     "build:css": "node-sass --output-style expanded --source-map true --source-map-contents true src/flex-wrap-layout.scss dist/flex-wrap-layout.css",
-    "build": "yarn build:umd && yarn build:esnext && yarn build:cjs && yarn build:css",
+    "build": "npm run build:umd && npm run build:esnext && npm run build:cjs && npm run build:css",
     "build:examples": "webpack -d",
     "build:examples:watch": "webpack -d --watch",
     "tsc": "tsc",
     "prettier": "prettier --write \"**/*\"",
     "eslint": "eslint . '**/*.{js,jsx,ts,tsx}'",
-    "prepublishOnly": "yarn clean && yarn tsc && yarn eslint && yarn build",
-    "publish:beta": "yarn publish --tag next --no-git-tag-version --no-push # Custom example: 0.1.0-beta.1"
+    "prepublishOnly": "npm run clean && npm run tsc && npm run eslint && npm run build"
   },
   "devDependencies": {
     "@types/node": "^11.11.6",
