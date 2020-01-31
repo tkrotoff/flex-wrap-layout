@@ -37,8 +37,9 @@ export class DetectRowWrapController {
     // because it is much faster, see https://stackoverflow.com/a/43967953/990356
 
     const children = this.rootEl.getElementsByClassName('next-is-wrapped');
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.remove('next-is-wrapped');
+    // See https://stackoverflow.com/q/22270664#comment33829207_22270685
+    while (children.length > 0) {
+      children[0].classList.remove('next-is-wrapped');
     }
   }
 
