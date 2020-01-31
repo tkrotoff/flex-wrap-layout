@@ -8,10 +8,8 @@ export default (_webpackEnv: any, _argv: any) => {
   const config: webpack.Configuration = {
     entry: {
       'examples/native': './examples/native.ts',
-      'examples/bootstrap3': './examples/bootstrap3.ts',
       'examples/bootstrap4': './examples/bootstrap4.ts',
       'examples/demo': './examples/demo.ts',
-      'examples/demo-bootstrap3': './examples/demo-bootstrap3.ts',
       'examples/cssgrid': './examples/cssgrid.ts',
       'examples/detectRowWrap': './examples/detectRowWrap.ts',
       'examples/DetectRowWrapWithDevTools': './examples/DetectRowWrapWithDevTools.tsx',
@@ -20,7 +18,6 @@ export default (_webpackEnv: any, _argv: any) => {
 
     output: {
       path: path.join(__dirname, 'build'),
-      publicPath: path.join(__dirname, 'build'), // For Bootstrap 3 fonts
       filename: '[name].js'
     },
 
@@ -44,14 +41,6 @@ export default (_webpackEnv: any, _argv: any) => {
             { loader: 'css-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { implementation: sass, sourceMap: true } }
           ]
-        },
-        {
-          test: /\.(eot|svg|ttf|woff|woff2)$/,
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: '/examples/fonts/'
-          }
         },
         {
           test: /\.html$/,
