@@ -33,7 +33,6 @@
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
     "lint": "npm run tsc && eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",
-    "precommit": "npm run format && npm run lint",
     "prepush": "npm run build && npm run build:examples",
     "prepublishOnly": "npm run clean && npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
@@ -58,6 +57,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^5.0.2",
     "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -78,5 +78,14 @@
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix"
   }
 }
