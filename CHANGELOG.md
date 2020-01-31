@@ -1,3 +1,8 @@
+## v0.2.1 (2020/01/31)
+
+- Fix remove .next-is-wrapped
+- Listen to load event does not work under React
+
 ## v0.2.0 (2020/01/30)
 
 - Replace `.wrapped` by `.next-is-wrapped ~ *`
