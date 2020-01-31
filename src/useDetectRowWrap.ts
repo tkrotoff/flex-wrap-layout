@@ -11,8 +11,6 @@ export function useDetectRowWrap(rootRef: React.RefObject<HTMLElement>) {
       if (rootEl) detectRowWrap(rootEl);
     }
 
-    // See [Difference between DOMContentLoaded and load events](https://stackoverflow.com/q/2414750)
-    window.addEventListener('load', run);
     window.addEventListener('resize', run);
 
     // FIXME We should not have to do this since enable() listen to the 'load' event
@@ -20,7 +18,6 @@ export function useDetectRowWrap(rootRef: React.RefObject<HTMLElement>) {
     run();
 
     return function cleanup() {
-      window.removeEventListener('load', run);
       window.removeEventListener('resize', run);
 
       // Remove all CSS classes
