@@ -1,6 +1,7 @@
-# Node.js
 node_modules/
 
-# Generated files
+.eslintcache
+.stylelintcache
+
 build/
 dist/
