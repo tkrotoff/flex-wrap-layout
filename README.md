@@ -9,6 +9,14 @@ Detects flex-wrap via JavaScript ([unfortunately not possible in CSS](https://st
 
 This allows for responsive UIs without hardcoded CSS (width, min-width, media queries...) using the "natural" width of elements instead.
 
+- With `detectRowWrap()`:
+
+![Minimal example with detectRowWrap()](examples/Minimal-detectRowWrap.gif)
+
+- Without:
+
+![Minimal example without detectRowWrap()](examples/Minimal.gif)
+
 ## Usage
 
 `npm install flex-wrap-layout`
