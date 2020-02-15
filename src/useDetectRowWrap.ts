@@ -6,12 +6,8 @@ export const wrapChildrenClassName = 'wrap-children';
 export const nextIsWrappedClassName = 'next-is-wrapped';
 export const hasChildWrappedClassName = 'has-child-wrapped';
 
-export function useDetectRowWrap(ref: React.RefObject<HTMLElement> | undefined) {
+export function useDetectRowWrap(ref: React.RefObject<HTMLElement>) {
   useEffect(() => {
-    if (ref === undefined) {
-      return;
-    }
-
     const rootEl = ref.current!;
 
     function run() {

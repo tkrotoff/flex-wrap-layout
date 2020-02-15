@@ -4,5 +4,6 @@ node_modules/
 .stylelintcache
 
 dist/
+coverage/
 examples/package-lock.json
 examples/build/

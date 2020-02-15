@@ -24,7 +24,6 @@ interface DevToolsContext {
 }
 
 export function useDevTools(
-  ref: React.RefObject<HTMLElement>,
   showBordersInit: boolean,
   detectRowWrapInit: boolean,
   flexFillInit: boolean
@@ -32,8 +31,6 @@ export function useDevTools(
   const [showBorders, setShowBorders] = useState(showBordersInit);
   const [detectRowWrap, setDetectRowWrap] = useState(detectRowWrapInit);
   const [flexFill, setFlexFill] = useState(flexFillInit);
-
-  useDetectRowWrap(detectRowWrap ? ref : undefined);
 
   const showBordersClassName = showBorders ? 'showBorders' : '';
   const flexFillClassName = flexFill ? 'flex-fill' : '';
@@ -52,12 +49,20 @@ export function useDevTools(
   };
 }
 
+// https://inventingwithmonster.io/20190207-break-the-rules-of-react-hooks/
+function DetectRowWrap({ detectRowWrapRef }: { detectRowWrapRef: React.RefObject<HTMLElement> }) {
+  useDetectRowWrap(detectRowWrapRef);
+  return null;
+}
+
 interface Props {
+  detectRowWrapRef: React.RefObject<HTMLElement>;
   context: DevToolsContext;
 }
 
 export function DevTools(props: Props) {
-  const { context } = props;
+  const { detectRowWrapRef, context } = props;
+
   const {
     showBorders,
     setShowBorders,
@@ -71,6 +76,8 @@ export function DevTools(props: Props) {
 
   return (
     <div style={{ ...panel }}>
+      {detectRowWrap && <DetectRowWrap detectRowWrapRef={detectRowWrapRef} />}
+
       <label title="Dotted line: growing block, solid line: fixed block">
         <input
           type="checkbox"

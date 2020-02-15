@@ -17,6 +17,7 @@ jobs:
       - run: npm run npm:install:examples
       - run: npm run build:examples
       - run: npm run lint
+      - run: npm run test:coverage
 
   publish-npm:
     needs: build
