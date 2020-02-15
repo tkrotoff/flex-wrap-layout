@@ -8,11 +8,11 @@ export const hasChildWrappedClassName = 'has-child-wrapped';
 
 export function useDetectWrappedElements(ref: React.RefObject<HTMLElement>) {
   useEffect(() => {
-    const rootEl = ref.current!;
+    const rootElement = ref.current!;
 
     function run() {
       detectWrappedElements(
-        rootEl,
+        rootElement,
         wrapChildrenClassName,
         nextIsWrappedClassName,
         hasChildWrappedClassName
@@ -27,13 +27,13 @@ export function useDetectWrappedElements(ref: React.RefObject<HTMLElement>) {
     return () => {
       window.removeEventListener('resize', run);
 
-      const children = rootEl.getElementsByClassName(nextIsWrappedClassName);
+      const children = rootElement.getElementsByClassName(nextIsWrappedClassName);
       // See https://stackoverflow.com/q/22270664#comment33829207_22270685
       while (children.length > 0) {
         children[0].classList.remove(nextIsWrappedClassName);
       }
 
-      rootEl.classList.remove(hasChildWrappedClassName);
+      rootElement.classList.remove(hasChildWrappedClassName);
     };
   }, [ref]);
 }

@@ -10,7 +10,7 @@ function position(el: Element) {
 
 // See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
 export function detectWrappedElements(
-  rootEl: HTMLElement,
+  rootElement: HTMLElement,
   wrapChildrenClassName: string,
   nextIsWrappedClassName: string,
   hasChildWrappedClassName: string
@@ -22,8 +22,8 @@ export function detectWrappedElements(
   //     - if same position, remove .next-is-wrapped
 
   // [...HTMLCollection] vs Array.from(HTMLCollection): the latter doesn't need downlevelIteration with IE
-  const parents = Array.from(rootEl.getElementsByClassName(wrapChildrenClassName));
-  if (rootEl.classList.contains(wrapChildrenClassName)) parents.unshift(rootEl);
+  const parents = Array.from(rootElement.getElementsByClassName(wrapChildrenClassName));
+  if (rootElement.classList.contains(wrapChildrenClassName)) parents.unshift(rootElement);
   parents.forEach(parent => {
     const { children } = parent;
 
@@ -49,10 +49,10 @@ export function detectWrappedElements(
   });
 
   const containsChildNextIsWrapped =
-    rootEl.getElementsByClassName(nextIsWrappedClassName).length > 0;
+    rootElement.getElementsByClassName(nextIsWrappedClassName).length > 0;
 
   // IE does not support toggle() second argument
   // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Browser_compatibility
   //rootEl.classList.toggle(hasChildWrappedClassName, containsChildNextIsWrapped);
-  rootEl.classList[containsChildNextIsWrapped ? 'add' : 'remove'](hasChildWrappedClassName);
+  rootElement.classList[containsChildNextIsWrapped ? 'add' : 'remove'](hasChildWrappedClassName);
 }
