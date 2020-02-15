@@ -1,0 +1,31 @@
+@import '~flex-wrap-layout/src/detectRowWrap';
+@import '~flex-wrap-layout/src/DevTools';
+
+.flex-fill {
+  //flex: 1 1 auto;
+  // See [flex-grow vs flex](https://github.com/angular/material/issues/2632)
+  flex: auto;
+}
+
+.box {
+  height: 60px;
+  margin: 5px;
+  padding: 5px;
+
+  &::before {
+    content: 'Lorem ipsum';
+  }
+
+  &.blue {
+    background: lightblue;
+  }
+  &.yellow {
+    background: lightyellow;
+  }
+  &.grey {
+    background: lightgrey;
+  }
+  &.green {
+    background: lightgreen;
+  }
+}

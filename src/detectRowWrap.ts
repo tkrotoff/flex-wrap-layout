@@ -13,30 +13,50 @@ function position(el: Element) {
 }
 
 // See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
-export function detectRowWrap(rootEl: HTMLElement) {
-  // For each child of [layout="row"]
+export function detectRowWrap(
+  rootEl: HTMLElement,
+  wrapChildrenClassName: string,
+  nextIsWrappedClassName: string,
+  hasChildWrappedClassName: string
+) {
+  // For each child of .wrap-children
   //   - find its previous sibling
   //   - check its sibling is not at the same position
-  //     - if it's not, add classes
-  //     - if same position, remove classes
+  //     - if it's not, add .next-is-wrapped
+  //     - if same position, remove .next-is-wrapped
 
-  rootEl.querySelectorAll('[data-layout="row"] > *, [layout="row"] > *').forEach(el => {
-    // With jQuery:
-    //const { top } = $(el).position();
-    const { top } = position(el);
+  // [...HTMLCollection] vs Array.from(HTMLCollection): the latter doesn't need downlevelIteration with IE
+  const parents = Array.from(rootEl.getElementsByClassName(wrapChildrenClassName));
+  if (rootEl.classList.contains(wrapChildrenClassName)) parents.unshift(rootEl);
+  parents.forEach(parent => {
+    const { children } = parent;
 
-    const prev = el.previousElementSibling;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
 
-    if (prev !== null) {
-      const prevTop = position(prev).top;
+      const { top } = position(child);
 
-      if (top > prevTop) {
-        // There is no way to CSS style an element given a match on its next sibling
-        // See [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
-        prev.classList.add('next-is-wrapped');
-      } else if (top === prevTop) {
-        prev.classList.remove('next-is-wrapped');
+      const prev = child.previousElementSibling;
+
+      if (prev !== null) {
+        const { top: prevTop } = position(prev);
+
+        if (top > prevTop) {
+          // There is no way to CSS style an element given a match on its next sibling
+          // See [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
+          prev.classList.add(nextIsWrappedClassName);
+        } else if (top === prevTop) {
+          prev.classList.remove(nextIsWrappedClassName);
+        }
       }
     }
   });
+
+  const containsChildNextIsWrapped =
+    rootEl.getElementsByClassName(nextIsWrappedClassName).length > 0;
+
+  // IE does not support toggle() second argument
+  // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Browser_compatibility
+  //rootEl.classList.toggle(hasChildWrappedClassName, containsChildNextIsWrapped);
+  rootEl.classList[containsChildNextIsWrapped ? 'add' : 'remove'](hasChildWrappedClassName);
 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "target": "esnext",
+    "target": "es2020",
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -12,6 +12,13 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    // Fix
+    // "examples/node_modules/@types/react/index.d.ts: error TS2300: Duplicate identifier 'LibraryManagedAttributes'"
+    // "node_modules/@types/react/index.d.ts: error TS2300: Duplicate identifier 'LibraryManagedAttributes'"
+    // FIXME ["adding "skipLibCheck": true to tsconfig is a potentially destructive action on the type-safety of your codebase"](https://stackoverflow.com/q/52399839#comment99370486_52404148)
+    // Switch to a monorepo?
+    "skipLibCheck": true
   }
 }

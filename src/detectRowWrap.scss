@@ -1,0 +1,13 @@
+// "Child: An element A is called the child of element B if and only if B is the parent of A"
+// "Descendant: An element A is called a descendant of an element B, if either (1) A is a child of B, or (2) A is the child of some element C that is a descendant of B"
+// See https://www.w3.org/TR/CSS21/conform.html#child
+.wrap-children {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.next-is-wrapped,
+.next-is-wrapped ~ * {
+  // See [flex-grow vs flex](https://github.com/angular/material/issues/2632)
+  flex: auto;
+}

@@ -1,0 +1,28 @@
+@import '~flex-wrap-layout/src/detectRowWrap';
+@import '~flex-wrap-layout/src/DevTools';
+
+@import '~bootstrap/scss/bootstrap';
+
+.people {
+  // Displays only the first row of titles
+  .person:not(:first-of-type) .column-title {
+    @extend .d-none;
+  }
+
+  // All labels hidden...
+  label,
+  hr {
+    @extend .d-none;
+  }
+  // ...except when a row is wrapped
+  &.has-child-wrapped {
+    label,
+    hr {
+      @extend .d-block;
+    }
+
+    .person .column-title {
+      @extend .d-none;
+    }
+  }
+}

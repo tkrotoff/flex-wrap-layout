@@ -3,5 +3,6 @@ node_modules/
 .eslintcache
 .stylelintcache
 
-build/
 dist/
+examples/package-lock.json
+examples/build/

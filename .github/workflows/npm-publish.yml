@@ -13,9 +13,10 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: npm run lint
       - run: npm run build
+      - run: npm run npm:install:examples
       - run: npm run build:examples
+      - run: npm run lint
 
   publish-npm:
     needs: build
