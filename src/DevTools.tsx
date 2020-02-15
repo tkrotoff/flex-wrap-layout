@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useDetectRowWrap } from './useDetectRowWrap';
+import { useDetectWrappedElements } from './useDetectWrappedElements';
 
 // See https://github.com/mobxjs/mobx-react-devtools/blob/6.1.1/src/Panel/styles/index.js
 const panel: React.CSSProperties = {
@@ -15,8 +15,8 @@ interface DevToolsContext {
   showBorders: boolean;
   setShowBorders: React.Dispatch<React.SetStateAction<boolean>>;
 
-  detectRowWrap: boolean;
-  setDetectRowWrap: React.Dispatch<React.SetStateAction<boolean>>;
+  detectWrappedElements: boolean;
+  setDetectWrappedElements: React.Dispatch<React.SetStateAction<boolean>>;
 
   flexFillClassName: string;
   flexFill: boolean;
@@ -25,11 +25,11 @@ interface DevToolsContext {
 
 export function useDevTools(
   showBordersInit: boolean,
-  detectRowWrapInit: boolean,
+  detectWrappedElementsInit: boolean,
   flexFillInit: boolean
 ) {
   const [showBorders, setShowBorders] = useState(showBordersInit);
-  const [detectRowWrap, setDetectRowWrap] = useState(detectRowWrapInit);
+  const [detectWrappedElements, setDetectWrappedElements] = useState(detectWrappedElementsInit);
   const [flexFill, setFlexFill] = useState(flexFillInit);
 
   const showBordersClassName = showBorders ? 'showBorders' : '';
@@ -40,8 +40,8 @@ export function useDevTools(
     showBorders,
     setShowBorders,
 
-    detectRowWrap,
-    setDetectRowWrap,
+    detectWrappedElements,
+    setDetectWrappedElements,
 
     flexFillClassName,
     flexFill,
@@ -50,25 +50,29 @@ export function useDevTools(
 }
 
 // https://inventingwithmonster.io/20190207-break-the-rules-of-react-hooks/
-function DetectRowWrap({ detectRowWrapRef }: { detectRowWrapRef: React.RefObject<HTMLElement> }) {
-  useDetectRowWrap(detectRowWrapRef);
+function DetectWrappedElements({
+  detectWrappedElementsRef
+}: {
+  detectWrappedElementsRef: React.RefObject<HTMLElement>;
+}) {
+  useDetectWrappedElements(detectWrappedElementsRef);
   return null;
 }
 
 interface Props {
-  detectRowWrapRef: React.RefObject<HTMLElement>;
+  detectWrappedElementsRef: React.RefObject<HTMLElement>;
   context: DevToolsContext;
 }
 
 export function DevTools(props: Props) {
-  const { detectRowWrapRef, context } = props;
+  const { detectWrappedElementsRef, context } = props;
 
   const {
     showBorders,
     setShowBorders,
 
-    detectRowWrap,
-    setDetectRowWrap,
+    detectWrappedElements,
+    setDetectWrappedElements,
 
     flexFill,
     setFlexFill
@@ -76,7 +80,9 @@ export function DevTools(props: Props) {
 
   return (
     <div style={{ ...panel }}>
-      {detectRowWrap && <DetectRowWrap detectRowWrapRef={detectRowWrapRef} />}
+      {detectWrappedElements && (
+        <DetectWrappedElements detectWrappedElementsRef={detectWrappedElementsRef} />
+      )}
 
       <label title="Dotted line: growing block, solid line: fixed block">
         <input
@@ -91,10 +97,10 @@ export function DevTools(props: Props) {
       <label title="Make previous and next blocks grow">
         <input
           type="checkbox"
-          checked={detectRowWrap}
-          onChange={() => setDetectRowWrap(!detectRowWrap)}
+          checked={detectWrappedElements}
+          onChange={() => setDetectWrappedElements(!detectWrappedElements)}
         />{' '}
-        detectRowWrap()
+        detectWrappedElements()
       </label>
       {'  '}
 

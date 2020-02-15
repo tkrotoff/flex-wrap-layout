@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import {
-  useDetectRowWrap,
+  useDetectWrappedElements,
   wrapChildrenClassName,
   nextIsWrappedClassName,
   hasChildWrappedClassName
-} from './useDetectRowWrap';
+} from './useDetectWrappedElements';
 
 // ["jsdom doesn't do any rendering, so getBoundingClientRect() always returns 0,0,0,0"](https://github.com/jsdom/jsdom/issues/1590#issuecomment-243228840)
 // See also [Implement a layout engine](https://github.com/jsdom/jsdom/issues/1322)
@@ -20,7 +20,7 @@ const mockGetBoundingClientRect = (el: HTMLElement, rect: { top: number; left: n
 
 function MinimalExample() {
   const ref = useRef(null);
-  useDetectRowWrap(ref);
+  useDetectWrappedElements(ref);
 
   return (
     <div data-testid="parent" ref={ref} className={wrapChildrenClassName}>

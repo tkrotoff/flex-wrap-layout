@@ -5,17 +5,17 @@
 
 Detects flex-wrap via JavaScript ([unfortunately not possible in CSS](https://stackoverflow.com/q/40012428)).
 
-[`detectRowWrap()`](src/detectRowWrap.ts) and [`useDetectRowWrap()`](src/useDetectRowWrap.ts) are JavaScript functions that detect when elements are wrapped and let you [define the CSS](src/detectRowWrap.scss) that goes with it.
+[`detectWrappedElements()`](src/detectWrappedElements.ts) and [`useDetectWrappedElements()`](src/useDetectWrappedElements.ts) are JavaScript functions that detect when elements are wrapped and let you [define the CSS](src/detectWrappedElements.scss) that goes with it.
 
 This allows for responsive UIs without hardcoded CSS (width, min-width, media queries...) using the "natural" width of elements instead.
 
-- With `detectRowWrap()`:
+- With `detectWrappedElements()`:
 
-![Minimal example with detectRowWrap()](examples/Minimal-detectRowWrap.gif)
+![Minimal example with detectWrappedElements()](examples/Minimal-detectWrappedElements.gif)
 
 - Without:
 
-![Minimal example without detectRowWrap()](examples/Minimal.gif)
+![Minimal example without detectWrappedElements()](examples/Minimal.gif)
 
 ## Usage
 
@@ -25,8 +25,8 @@ This allows for responsive UIs without hardcoded CSS (width, min-width, media qu
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useDetectRowWrap, wrapChildrenClassName } from 'flex-wrap-layout';
-import 'flex-wrap-layout/src/detectRowWrap.scss';
+import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
+import 'flex-wrap-layout/src/detectWrappedElements.scss';
 
 const boxStyle = {
   border: '1px solid',
@@ -37,7 +37,7 @@ const boxStyle = {
 
 function MyComponent() {
   const ref = useRef(null);
-  useDetectRowWrap(ref);
+  useDetectWrappedElements(ref);
 
   return (
     <div ref={ref} className={wrapChildrenClassName}>

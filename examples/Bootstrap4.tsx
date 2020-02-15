@@ -63,12 +63,12 @@ interface Person {
 function People({ people }: { people: Person[] }) {
   const ref = useRef(null);
 
-  // This example uses the dev tools: replace useDevTools() and <DevTools /> by useDetectRowWrap()
+  // This example uses the dev tools: replace useDevTools() and <DevTools /> by useDetectWrappedElements()
   const devToolsContext = useDevTools(false, true, true);
 
   return (
     <>
-      <DevTools detectRowWrapRef={ref} context={devToolsContext} />
+      <DevTools detectWrappedElementsRef={ref} context={devToolsContext} />
       <div ref={ref} className={`people ${devToolsContext.showBordersClassName}`}>
         {people.map(person => (
           <Person

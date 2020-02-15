@@ -9,7 +9,7 @@ function position(el: Element) {
 }
 
 // See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
-export function detectRowWrap(
+export function detectWrappedElements(
   rootEl: HTMLElement,
   wrapChildrenClassName: string,
   nextIsWrappedClassName: string,

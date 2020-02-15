@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 
-import { detectRowWrap } from './detectRowWrap';
+import { detectWrappedElements } from './detectWrappedElements';
 
 export const wrapChildrenClassName = 'wrap-children';
 export const nextIsWrappedClassName = 'next-is-wrapped';
 export const hasChildWrappedClassName = 'has-child-wrapped';
 
-export function useDetectRowWrap(ref: React.RefObject<HTMLElement>) {
+export function useDetectWrappedElements(ref: React.RefObject<HTMLElement>) {
   useEffect(() => {
     const rootEl = ref.current!;
 
     function run() {
-      detectRowWrap(
+      detectWrappedElements(
         rootEl,
         wrapChildrenClassName,
         nextIsWrappedClassName,

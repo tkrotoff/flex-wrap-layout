@@ -11,14 +11,14 @@ import './Boxes.scss';
 function Boxes() {
   const ref = useRef(null);
 
-  // This example uses the dev tools: replace useDevTools() and <DevTools /> by useDetectRowWrap()
+  // This example uses the dev tools: replace useDevTools() and <DevTools /> by useDetectWrappedElements()
   const devToolsContext = useDevTools(false, true, true);
 
   const { showBordersClassName, flexFillClassName } = devToolsContext;
 
   return (
     <>
-      <DevTools detectRowWrapRef={ref} context={devToolsContext} />
+      <DevTools detectWrappedElementsRef={ref} context={devToolsContext} />
       <div ref={ref} className={`${wrapChildrenClassName} ${showBordersClassName}`}>
         <div className={wrapChildrenClassName}>
           <div className="box blue" />

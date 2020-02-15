@@ -1,3 +1,3 @@
-export * from './detectRowWrap';
-export * from './useDetectRowWrap';
+export * from './detectWrappedElements';
+export * from './useDetectWrappedElements';
 export * from './DevTools';

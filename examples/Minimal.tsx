@@ -3,8 +3,8 @@ import 'core-js';
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useDetectRowWrap, wrapChildrenClassName } from 'flex-wrap-layout';
-import 'flex-wrap-layout/src/detectRowWrap.scss';
+import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
+import 'flex-wrap-layout/src/detectWrappedElements.scss';
 
 import './Minimal.html';
 
@@ -17,7 +17,7 @@ const boxStyle = {
 
 function MyComponent() {
   const ref = useRef(null);
-  useDetectRowWrap(ref);
+  useDetectWrappedElements(ref);
 
   return (
     <div ref={ref} className={wrapChildrenClassName}>
