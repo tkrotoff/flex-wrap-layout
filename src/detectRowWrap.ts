@@ -1,14 +1,10 @@
 // See [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
 function position(el: Element) {
-  const rect = el.getBoundingClientRect();
-
-  const style = window.getComputedStyle(el);
-  const marginTop = style.marginTop !== null ? parseInt(style.marginTop, 10) : 0;
-  const marginLeft = style.marginLeft !== null ? parseInt(style.marginLeft, 10) : 0;
-
+  const { top, left } = el.getBoundingClientRect();
+  const { marginTop, marginLeft } = window.getComputedStyle(el);
   return {
-    top: rect.top - marginTop,
-    left: rect.left - marginLeft
+    top: top - parseInt(marginTop, 10),
+    left: left - parseInt(marginLeft, 10)
   };
 }
 
