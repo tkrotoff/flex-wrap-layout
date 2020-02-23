@@ -29,10 +29,11 @@
     "build:examples": "cd examples && ./node_modules/.bin/webpack -d",
     "test": "NODE_ENV=test jest --verbose",
     "test:coverage": "jest --coverage",
+    "test:examples": "cd examples && NODE_ENV=test ./node_modules/.bin/jest --config jest-e2e.config.js --verbose",
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
     "lint": "npm run tsc && eslint . '**/*.{js,ts,tsx}' && stylelint '**/*.scss'",
-    "prepush": "npm run build:esnext && npm run build:examples && npm run test",
+    "prepush": "npm run build:esnext && npm run build:examples && npm run test && npm run test:examples",
     "prepublishOnly": "npm run clean && npm run build",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },

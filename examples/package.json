@@ -12,6 +12,9 @@
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
     "build": "webpack -d",
     "build:watch": "webpack -d --watch",
+    "test:e2e": "NODE_ENV=test jest --config jest-e2e.config.js --verbose",
+    "chromium:linux": "./node_modules/playwright-core/.local-chromium/linux-740847/chrome-linux/chrome",
+    "chromium:macos": "open node_modules/playwright-core/.local-chromium/mac-740847/chrome-mac/Chromium.app",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "dependencies": {
@@ -33,6 +36,9 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
+    "jest": "^25.1.0",
+    "jest-playwright-preset": "0.0.10",
+    "playwright": "^0.11.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "sass": "^1.25.0",

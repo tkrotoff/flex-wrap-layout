@@ -33,7 +33,7 @@ function MinimalExample() {
   );
 }
 
-test('resize 1024px => 274px => 171px', () => {
+test('resize 1024px => 296px => 183px', () => {
   const { getByTestId, container } = render(<MinimalExample />);
 
   expect(window.innerWidth).toEqual(1024);
@@ -49,8 +49,8 @@ test('resize 1024px => 274px => 171px', () => {
 
   // Values for window width 1024px
   mockGetBoundingClientRect(child0, { top: 13, left: 13 });
-  mockGetBoundingClientRect(child1, { top: 13, left: 67 });
-  mockGetBoundingClientRect(child2, { top: 13, left: 917 });
+  mockGetBoundingClientRect(child1, { top: 13, left: 71.265625 });
+  mockGetBoundingClientRect(child2, { top: 13, left: 909.046875 });
 
   fireEvent(window, new Event('resize'));
 
@@ -63,9 +63,9 @@ test('resize 1024px => 274px => 171px', () => {
 
   ///
 
-  // Values for window width 274px
+  // Values for window width 296px
   mockGetBoundingClientRect(child0, { top: 13, left: 13 });
-  mockGetBoundingClientRect(child1, { top: 13, left: 67 });
+  mockGetBoundingClientRect(child1, { top: 13, left: 71.265625 });
   mockGetBoundingClientRect(child2, { top: 95, left: 13 });
 
   fireEvent(window, new Event('resize'));
@@ -79,7 +79,7 @@ test('resize 1024px => 274px => 171px', () => {
 
   ///
 
-  // Values for window width 171px
+  // Values for window width 183px
   mockGetBoundingClientRect(child0, { top: 13, left: 13 });
   mockGetBoundingClientRect(child1, { top: 95, left: 13 });
   mockGetBoundingClientRect(child2, { top: 177, left: 13 });

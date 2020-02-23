@@ -25,6 +25,10 @@ module.exports = {
     browser: true,
     jest: true
   },
+  globals: {
+    // Jest Playwright, see https://github.com/smooth-code/jest-puppeteer/blob/v4.4.0/README.md#configure-eslint
+    page: true
+  },
 
   rules: {
     'no-console': 'off',
