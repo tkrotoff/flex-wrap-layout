@@ -1,3 +1,8 @@
+## v0.9.0 (2020/02/24)
+
+- Rework everything: exposes `useDetectWrappedElements()`, `detectWrappedElements()` and `DevTools`
+- Remove `DetectRowWrapController`, `flex-wrap-layout.scss` (`layout='column'`, `layout='row'`, `vspace`, `hspace`, `grow`)
+
 ## v0.2.1 (2020/01/31)
 
 - Fix remove .next-is-wrapped
