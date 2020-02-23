@@ -4,7 +4,7 @@
 const config = {
   preset: 'jest-playwright-preset',
 
-  setupFiles: ['./jest-e2e.setup.ts'],
+  setupFilesAfterEnv: ['./jest-e2e.setup.ts'],
 
   testRegex: '\\.test\\.e2e\\.ts$'
 };

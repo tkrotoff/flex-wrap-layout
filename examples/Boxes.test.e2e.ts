@@ -30,6 +30,11 @@ test('resize', async () => {
       'box grey flex-fill',
       'box yellow'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 2,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -52,6 +57,11 @@ test('resize', async () => {
       'box grey flex-fill',
       'box yellow'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 2,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -74,6 +84,11 @@ test('resize', async () => {
       'box grey flex-fill',
       'box yellow'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 2,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -96,6 +111,11 @@ test('resize', async () => {
       'box grey flex-fill next-is-wrapped',
       'box yellow'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 2,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -118,5 +138,10 @@ test('resize', async () => {
       'box grey flex-fill next-is-wrapped',
       'box yellow'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 2,
+      failureThresholdType: 'percent'
+    });
   }
 });

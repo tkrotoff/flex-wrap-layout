@@ -33,6 +33,11 @@ test('resize 1024px => 296px => 183px', async () => {
     expect(child1ClassName).toEqual('');
     expect(child2BoundingBox).toEqual({ x: 908.046875, y: 13, width: 102.953125, height: 72 });
     expect(child2ClassName).toEqual('');
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 0.1,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -55,6 +60,11 @@ test('resize 1024px => 296px => 183px', async () => {
     expect(child1ClassName).toEqual(nextIsWrappedClassName);
     expect(child2BoundingBox).toEqual({ x: 13, y: 95, width: 270, height: 72 });
     expect(child2ClassName).toEqual('');
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 0.1,
+      failureThresholdType: 'percent'
+    });
   }
 
   {
@@ -77,5 +87,10 @@ test('resize 1024px => 296px => 183px', async () => {
     expect(child1ClassName).toEqual(nextIsWrappedClassName);
     expect(child2BoundingBox).toEqual({ x: 13, y: 177, width: 157, height: 72 });
     expect(child2ClassName).toEqual('');
+
+    expect(await page.screenshot()).toMatchImageSnapshot({
+      failureThreshold: 0.1,
+      failureThresholdType: 'percent'
+    });
   }
 });
