@@ -1,12 +1,8 @@
 {
   "name": "flex-wrap-layout-examples",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tkrotoff/flex-wrap-layout.git"
-  },
+  "private": true,
   "description": "flex-wrap-layout examples",
-  "license": "MIT",
   "scripts": {
     "clean": "rm -rf build",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
