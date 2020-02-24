@@ -3,6 +3,8 @@
 
 @import '~bootstrap/scss/bootstrap';
 
+@import '~@tkrotoff/bootstrap-floating-label/src/bootstrap4-floating-label';
+
 .people {
   // Displays only the first row of titles
   .person:not(:first-of-type) .column-title {

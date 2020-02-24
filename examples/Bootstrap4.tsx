@@ -68,7 +68,7 @@ function People({ people }: { people: Person[] }) {
 
   return (
     <>
-      <DevTools detectWrappedElementsRef={ref} context={devToolsContext} />
+      <DevTools detectWrappedElementsRef={ref} context={devToolsContext} className="mb-3" />
       <div ref={ref} className={`people ${devToolsContext.showBordersClassName}`}>
         {people.map(person => (
           <Person
@@ -107,42 +107,42 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
   return (
     <div className="person mb-n2">
       <div className={`${wrapChildrenClassName} mr-n2`}>
-        <div className="mb-3 mr-2">
+        <div className="floating-label mb-3 mr-2">
           <ColumnTitle>Gender</ColumnTitle>
-          <label htmlFor={genderId}>Gender</label>
           <select id={genderId} defaultValue={gender} className="custom-select">
             {getSelectOptionsFromEnum(Gender)}
           </select>
+          <label htmlFor={genderId}>Gender</label>
         </div>
 
-        <div className={`mb-3 mr-2 ${flexFillClassName}`}>
+        <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
           <ColumnTitle>First name</ColumnTitle>
-          <label htmlFor={firstNameId}>First name</label>
           <input id={firstNameId} defaultValue={firstName} className="form-control" />
+          <label htmlFor={firstNameId}>First name</label>
         </div>
 
-        <div className={`mb-3 mr-2 ${flexFillClassName}`}>
+        <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
           <ColumnTitle>Last name</ColumnTitle>
-          <label htmlFor={lastNameId}>Last name</label>
           <input id={lastNameId} defaultValue={lastName} className="form-control" />
+          <label htmlFor={lastNameId}>Last name</label>
         </div>
 
-        <div className="mb-3 mr-2">
+        <div className="floating-label mb-3 mr-2">
           <ColumnTitle>Birth date</ColumnTitle>
-          <label htmlFor={birthDateId}>Birth date</label>
           <input type="date" id={birthDateId} defaultValue={birthDate} className="form-control" />
+          <label htmlFor={birthDateId}>Birth date</label>
         </div>
 
-        <div className="mb-3 mr-2">
+        <div className="floating-label mb-3 mr-2">
           <ColumnTitle>Nationality</ColumnTitle>
-          <label htmlFor={nationalityId}>Nationality</label>
           <select id={nationalityId} defaultValue={nationality} className="custom-select">
             {getSelectOptionsFromEnum(SomeCountries)}
           </select>
+          <label htmlFor={nationalityId}>Nationality</label>
         </div>
       </div>
 
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-0 mb-4" />
     </div>
   );
 }

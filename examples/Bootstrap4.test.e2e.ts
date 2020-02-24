@@ -17,11 +17,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2'
     ]);
   }
 
@@ -31,11 +31,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2 next-is-wrapped',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2 next-is-wrapped',
+      'floating-label mb-3 mr-2'
     ]);
   }
 
@@ -45,11 +45,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2'
     ]);
   }
 
@@ -59,11 +59,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2 flex-fill',
-      'mb-3 mr-2 next-is-wrapped',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2 flex-fill',
+      'floating-label mb-3 mr-2 next-is-wrapped',
+      'floating-label mb-3 mr-2'
     ]);
   }
 
@@ -73,11 +73,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2 next-is-wrapped',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2 next-is-wrapped',
+      'floating-label mb-3 mr-2'
     ]);
   }
 
@@ -87,11 +87,11 @@ test('resize', async () => {
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
     expect(classNames).toEqual([
-      'mb-3 mr-2 next-is-wrapped',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2 flex-fill next-is-wrapped',
-      'mb-3 mr-2 next-is-wrapped',
-      'mb-3 mr-2'
+      'floating-label mb-3 mr-2 next-is-wrapped',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2 flex-fill next-is-wrapped',
+      'floating-label mb-3 mr-2 next-is-wrapped',
+      'floating-label mb-3 mr-2'
     ]);
   }
 });

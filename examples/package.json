@@ -14,6 +14,7 @@
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "dependencies": {
+    "@tkrotoff/bootstrap-floating-label": "^0.5.0",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
     "flex-wrap-layout": "file:..",
