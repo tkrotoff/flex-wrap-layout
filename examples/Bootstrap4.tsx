@@ -107,14 +107,6 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
   return (
     <div className="person mb-n2">
       <div className={`${wrapChildrenClassName} mr-n2`}>
-        <div className="floating-label mb-3 mr-2">
-          <ColumnTitle>Gender</ColumnTitle>
-          <select id={genderId} defaultValue={gender} className="custom-select">
-            {getSelectOptionsFromEnum(Gender)}
-          </select>
-          <label htmlFor={genderId}>Gender</label>
-        </div>
-
         <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
           <ColumnTitle>First name</ColumnTitle>
           <input id={firstNameId} defaultValue={firstName} className="form-control" />
@@ -125,6 +117,14 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
           <ColumnTitle>Last name</ColumnTitle>
           <input id={lastNameId} defaultValue={lastName} className="form-control" />
           <label htmlFor={lastNameId}>Last name</label>
+        </div>
+
+        <div className="floating-label mb-3 mr-2">
+          <ColumnTitle>Gender</ColumnTitle>
+          <select id={genderId} defaultValue={gender} className="custom-select">
+            {getSelectOptionsFromEnum(Gender)}
+          </select>
+          <label htmlFor={genderId}>Gender</label>
         </div>
 
         <div className="floating-label mb-3 mr-2">
