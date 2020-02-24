@@ -59,13 +59,13 @@ function DetectWrappedElements({
   return null;
 }
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   detectWrappedElementsRef: React.RefObject<HTMLElement>;
   context: DevToolsContext;
 }
 
 export function DevTools(props: Props) {
-  const { detectWrappedElementsRef, context } = props;
+  const { detectWrappedElementsRef, context, ...otherProps } = props;
 
   const {
     showBorders,
@@ -79,7 +79,8 @@ export function DevTools(props: Props) {
   } = context;
 
   return (
-    <div style={{ ...panel }}>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <div style={{ ...panel }} {...otherProps}>
       {detectWrappedElements && (
         <DetectWrappedElements detectWrappedElementsRef={detectWrappedElementsRef} />
       )}
