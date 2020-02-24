@@ -1,3 +1,7 @@
+## v0.9.1 (2020/02/24)
+
+- DevTools accepts div props
+
 ## v0.9.0 (2020/02/24)
 
 - Rework everything: exposes `useDetectWrappedElements()`, `detectWrappedElements()` and `DevTools`
