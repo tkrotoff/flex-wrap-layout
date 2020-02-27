@@ -27,7 +27,7 @@ test('resize', async () => {
   }
 
   {
-    await page.setViewportSize({ width: 1103, height });
+    await page.setViewportSize({ width: /*1103*/ 1038, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -41,7 +41,7 @@ test('resize', async () => {
   }
 
   {
-    await page.setViewportSize({ width: 827 - 15, height });
+    await page.setViewportSize({ width: /*827 - 15*/ 762 - 15, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -55,7 +55,7 @@ test('resize', async () => {
   }
 
   {
-    await page.setViewportSize({ width: 623 - 15, height });
+    await page.setViewportSize({ width: /*623 - 15*/ 555 - 15, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -69,7 +69,7 @@ test('resize', async () => {
   }
 
   {
-    await page.setViewportSize({ width: 506 - 15, height });
+    await page.setViewportSize({ width: /*506 - 15*/ 438 - 15, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -82,6 +82,7 @@ test('resize', async () => {
     ]);
   }
 
+  /*
   {
     await page.setViewportSize({ width: 388 - 15, height });
     await waitForResize();
@@ -95,9 +96,10 @@ test('resize', async () => {
       'floating-label mb-3 mr-2'
     ]);
   }
+  */
 
   {
-    await page.setViewportSize({ width: 357 - 15, height });
+    await page.setViewportSize({ width: /*357 - 15*/ 354 - 15, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
