@@ -1,4 +1,5 @@
 import path from 'path';
+import 'jest-playwright-preset';
 
 const waitForResize = () => page.waitFor(100);
 
