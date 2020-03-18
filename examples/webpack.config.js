@@ -12,7 +12,7 @@ const postcssPresetEnv = require('postcss-preset-env');
  * @param {any} _argv
  */
 module.exports = (_webpackEnv, _argv) => {
-  // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
+  // https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
 
   /** @type import('webpack').Configuration */
   const config = {
@@ -41,7 +41,7 @@ module.exports = (_webpackEnv, _argv) => {
         {
           test: /\.(js|tsx?)$/,
 
-          // See [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
+          // [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
           exclude: /\/core-js/,
 
           loader: 'babel-loader'

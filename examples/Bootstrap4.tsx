@@ -191,7 +191,7 @@ function Beatles() {
   );
 }
 
-// See https://en.wikipedia.org/wiki/The_Velvet_Underground#Timeline
+// https://en.wikipedia.org/wiki/The_Velvet_Underground#Timeline
 const velvetUnderground: Person[] = [
   {
     id: '0',

@@ -1,4 +1,4 @@
-// See [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
+// [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
 function position(el: Element) {
   const { top, left } = el.getBoundingClientRect();
   const { marginTop, marginLeft } = window.getComputedStyle(el);
@@ -8,7 +8,7 @@ function position(el: Element) {
   };
 }
 
-// See [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
+// [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
 export function detectWrappedElements(
   rootElement: HTMLElement,
   wrapChildrenClassName: string,
@@ -39,7 +39,7 @@ export function detectWrappedElements(
 
         if (top > prevTop) {
           // There is no way to CSS style an element given a match on its next sibling
-          // See [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
+          // [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
           prev.classList.add(nextIsWrappedClassName);
         } else if (top === prevTop) {
           prev.classList.remove(nextIsWrappedClassName);
@@ -52,7 +52,7 @@ export function detectWrappedElements(
     rootElement.getElementsByClassName(nextIsWrappedClassName).length > 0;
 
   // IE does not support toggle() second argument
-  // See https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Browser_compatibility
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Browser_compatibility
   //rootEl.classList.toggle(hasChildWrappedClassName, containsChildNextIsWrapped);
   rootElement.classList[containsChildNextIsWrapped ? 'add' : 'remove'](hasChildWrappedClassName);
 }

@@ -9,7 +9,7 @@ import {
 } from './useDetectWrappedElements';
 
 // ["jsdom doesn't do any rendering, so getBoundingClientRect() always returns 0,0,0,0"](https://github.com/jsdom/jsdom/issues/1590#issuecomment-243228840)
-// See also [Implement a layout engine](https://github.com/jsdom/jsdom/issues/1322)
+// [Implement a layout engine](https://github.com/jsdom/jsdom/issues/1322)
 
 const mockWindowGetComputedStyle = (style: { marginTop: string; marginLeft: string }) =>
   (window.getComputedStyle = () => style as CSSStyleDeclaration);

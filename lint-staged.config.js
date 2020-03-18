@@ -1,3 +1,5 @@
+// @ts-check
+
 module.exports = {
   '*': 'prettier --write',
   '*.{js,ts,tsx}': 'eslint --cache',

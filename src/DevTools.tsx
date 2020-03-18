@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useDetectWrappedElements } from './useDetectWrappedElements';
 
-// See https://github.com/mobxjs/mobx-react-devtools/blob/6.1.1/src/Panel/styles/index.js
+// https://github.com/mobxjs/mobx-react-devtools/blob/6.1.1/src/Panel/styles/index.js
 const panel: React.CSSProperties = {
   display: 'inline-block',
   border: '1px solid rgba(0, 0, 0, 0.1)',

@@ -28,7 +28,7 @@ export function useDetectWrappedElements(ref: React.RefObject<HTMLElement>) {
       window.removeEventListener('resize', run);
 
       const children = rootElement.getElementsByClassName(nextIsWrappedClassName);
-      // See https://stackoverflow.com/q/22270664#comment33829207_22270685
+      // https://stackoverflow.com/q/22270664#comment33829207_22270685
       while (children.length > 0) {
         children[0].classList.remove(nextIsWrappedClassName);
       }
