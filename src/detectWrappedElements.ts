@@ -39,7 +39,7 @@ export function detectWrappedElements(
 
         if (top > prevTop) {
           // There is no way to CSS style an element given a match on its next sibling
-          // [Is there a "previous sibling" CSS selector?](http://stackoverflow.com/q/1817792)
+          // [Is there a "previous sibling" CSS selector?](https://stackoverflow.com/q/1817792)
           prev.classList.add(nextIsWrappedClassName);
         } else if (top === prevTop) {
           prev.classList.remove(nextIsWrappedClassName);
