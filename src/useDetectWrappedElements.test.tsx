@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import {
-  useDetectWrappedElements,
-  wrapChildrenClassName,
+  hasChildWrappedClassName,
   nextIsWrappedClassName,
-  hasChildWrappedClassName
+  useDetectWrappedElements,
+  wrapChildrenClassName
 } from './useDetectWrappedElements';
 
 // ["jsdom doesn't do any rendering, so getBoundingClientRect() always returns 0,0,0,0"](https://github.com/jsdom/jsdom/issues/1590#issuecomment-243228840)

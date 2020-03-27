@@ -1,12 +1,11 @@
 import 'core-js';
 
 import React, { useRef } from 'react';
+import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
 import ReactDOM from 'react-dom';
 
-import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
-import 'flex-wrap-layout/src/detectWrappedElements.scss';
-
 import './Minimal.html';
+import 'flex-wrap-layout/src/detectWrappedElements.scss';
 
 const boxStyle = {
   border: '1px solid',

@@ -1,9 +1,8 @@
 import 'core-js';
 
 import React, { useRef } from 'react';
+import { DevTools, useDevTools, wrapChildrenClassName } from 'flex-wrap-layout';
 import ReactDOM from 'react-dom';
-
-import { useDevTools, DevTools, wrapChildrenClassName } from 'flex-wrap-layout';
 
 import './Bootstrap4.html';
 import './Bootstrap4.scss';

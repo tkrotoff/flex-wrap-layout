@@ -1,6 +1,5 @@
-import path from 'path';
-
 import { nextIsWrappedClassName } from 'flex-wrap-layout';
+import path from 'path';
 
 const waitForResize = () => page.waitFor(100);
 
