@@ -12,13 +12,13 @@
   }
 
   // All labels hidden...
-  label,
+  .floating-label > label,
   hr {
     @extend .d-none;
   }
   // ...except when a row is wrapped
   &.has-child-wrapped {
-    label,
+    .floating-label > label,
     hr {
       @extend .d-block;
     }
