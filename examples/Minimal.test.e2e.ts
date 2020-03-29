@@ -1,10 +1,10 @@
 import { nextIsWrappedClassName } from 'flex-wrap-layout';
-import path from 'path';
+import { join } from 'path';
 
 const waitForResize = () => page.waitFor(100);
 
 test('resize 1024px => 296px => 183px', async () => {
-  await page.goto(`file:${path.join(__dirname, 'build/Minimal.html')}`);
+  await page.goto(`file:${join(__dirname, 'build/Minimal.html')}`);
 
   const height = 768;
 

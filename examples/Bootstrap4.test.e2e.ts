@@ -1,11 +1,11 @@
 import 'jest-playwright-preset';
 
-import path from 'path';
+import { join } from 'path';
 
 const waitForResize = () => page.waitFor(100);
 
 test('resize', async () => {
-  await page.goto(`file:${path.join(__dirname, 'build/Bootstrap4.html')}`);
+  await page.goto(`file:${join(__dirname, 'build/Bootstrap4.html')}`);
 
   const height = 768;
 
