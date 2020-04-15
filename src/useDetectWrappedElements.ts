@@ -23,7 +23,6 @@ export function useDetectWrappedElements(ref: React.RefObject<HTMLElement>) {
 
     run();
 
-    // eslint-disable-next-line consistent-return
     return () => {
       window.removeEventListener('resize', run);
 

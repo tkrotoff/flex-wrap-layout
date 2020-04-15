@@ -1,6 +1,7 @@
 // @ts-check
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { defaults } = require('jest-config');
 
 /** @type import('@jest/types').Config.InitialOptions */
