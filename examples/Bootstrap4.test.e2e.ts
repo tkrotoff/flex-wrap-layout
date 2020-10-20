@@ -2,7 +2,7 @@ import 'jest-playwright-preset';
 
 import { join } from 'path';
 
-const waitForResize = () => page.waitFor(100);
+const waitForResize = () => new Promise(res => setTimeout(res, 100));
 
 test('resize', async () => {
   await page.goto(`file:${join(__dirname, 'build/Bootstrap4.html')}`);

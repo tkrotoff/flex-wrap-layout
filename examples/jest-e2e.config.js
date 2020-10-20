@@ -6,7 +6,9 @@ const config = {
 
   setupFilesAfterEnv: ['./jest-e2e.setup.ts'],
 
-  testRegex: '\\.test\\.e2e\\.ts$'
+  testRegex: '\\.test\\.e2e\\.ts$',
+  testEnvironment: '@testim/root-cause-jest/lib/RootCauseJestEnv',
+  reporters: ['@testim/root-cause-jest/lib/reporter/default']
 };
 
 module.exports = config;

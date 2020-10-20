@@ -15,7 +15,7 @@ module.exports = {
   ],
   */
 
-  launchBrowserApp: {
+  launchOptions: {
     headless: true,
 
     args: [

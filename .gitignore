@@ -7,3 +7,4 @@ dist/
 coverage/
 examples/package-lock.json
 examples/build/
+.root-cause
