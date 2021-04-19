@@ -6,23 +6,19 @@ const config = {
   parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
+    'plugin:jest-playwright/recommended',
     'plugin:jest/recommended',
     'airbnb',
     // Already done by Airbnb
     //'plugin:react/recommended'
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react'
+    'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'react-hooks'],
   env: {
     browser: true
   },
-  globals: {
-    // Jest Playwright, see https://github.com/smooth-code/jest-puppeteer/blob/v4.4.0/README.md#configure-eslint
-    page: true
-  },
+  globals: {},
 
   rules: {
     'no-console': 'off',
@@ -39,10 +35,10 @@ const config = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
 
-    'simple-import-sort/sort': [
+    'simple-import-sort/imports': [
       'error',
       {
-        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/v5.0.2/src/sort.js#L3-L15
+        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/v7.0.0/src/imports.js#L5
         groups: [
           // Side effect imports
           ['^\\u0000'],
@@ -56,8 +52,8 @@ const config = {
           ],
 
           // Absolute imports and other imports such as Vue-style `@/foo`
-          // Anything that does not start with a dot
-          ['^[^.]'],
+          // Anything not matched in another group
+          ['^'],
 
           // Relative imports
           [
@@ -79,20 +75,30 @@ const config = {
         ]
       }
     ],
+    'simple-import-sort/exports': 'error',
+
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v4.1.0/packages/eslint-plugin/docs/rules/no-use-before-define.md
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'error',
+
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v4.1.0/packages/eslint-plugin/docs/rules/no-shadow.md
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
 
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     'jsx-a11y/label-has-associated-control': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-    'react/state-in-constructor': 'off',
+    'react/require-default-props': 'off',
     'react/prop-types': 'off',
 
     'react-hooks/rules-of-hooks': 'error',

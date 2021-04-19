@@ -81,11 +81,11 @@ function People({ people }: { people: Person[] }) {
   );
 }
 
-const ColumnTitle = ({ children }: { children?: React.ReactNode }) => (
-  <div className="column-title font-weight-bold pl-1 mb-2">{children ?? '\u00A0'}</div>
-);
+function ColumnTitle({ children }: { children?: React.ReactNode }) {
+  return <div className="column-title font-weight-bold pl-1 mb-2">{children ?? '\u00A0'}</div>;
+}
 
-function getSelectOptionsFromEnum(_enum: object) {
+function getSelectOptionsFromEnum(_enum: Record<string, string>) {
   return Object.entries(_enum).map(([key, value]) => (
     <option key={key} value={value}>
       {value}

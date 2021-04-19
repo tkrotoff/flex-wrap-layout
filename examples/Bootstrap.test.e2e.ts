@@ -9,8 +9,8 @@ test('resize', async () => {
 
   const height = 768;
 
-  const firstPersonChildren = await page.$('.people > .person:first-child > .wrap-children');
-  const children = await firstPersonChildren?.$$(':scope > div')!;
+  const firstPersonChildren = (await page.$('.people > .person:first-child > .wrap-children'))!;
+  const children = await firstPersonChildren.$$(':scope > div');
   expect(children.length).toEqual(5);
 
   {

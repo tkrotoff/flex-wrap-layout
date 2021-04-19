@@ -1,3 +1,3 @@
 export * from './detectWrappedElements';
-export * from './useDetectWrappedElements';
 export * from './DevTools';
+export * from './useDetectWrappedElements';
