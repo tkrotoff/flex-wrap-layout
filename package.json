@@ -22,7 +22,7 @@
   "scripts": {
     "clean": "rm -rf dist examples/build",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json examples/node_modules examples/package-lock.json",
-    "build:esnext": "tsc --project tsconfig.dist.json --outDir dist --module esnext --declaration true",
+    "build:esnext": "tsc --project tsconfig.dist.json --outDir dist --declaration true",
     "build:cjs": "tsc --project tsconfig.dist.json --outDir dist/cjs",
     "build": "npm run build:esnext && npm run build:cjs",
     "npm:install:examples": "cd examples && npm install",

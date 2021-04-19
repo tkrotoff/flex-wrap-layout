@@ -1,7 +1,13 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "noEmit": false
+    "noEmit": false,
+
+    // Nullish coalescing operator (??) needs to be transpiled by TypeScript to support Node.js 12
+    // https://stackoverflow.com/a/59787575
+    "target": "es2019",
+
+    "module": "commonjs"
   },
-  "include": ["src/**/*"]
+  "files": ["src/index.ts"]
 }
