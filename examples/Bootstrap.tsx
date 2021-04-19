@@ -4,8 +4,8 @@ import React, { useRef } from 'react';
 import { DevTools, useDevTools, wrapChildrenClassName } from 'flex-wrap-layout';
 import ReactDOM from 'react-dom';
 
-import './Bootstrap4.html';
-import './Bootstrap4.scss';
+import './Bootstrap.html';
+import './Bootstrap.scss';
 
 // https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes
 // https://gist.github.com/evolkmann/740d24889c509c08484a8ff72af5dd64

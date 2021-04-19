@@ -58,7 +58,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('app'));
 
 - [Minimal example](examples/Minimal.tsx)
 - [Boxes example](examples/Boxes.tsx)
-- [Bootstrap 4 example](examples/Bootstrap4.tsx): https://codesandbox.io/s/github/tkrotoff/flex-wrap-layout/tree/codesandbox.io/examples
+- [Bootstrap example](examples/Bootstrap.tsx): https://codesandbox.io/s/github/tkrotoff/flex-wrap-layout/tree/codesandbox.io/examples
 
 ## Supported browsers
 

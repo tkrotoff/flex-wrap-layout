@@ -5,7 +5,7 @@ import { join } from 'path';
 const waitForResize = () => page.waitForTimeout(100);
 
 test('resize', async () => {
-  await page.goto(`file:${join(__dirname, 'build/Bootstrap4.html')}`);
+  await page.goto(`file:${join(__dirname, 'build/Bootstrap.html')}`);
 
   const height = 768;
 

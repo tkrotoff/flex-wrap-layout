@@ -17,7 +17,7 @@ module.exports = (_webpackEnv, _argv) => {
   /** @type import('webpack').Configuration */
   const config = {
     entry: {
-      Bootstrap4: './Bootstrap4.tsx',
+      Bootstrap: './Bootstrap.tsx',
       Boxes: './Boxes.tsx',
       Minimal: './Minimal.tsx'
     },
