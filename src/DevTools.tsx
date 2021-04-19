@@ -32,7 +32,7 @@ export function useDevTools(
   const [detectWrappedElements, setDetectWrappedElements] = useState(detectWrappedElementsInit);
   const [flexFill, setFlexFill] = useState(flexFillInit);
 
-  const showBordersClassName = showBorders ? 'showBorders' : '';
+  const showBordersClassName = showBorders ? 'show-borders' : '';
   const flexFillClassName = flexFill ? 'flex-fill' : '';
 
   return {

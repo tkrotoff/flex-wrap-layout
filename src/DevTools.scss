@@ -1,29 +1,29 @@
 // Dotted line: growing block, solid line: fixed block
-.showBorders {
+.show-borders {
   .wrap-children,
   .wrap-children > *,
   .flex-fill,
   .next-is-wrapped,
   .next-is-wrapped ~ * {
     margin: 2px;
-    border-width: 2px;
     border-color: transparent;
+    border-width: 2px;
   }
 
   .wrap-children,
   .wrap-children > * {
-    border-style: solid;
     border-color: black;
+    border-style: solid;
   }
 
   .flex-fill {
-    border-style: dashed;
     border-color: black;
+    border-style: dashed;
   }
 
   .next-is-wrapped,
   .next-is-wrapped ~ * {
-    border-style: dashed;
     border-color: blue;
+    border-style: dashed;
   }
 }
