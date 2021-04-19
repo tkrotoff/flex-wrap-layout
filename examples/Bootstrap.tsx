@@ -148,7 +148,7 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
 
 const beatles: Person[] = [
   {
-    id: '0',
+    id: 'beatles-0',
     gender: Gender.Male,
     firstName: 'John',
     lastName: 'Lennon',
@@ -156,7 +156,7 @@ const beatles: Person[] = [
     nationality: SomeCountries.GB
   },
   {
-    id: '1',
+    id: 'beatles-1',
     gender: Gender.Male,
     firstName: 'Paul',
     lastName: 'McCartney',
@@ -164,7 +164,7 @@ const beatles: Person[] = [
     nationality: SomeCountries.GB
   },
   {
-    id: '2',
+    id: 'beatles-2',
     gender: Gender.Male,
     firstName: 'George',
     lastName: 'Harrison',
@@ -172,7 +172,7 @@ const beatles: Person[] = [
     nationality: SomeCountries.GB
   },
   {
-    id: '3',
+    id: 'beatles-3',
     gender: Gender.Male,
     firstName: 'Ringo',
     lastName: 'Starr',
@@ -193,7 +193,7 @@ function Beatles() {
 // https://en.wikipedia.org/wiki/The_Velvet_Underground#Timeline
 const velvetUnderground: Person[] = [
   {
-    id: '0',
+    id: 'velvetunderground-0',
     gender: Gender.Male,
     firstName: 'Lou',
     lastName: 'Reed',
@@ -201,7 +201,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '1',
+    id: 'velvetunderground-1',
     gender: Gender.Female,
     firstName: 'Nico',
     lastName: '',
@@ -209,7 +209,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.DE
   },
   {
-    id: '2',
+    id: 'velvetunderground-2',
     gender: Gender.Male,
     firstName: 'Sterling',
     lastName: 'Morrison',
@@ -217,7 +217,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '3',
+    id: 'velvetunderground-3',
     gender: Gender.Male,
     firstName: 'Willie',
     lastName: 'Alexander',
@@ -225,7 +225,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '4',
+    id: 'velvetunderground-4',
     gender: Gender.Male,
     firstName: 'John',
     lastName: 'Cale',
@@ -233,7 +233,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.GB
   },
   {
-    id: '5',
+    id: 'velvetunderground-5',
     gender: Gender.Male,
     firstName: 'Doug',
     lastName: 'Yule',
@@ -241,7 +241,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '6',
+    id: 'velvetunderground-6',
     gender: Gender.Male,
     firstName: 'Walter',
     lastName: 'Powers',
@@ -249,7 +249,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '7',
+    id: 'velvetunderground-7',
     gender: Gender.Male,
     firstName: 'Angus',
     lastName: 'MacLise',
@@ -257,7 +257,7 @@ const velvetUnderground: Person[] = [
     nationality: SomeCountries.US
   },
   {
-    id: '8',
+    id: 'velvetunderground-8',
     gender: Gender.Female,
     firstName: 'Moe',
     lastName: 'Tucker',
