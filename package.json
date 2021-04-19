@@ -24,7 +24,7 @@
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json examples/node_modules examples/package-lock.json",
     "build:esnext": "tsc --project tsconfig.dist.json --outDir dist --declaration true",
     "build:cjs": "tsc --project tsconfig.dist.json --outDir dist/cjs",
-    "build": "npm run build:esnext && npm run build:cjs",
+    "build": "npm run clean && npm run build:esnext && npm run build:cjs",
     "npm:install:examples": "cd examples && npm install",
     "build:examples": "cd examples && ./node_modules/.bin/webpack -d",
     "test": "NODE_ENV=test jest --verbose",
