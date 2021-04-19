@@ -3,9 +3,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const path = require('path');
-const sass = require('sass');
-// @ts-ignore FIXME No @types/postcss-preset-env
-const postcssPresetEnv = require('postcss-preset-env');
 
 /**
  * @param {any} _webpackEnv
@@ -23,9 +20,10 @@ module.exports = (_webpackEnv, _argv) => {
     },
 
     output: {
-      path: path.join(__dirname, 'build'),
-      filename: '[name].js'
+      path: path.join(__dirname, 'build')
     },
+
+    devtool: 'source-map',
 
     plugins: [],
 
@@ -39,32 +37,25 @@ module.exports = (_webpackEnv, _argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|tsx?)$/,
-
-          // [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
-          exclude: /\/core-js/,
-
+          test: /\.tsx?$/,
           loader: 'babel-loader'
         },
         {
           test: /\.scss$/,
           use: [
             { loader: 'style-loader' },
-            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'css-loader' },
             {
               loader: 'postcss-loader',
-              options: {
-                plugins: () => [postcssPresetEnv],
-                sourceMap: true
-              }
+              options: { postcssOptions: { plugins: [['postcss-preset-env']] } }
             },
-            { loader: 'sass-loader', options: { implementation: sass, sourceMap: true } }
+            { loader: 'sass-loader' }
           ]
         },
         {
           test: /\.html$/,
-          loader: 'file-loader',
-          options: { name: '[name].[ext]' }
+          type: 'asset/resource',
+          generator: { filename: '[name][ext]' }
         }
       ]
     }

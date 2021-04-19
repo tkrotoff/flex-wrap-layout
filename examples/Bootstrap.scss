@@ -1,9 +1,9 @@
-@import '~flex-wrap-layout/src/detectWrappedElements';
-@import '~flex-wrap-layout/src/DevTools';
+@import 'flex-wrap-layout/src/detectWrappedElements';
+@import 'flex-wrap-layout/src/DevTools';
 
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
-@import '~@tkrotoff/bootstrap-floating-label/src/bootstrap4-floating-label';
+@import '@tkrotoff/bootstrap-floating-label/src/bootstrap-floating-label';
 
 .people {
   // Displays only the first row of titles

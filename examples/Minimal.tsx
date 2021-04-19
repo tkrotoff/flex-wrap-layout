@@ -5,7 +5,7 @@ import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layou
 import ReactDOM from 'react-dom';
 
 import './Minimal.html';
-import 'flex-wrap-layout/src/detectWrappedElements.scss';
+import './Minimal.scss';
 
 const boxStyle = {
   border: '1px solid',

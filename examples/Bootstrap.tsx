@@ -108,13 +108,18 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
       <div className={`${wrapChildrenClassName} mr-n2`}>
         <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
           <ColumnTitle>First name</ColumnTitle>
-          <input id={firstNameId} defaultValue={firstName} className="form-control" />
+          <input
+            id={firstNameId}
+            defaultValue={firstName}
+            className="form-control"
+            placeholder=" "
+          />
           <label htmlFor={firstNameId}>First name</label>
         </div>
 
         <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
           <ColumnTitle>Last name</ColumnTitle>
-          <input id={lastNameId} defaultValue={lastName} className="form-control" />
+          <input id={lastNameId} defaultValue={lastName} className="form-control" placeholder=" " />
           <label htmlFor={lastNameId}>Last name</label>
         </div>
 
@@ -128,7 +133,13 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
 
         <div className="floating-label mb-3 mr-2">
           <ColumnTitle>Birth date</ColumnTitle>
-          <input type="date" id={birthDateId} defaultValue={birthDate} className="form-control" />
+          <input
+            type="date"
+            id={birthDateId}
+            defaultValue={birthDate}
+            className="form-control"
+            placeholder=" "
+          />
           <label htmlFor={birthDateId}>Birth date</label>
         </div>
 
