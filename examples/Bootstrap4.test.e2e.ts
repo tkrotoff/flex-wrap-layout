@@ -2,7 +2,7 @@ import 'jest-playwright-preset';
 
 import { join } from 'path';
 
-const waitForResize = () => page.waitFor(100);
+const waitForResize = () => page.waitForTimeout(100);
 
 test('resize', async () => {
   await page.goto(`file:${join(__dirname, 'build/Bootstrap4.html')}`);
@@ -14,7 +14,7 @@ test('resize', async () => {
   expect(children.length).toEqual(5);
 
   {
-    await page.setViewportSize({ width: 1119, height });
+    await page.setViewportSize({ width: /*1119*/ 1101, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -25,10 +25,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 
   {
-    await page.setViewportSize({ width: /*1103*/ 1038, height });
+    await page.setViewportSize({ width: /*1118*/ 1100, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -39,10 +41,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2 next-is-wrapped',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 
   {
-    await page.setViewportSize({ width: /*827 - 15*/ 762 - 15, height });
+    await page.setViewportSize({ width: /*827*/ 811, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -53,10 +57,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 
   {
-    await page.setViewportSize({ width: /*623 - 15*/ 555 - 15, height });
+    await page.setViewportSize({ width: /*623*/ 607, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -67,10 +73,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2 next-is-wrapped',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 
   {
-    await page.setViewportSize({ width: /*506 - 15*/ 438 - 15, height });
+    await page.setViewportSize({ width: /*506*/ 491, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -81,11 +89,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2 next-is-wrapped',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 
-  /*
   {
-    await page.setViewportSize({ width: 388 - 15, height });
+    await page.setViewportSize({ width: /*388*/ 372, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -96,11 +105,12 @@ test('resize', async () => {
       'floating-label mb-3 mr-2 next-is-wrapped',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
-  */
 
   {
-    await page.setViewportSize({ width: /*357 - 15*/ 354 - 15, height });
+    await page.setViewportSize({ width: /*357*/ 341, height });
     await waitForResize();
 
     const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
@@ -111,5 +121,7 @@ test('resize', async () => {
       'floating-label mb-3 mr-2 next-is-wrapped',
       'floating-label mb-3 mr-2'
     ]);
+
+    expect(await page.screenshot()).toMatchImageSnapshot();
   }
 });
