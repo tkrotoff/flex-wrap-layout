@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import {
   hasChildWrappedClassName,
@@ -34,16 +34,16 @@ function MinimalExample() {
 }
 
 test('resize 1024px => 296px => 183px', () => {
-  const { getByTestId, container } = render(<MinimalExample />);
+  const { container } = render(<MinimalExample />);
 
   expect(window.innerWidth).toEqual(1024);
   expect(window.innerHeight).toEqual(768);
 
   mockWindowGetComputedStyle({ marginTop: '15px', marginLeft: '15px' });
-  const parent = getByTestId('parent');
-  const child0 = getByTestId('child0');
-  const child1 = getByTestId('child1');
-  const child2 = getByTestId('child2');
+  const parent = screen.getByTestId('parent');
+  const child0 = screen.getByTestId('child0');
+  const child1 = screen.getByTestId('child1');
+  const child2 = screen.getByTestId('child2');
 
   ///
 
