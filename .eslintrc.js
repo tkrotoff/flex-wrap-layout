@@ -8,6 +8,7 @@ const config = {
     // /!\ Order matters: the next one overrides rules from the previous one
     'plugin:jest-playwright/recommended',
     'plugin:jest/recommended',
+    'plugin:unicorn/recommended',
     'airbnb',
     // Already done by Airbnb
     //'plugin:react/recommended'
@@ -92,6 +93,20 @@ const config = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+    'unicorn/filename-case': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/catch-error-name': 'off',
+    'unicorn/no-for-loop': 'off',
+    'unicorn/no-null': 'off',
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v27.0.0/docs/rules/no-array-for-each.md
+    // https://github.com/github/eslint-plugin-github/blob/v4.1.1/docs/rules/array-foreach.md
+    // conflicts with
+    // https://github.com/airbnb/javascript/issues/1271
+    'unicorn/no-array-for-each': 'off',
+    'unicorn/prefer-query-selector': 'off',
+    'unicorn/prefer-number-properties': 'off',
+    'unicorn/prefer-spread': 'off',
 
     'jsx-a11y/label-has-associated-control': 'off',
 

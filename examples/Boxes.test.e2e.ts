@@ -1,9 +1,9 @@
-import { join } from 'path';
+import path from 'path';
 
 const waitForResize = () => page.waitForTimeout(100);
 
 test('resize', async () => {
-  await page.goto(`file:${join(__dirname, 'build/Boxes.html')}`);
+  await page.goto(`file:${path.join(__dirname, 'build/Boxes.html')}`);
 
   const height = 768;
 
