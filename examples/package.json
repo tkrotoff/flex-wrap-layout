@@ -13,8 +13,8 @@
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "dependencies": {
-    "@tkrotoff/bootstrap-floating-label": "^0.8.0",
-    "bootstrap": "^4.6.0",
+    "@tkrotoff/bootstrap-floating-label": "^0.10.0",
+    "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.10.2",
     "flex-wrap-layout": "file:..",
     "react": "^17.0.2",

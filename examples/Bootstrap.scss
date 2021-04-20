@@ -1,6 +1,7 @@
 @import 'flex-wrap-layout/src/detectWrappedElements';
 @import 'flex-wrap-layout/src/DevTools';
 
+$enable-negative-margins: true;
 @import 'bootstrap/scss/bootstrap';
 
 @import '@tkrotoff/bootstrap-floating-label/src/bootstrap-floating-label';

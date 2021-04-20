@@ -109,8 +109,8 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
 
   return (
     <div className="person mb-n2">
-      <div className={`${wrapChildrenClassName} mr-n2`}>
-        <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
+      <div className={`${wrapChildrenClassName} me-n2`}>
+        <div className={`floating-label mb-3 me-2 ${flexFillClassName}`}>
           <ColumnTitle>First name</ColumnTitle>
           <input
             id={firstNameId}
@@ -121,21 +121,21 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
           <label htmlFor={firstNameId}>First name</label>
         </div>
 
-        <div className={`floating-label mb-3 mr-2 ${flexFillClassName}`}>
+        <div className={`floating-label mb-3 me-2 ${flexFillClassName}`}>
           <ColumnTitle>Last name</ColumnTitle>
           <input id={lastNameId} defaultValue={lastName} className="form-control" placeholder=" " />
           <label htmlFor={lastNameId}>Last name</label>
         </div>
 
-        <div className="floating-label mb-3 mr-2">
+        <div className="floating-label mb-3 me-2">
           <ColumnTitle>Gender</ColumnTitle>
-          <select id={genderId} defaultValue={gender} className="custom-select">
+          <select id={genderId} defaultValue={gender} className="form-select">
             {getSelectOptionsFromEnum(Gender)}
           </select>
           <label htmlFor={genderId}>Gender</label>
         </div>
 
-        <div className="floating-label mb-3 mr-2">
+        <div className="floating-label mb-3 me-2">
           <ColumnTitle>Birth date</ColumnTitle>
           <input
             type="date"
@@ -147,9 +147,9 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
           <label htmlFor={birthDateId}>Birth date</label>
         </div>
 
-        <div className="floating-label mb-3 mr-2">
+        <div className="floating-label mb-3 me-2">
           <ColumnTitle>Nationality</ColumnTitle>
-          <select id={nationalityId} defaultValue={nationality} className="custom-select">
+          <select id={nationalityId} defaultValue={nationality} className="form-select">
             {getSelectOptionsFromEnum(SomeCountries)}
           </select>
           <label htmlFor={nationalityId}>Nationality</label>
