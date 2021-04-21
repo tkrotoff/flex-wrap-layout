@@ -37,6 +37,7 @@
     "precommit": "lint-staged --verbose",
     "prepush": "npm run build:esnext && npm run build:examples && npm run test && npm run test:examples",
     "prepublishOnly": "npm run clean && npm run build",
+    "publish:beta": "npm version 0.10.0-beta.1 && npm publish --tag next --dry-run",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "dependencies": {},
