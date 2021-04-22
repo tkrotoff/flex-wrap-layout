@@ -23,11 +23,13 @@ interface DevToolsContext {
   setFlexFill: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function useDevTools(
-  showBordersInit: boolean,
-  detectWrappedElementsInit: boolean,
-  flexFillInit: boolean
-) {
+interface Init {
+  showBordersInit: boolean;
+  detectWrappedElementsInit: boolean;
+  flexFillInit: boolean;
+}
+
+export function useDevTools({ showBordersInit, detectWrappedElementsInit, flexFillInit }: Init) {
   const [showBorders, setShowBorders] = useState(showBordersInit);
   const [detectWrappedElements, setDetectWrappedElements] = useState(detectWrappedElementsInit);
   const [flexFill, setFlexFill] = useState(flexFillInit);
@@ -49,7 +51,8 @@ export function useDevTools(
   };
 }
 
-// https://inventingwithmonster.io/20190207-break-the-rules-of-react-hooks/
+// http://web.archive.org/web/20191213203807/https://inventingwithmonster.io/20190207-break-the-rules-of-react-hooks/
+// https://mattperry.is/writing-code/how-to-break-the-rules-of-react-hooks
 function DetectWrappedElements({
   detectWrappedElementsRef
 }: {

@@ -63,7 +63,11 @@ function People({ people }: { people: Person[] }) {
   const ref = useRef(null);
 
   // This example uses the dev tools: replace useDevTools() and <DevTools /> by useDetectWrappedElements()
-  const devToolsContext = useDevTools(false, true, true);
+  const devToolsContext = useDevTools({
+    showBordersInit: false,
+    detectWrappedElementsInit: true,
+    flexFillInit: true
+  });
 
   return (
     <>
