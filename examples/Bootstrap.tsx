@@ -1,6 +1,6 @@
 import 'core-js';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DevTools, useDevTools, wrapChildrenClassName } from 'flex-wrap-layout';
 import ReactDOM from 'react-dom';
 
@@ -59,6 +59,11 @@ interface Person {
   nationality: SomeCountries;
 }
 
+function forceDetectWrappedElements() {
+  // https://stackoverflow.com/q/1818474
+  window.dispatchEvent(new Event('resize'));
+}
+
 function People({ people }: { people: Person[] }) {
   const ref = useRef(null);
 
@@ -69,14 +74,34 @@ function People({ people }: { people: Person[] }) {
     flexFillInit: true
   });
 
+  const [showDetails, setShowDetails] = useState(true);
+
+  useEffect(() => {
+    forceDetectWrappedElements();
+  }, [showDetails]);
+
   return (
     <>
       <DevTools detectWrappedElementsRef={ref} context={devToolsContext} className="mb-3" />
+
+      <div className="mb-3 form-check">
+        <label className="form-check-label">
+          <input
+            type="checkbox"
+            checked={showDetails}
+            onChange={({ target }) => setShowDetails(target.checked)}
+            className="form-check-input"
+          />
+          Show details
+        </label>
+      </div>
+
       <div ref={ref} className={`people ${devToolsContext.showBordersClassName}`}>
         {people.map(person => (
           <Person
             key={person.id}
             person={person}
+            showDetails={showDetails}
             flexFillClassName={devToolsContext.flexFillClassName}
           />
         ))}
@@ -97,7 +122,13 @@ function getSelectOptionsFromEnum(_enum: Record<string, string>) {
   ));
 }
 
-function Person({ person, flexFillClassName }: { person: Person; flexFillClassName: string }) {
+interface PersonProps {
+  person: Person;
+  showDetails: boolean;
+  flexFillClassName: string;
+}
+
+function Person({ person, showDetails, flexFillClassName }: PersonProps) {
   const { id, gender, firstName, lastName, birthDate, nationality } = person;
 
   const getId = (name: string) => `${name}-${id}`;
@@ -127,33 +158,39 @@ function Person({ person, flexFillClassName }: { person: Person; flexFillClassNa
           <label htmlFor={lastNameId}>Last name</label>
         </div>
 
-        <div className="floating-label mb-3 me-2">
-          <ColumnTitle>Gender</ColumnTitle>
-          <select id={genderId} defaultValue={gender} className="form-select">
-            {getSelectOptionsFromEnum(Gender)}
-          </select>
-          <label htmlFor={genderId}>Gender</label>
-        </div>
+        {showDetails ? (
+          <>
+            <div className="floating-label mb-3 me-2">
+              <ColumnTitle>Gender</ColumnTitle>
+              <select id={genderId} defaultValue={gender} className="form-select">
+                {getSelectOptionsFromEnum(Gender)}
+              </select>
+              <label htmlFor={genderId}>Gender</label>
+            </div>
 
-        <div className="floating-label mb-3 me-2">
-          <ColumnTitle>Birth date</ColumnTitle>
-          <input
-            type="date"
-            id={birthDateId}
-            defaultValue={birthDate}
-            className="form-control"
-            placeholder=" "
-          />
-          <label htmlFor={birthDateId}>Birth date</label>
-        </div>
+            <div className="floating-label mb-3 me-2">
+              <ColumnTitle>Birth date</ColumnTitle>
+              <input
+                type="date"
+                id={birthDateId}
+                defaultValue={birthDate}
+                className="form-control"
+                placeholder=" "
+              />
+              <label htmlFor={birthDateId}>Birth date</label>
+            </div>
 
-        <div className="floating-label mb-3 me-2">
-          <ColumnTitle>Nationality</ColumnTitle>
-          <select id={nationalityId} defaultValue={nationality} className="form-select">
-            {getSelectOptionsFromEnum(SomeCountries)}
-          </select>
-          <label htmlFor={nationalityId}>Nationality</label>
-        </div>
+            <div className="floating-label mb-3 me-2">
+              <ColumnTitle>Nationality</ColumnTitle>
+              <select id={nationalityId} defaultValue={nationality} className="form-select">
+                {getSelectOptionsFromEnum(SomeCountries)}
+              </select>
+              <label htmlFor={nationalityId}>Nationality</label>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
 
       <hr className="mt-0 mb-4" />
