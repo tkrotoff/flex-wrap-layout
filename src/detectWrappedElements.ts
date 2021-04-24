@@ -1,11 +1,8 @@
 // [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
-function position(el: Element) {
-  const { top, left } = el.getBoundingClientRect();
-  const { marginTop, marginLeft } = window.getComputedStyle(el);
-  return {
-    top: top - parseInt(marginTop, 10),
-    left: left - parseInt(marginLeft, 10)
-  };
+function getTopPosition(el: Element) {
+  const { top } = el.getBoundingClientRect();
+  const { marginTop } = window.getComputedStyle(el);
+  return top - parseInt(marginTop, 10);
 }
 
 // [How to detect CSS flex wrap event](https://stackoverflow.com/q/40012428)
@@ -17,8 +14,8 @@ export function detectWrappedElements(
 ) {
   // For each child of .wrap-children
   //   - find its previous sibling
-  //   - check its sibling is not at the same position
-  //     - if it's not, add .next-is-wrapped
+  //   - check if its previous sibling is at the same top position
+  //     - if not, add .next-is-wrapped
   //     - if same position, remove .next-is-wrapped
 
   // [...HTMLCollection] vs Array.from(HTMLCollection): the latter doesn't need downlevelIteration with IE
@@ -30,12 +27,10 @@ export function detectWrappedElements(
     for (let i = 0; i < children.length; i++) {
       const child = children[i];
 
-      const { top } = position(child);
-
       const prev = child.previousElementSibling;
-
       if (prev !== null) {
-        const { top: prevTop } = position(prev);
+        const top = getTopPosition(child);
+        const prevTop = getTopPosition(prev);
 
         if (top > prevTop) {
           // There is no way to CSS style an element given a match on its next sibling
