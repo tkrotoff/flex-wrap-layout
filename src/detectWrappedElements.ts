@@ -40,6 +40,12 @@ export function detectWrappedElements(
           prev.classList.remove(nextIsWrappedClassName);
         }
       }
+
+      // If the next sibling has been removed since the last run,
+      // .next-is-wrapped may be present and we need to remove it
+      if (child.nextElementSibling === null) {
+        child.classList.remove(nextIsWrappedClassName);
+      }
     }
   });
 
