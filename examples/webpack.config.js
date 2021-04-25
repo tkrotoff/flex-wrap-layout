@@ -37,7 +37,9 @@ module.exports = (_webpackEnv, _argv) => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+          test: /\.(js|tsx?)$/,
+          // [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
+          exclude: /\/core-js/,
           loader: 'babel-loader'
         },
         {

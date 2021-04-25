@@ -7,6 +7,7 @@
     "clean": "rm -rf build",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
     "build": "npm run clean && webpack --mode development",
+    "build:prod": "npm run clean && webpack --mode production",
     "build:watch": "npm run clean && webpack --mode development --watch",
     "test:e2e": "NODE_ENV=test jest --config jest-e2e.config.js --verbose",
     "chromium:linux": "~/.cache/ms-playwright/chromium-857950/chrome-linux/chrome",

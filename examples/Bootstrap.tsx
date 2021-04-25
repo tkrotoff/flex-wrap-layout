@@ -1,7 +1,12 @@
 import 'core-js';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { DevTools, useDevTools, wrapChildrenClassName } from 'flex-wrap-layout';
+import {
+  DevTools,
+  forceDetectWrappedElements,
+  useDevTools,
+  wrapChildrenClassName
+} from 'flex-wrap-layout';
 import ReactDOM from 'react-dom';
 
 import './Bootstrap.html';
@@ -57,11 +62,6 @@ interface Person {
   lastName: string;
   birthDate: string;
   nationality: SomeCountries;
-}
-
-function forceDetectWrappedElements() {
-  // https://stackoverflow.com/q/1818474
-  window.dispatchEvent(new Event('resize'));
 }
 
 function People({ people }: { people: Person[] }) {
