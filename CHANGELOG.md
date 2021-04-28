@@ -1,3 +1,13 @@
+## 0.10.0 (2020/04/29)
+
+- Breaking change: make useDevTools() params more user-friendly
+- Fix: .next-is-wrapped may be present if the next sibling has been removed since the last run
+- New function forceDetectWrappedElements() to support IE
+- Add a "Show details" button to the Bootstrap example
+- Switch Bootstrap example to Bootstrap 5
+- Simplify code
+- Update npm packages
+
 ## 0.9.2 (2020/03/18)
 
 - Update npm packages
