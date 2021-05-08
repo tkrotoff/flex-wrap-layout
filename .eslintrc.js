@@ -15,7 +15,7 @@ const config = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort', 'react-hooks'],
+  plugins: ['simple-import-sort', 'react-hooks', 'jest-playwright'],
   env: {
     browser: true
   },
@@ -107,6 +107,10 @@ const config = {
     'unicorn/prefer-query-selector': 'off',
     'unicorn/prefer-number-properties': 'off',
     'unicorn/prefer-spread': 'off',
+    // FIXME Activate when ES modules are well supported
+    'unicorn/prefer-module': 'off',
+    // FIXME Activate when ES modules are well supported
+    'unicorn/prefer-node-protocol': 'off',
 
     'jsx-a11y/label-has-associated-control': 'off',
 
