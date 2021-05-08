@@ -1,4 +1,8 @@
-## 0.10.0 (2020/04/29)
+## 0.10.1 (2021/05/08)
+
+- Update npm packages
+
+## 0.10.0 (2021/04/29)
 
 - Breaking change: make useDevTools() params more user-friendly
 - Fix: .next-is-wrapped may be present if the next sibling has been removed since the last run
