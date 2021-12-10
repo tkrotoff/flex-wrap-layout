@@ -12,5 +12,6 @@ LICENSE
 
 dist/
 build/
+coverage/
 *.gif
 *.png
