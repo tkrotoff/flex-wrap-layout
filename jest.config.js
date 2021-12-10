@@ -6,6 +6,8 @@ const { defaults } = require('jest-config');
 
 /** @type import('@jest/types').Config.InitialOptions */
 const config = {
+  testEnvironment: 'jsdom',
+
   preset: 'ts-jest',
 
   // https://github.com/kulshekhar/ts-jest/blob/v25.2.0/docs/user/config/isolatedModules.md
