@@ -188,9 +188,7 @@ function Person({ person, showDetails, flexFillClassName }: PersonProps) {
               <label htmlFor={nationalityId}>Nationality</label>
             </div>
           </>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </div>
 
       <hr className="mt-0 mb-4" />

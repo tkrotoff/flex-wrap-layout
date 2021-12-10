@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/no-await-expression-member */
+
 import { nextIsWrappedClassName } from 'flex-wrap-layout';
 import path from 'path';
 
