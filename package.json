@@ -29,7 +29,7 @@
     "build:examples": "cd examples && ./node_modules/.bin/webpack --mode=development",
     "test": "NODE_ENV=test jest --verbose",
     "test:coverage": "jest --coverage",
-    "test:examples": "cd examples && NODE_ENV=test ./node_modules/.bin/jest --config jest-e2e.config.js --verbose",
+    "test:examples": "cd examples && npm run test:e2e",
     "tsc": "tsc",
     "format": "prettier --write '**/*'",
     "lint": "npm run tsc && eslint . '**/*.{js,ts,tsx}' && stylelint '**/*.scss'",
@@ -40,7 +40,6 @@
     "publish:beta": "npm version 0.10.0-beta.1 && npm publish --tag next --dry-run",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.8"
   },
@@ -55,8 +54,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.3.0",
-    "eslint-plugin-jest-playwright": "^0.6.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-playwright": "^0.6.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",

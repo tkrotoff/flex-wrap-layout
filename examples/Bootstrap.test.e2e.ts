@@ -1,127 +1,108 @@
-import 'jest-playwright-preset';
+/* eslint-disable unicorn/no-await-expression-member, jest/no-done-callback, playwright/missing-playwright-await */
 
+import { expect, test } from '@playwright/test';
 import path from 'path';
 
-const waitForResize = () => page.waitForTimeout(100);
-
-test('resize', async () => {
+test('resize', async ({ page }) => {
   await page.goto(`file:${path.join(__dirname, 'build/Bootstrap.html')}`);
 
   const height = 768;
 
-  const firstPersonChildren = (await page.$('.people > .person:first-child > .wrap-children'))!;
-  const children = await firstPersonChildren.$$(':scope > div');
-  expect(children.length).toEqual(5);
+  const firstBeatlesChildren = page
+    .locator('.people > .person:first-child > .wrap-children')
+    .first();
+  await expect(firstBeatlesChildren).toHaveCount(1);
+  const inputs = firstBeatlesChildren.locator('> div');
+  await expect(inputs).toHaveCount(5);
 
-  {
-    await page.setViewportSize({ width: /*1114*/ 1111, height });
-    await waitForResize();
+  // 1
+  await page.setViewportSize({ width: 1068, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-1.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2',
+    'floating-label mb-3 me-2',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*1113*/ 1110, height });
-    await waitForResize();
+  // 2
+  await page.setViewportSize({ width: 1067, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-2.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*814*/ 813, height });
-    await waitForResize();
+  // 3
+  await page.setViewportSize({ width: 761, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-3.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*610*/ 609, height });
-    await waitForResize();
+  // 4
+  await page.setViewportSize({ width: 559, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-4.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*485*/ 485, height });
-    await waitForResize();
+  // 5
+  await page.setViewportSize({ width: 433, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2 flex-fill',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-5.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2 flex-fill',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*375*/ 374, height });
-    await waitForResize();
+  // 6
+  await page.setViewportSize({ width: 350, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-6.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2'
+  ]);
 
-  {
-    await page.setViewportSize({ width: /*344*/ 341, height });
-    await waitForResize();
+  // 7
+  await page.setViewportSize({ width: 343, height });
 
-    const classNames = await Promise.all(children.map(div => div.evaluate(el => el.className)));
-    expect(classNames).toEqual([
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2 flex-fill next-is-wrapped',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2 next-is-wrapped',
-      'floating-label mb-3 me-2'
-    ]);
+  expect(await page.screenshot()).toMatchSnapshot('bootstrap-7.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(inputs).toHaveClass([
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2 flex-fill next-is-wrapped',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2 next-is-wrapped',
+    'floating-label mb-3 me-2'
+  ]);
 });

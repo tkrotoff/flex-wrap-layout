@@ -6,7 +6,7 @@ const config = {
   parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
-    'plugin:jest-playwright/recommended',
+    'plugin:playwright/playwright-test',
     'plugin:jest/recommended',
     'plugin:unicorn/recommended',
     'airbnb',
@@ -15,7 +15,7 @@ const config = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort', 'react-hooks', 'jest-playwright'],
+  plugins: ['simple-import-sort', 'react-hooks'],
   env: {
     browser: true
   },
