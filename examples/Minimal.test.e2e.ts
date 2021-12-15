@@ -1,86 +1,91 @@
-import { nextIsWrappedClassName } from 'flex-wrap-layout';
+/* eslint-disable unicorn/no-await-expression-member, jest/no-done-callback, playwright/missing-playwright-await */
+
+import { expect, test } from '@playwright/test';
 import path from 'path';
 
-const waitForResize = () => page.waitForTimeout(100);
-
-test('resize', async () => {
+test('resize', async ({ page }) => {
   await page.goto(`file:${path.join(__dirname, 'build/Minimal.html')}`);
 
   const height = 768;
 
-  const parent = (await page.$('.wrap-children'))!;
-  const children = await parent.$$('div');
-  expect(children.length).toEqual(3);
+  const parent = page.locator('.wrap-children');
 
-  {
-    await page.setViewportSize({ width: 1024, height });
-    await waitForResize();
+  const countries = parent.locator('> div');
+  await expect(countries).toHaveCount(3);
 
-    const parentClassName = await parent.evaluate(el => el.className);
-    const child0BoundingBox = await children[0].boundingBox();
-    const child0ClassName = await children[0].evaluate(el => el.className);
-    const child1BoundingBox = await children[1].boundingBox();
-    const child1ClassName = await children[1].evaluate(el => el.className);
-    const child2BoundingBox = await children[2].boundingBox();
-    const child2ClassName = await children[2].evaluate(el => el.className);
+  // 1
+  await page.setViewportSize({ width: 1024, height });
 
-    expect((await page.$$('.next-is-wrapped')).length).toEqual(0);
-    expect(parentClassName).toEqual('wrap-children');
-    expect(child0BoundingBox).toEqual({ x: 13, y: 13, width: 48, height: 72 });
-    expect(child0ClassName).toEqual('');
-    expect(child1BoundingBox).toEqual({ x: 71, y: 13, width: 827, height: 72 });
-    expect(child1ClassName).toEqual('');
-    expect(child2BoundingBox).toEqual({ x: 908, y: 13, width: 103, height: 72 });
-    expect(child2ClassName).toEqual('');
+  expect(await page.screenshot()).toMatchSnapshot('minimal-1.png');
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  await expect(parent.locator('.next-is-wrapped')).toHaveCount(0);
+  await expect(parent).toHaveClass(['wrap-children']);
 
-  {
-    await page.setViewportSize({ width: /*296*/ 294, height });
-    await waitForResize();
+  expect(await countries.nth(0).boundingBox()).toEqual({
+    x: 13,
+    y: 13,
+    width: 44,
+    height: 72
+  });
+  await expect(countries.nth(0)).toHaveClass(['']);
 
-    const parentClassName = await parent.evaluate(el => el.className);
-    const child0BoundingBox = await children[0].boundingBox();
-    const child0ClassName = await children[0].evaluate(el => el.className);
-    const child1BoundingBox = await children[1].boundingBox();
-    const child1ClassName = await children[1].evaluate(el => el.className);
-    const child2BoundingBox = await children[2].boundingBox();
-    const child2ClassName = await children[2].evaluate(el => el.className);
+  expect(await countries.nth(1).boundingBox()).toEqual({
+    x: 67,
+    y: 13,
+    width: 840.656_25,
+    height: 72
+  });
+  await expect(countries.nth(1)).toHaveClass(['']);
 
-    expect((await page.$$('.next-is-wrapped')).length).toEqual(1);
-    expect(parentClassName).toEqual('wrap-children has-child-wrapped');
-    expect(child0BoundingBox).toEqual({ x: 13, y: 13, width: 48, height: 72 });
-    expect(child0ClassName).toEqual('');
-    expect(child1BoundingBox).toEqual({ x: 71, y: 13, width: 210, height: 72 });
-    expect(child1ClassName).toEqual(nextIsWrappedClassName);
-    expect(child2BoundingBox).toEqual({ x: 13, y: 95, width: 268, height: 72 });
-    expect(child2ClassName).toEqual('');
+  expect(await countries.nth(2).boundingBox()).toEqual({
+    x: 917.656_25,
+    y: 13,
+    width: 93.343_75,
+    height: 72
+  });
+  await expect(countries.nth(2)).toHaveClass(['']);
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  // 2
+  await page.setViewportSize({ width: 274, height });
 
-  {
-    await page.setViewportSize({ width: /*183*/ 181, height });
-    await waitForResize();
+  expect(await page.screenshot()).toMatchSnapshot('minimal-2.png');
 
-    const parentClassName = await parent.evaluate(el => el.className);
-    const child0BoundingBox = await children[0].boundingBox();
-    const child0ClassName = await children[0].evaluate(el => el.className);
-    const child1BoundingBox = await children[1].boundingBox();
-    const child1ClassName = await children[1].evaluate(el => el.className);
-    const child2BoundingBox = await children[2].boundingBox();
-    const child2ClassName = await children[2].evaluate(el => el.className);
+  await expect(parent.locator('.next-is-wrapped')).toHaveCount(1);
+  await expect(parent).toHaveClass('wrap-children has-child-wrapped');
 
-    expect((await page.$$('.next-is-wrapped')).length).toEqual(2);
-    expect(parentClassName).toEqual('wrap-children has-child-wrapped');
-    expect(child0BoundingBox).toEqual({ x: 13, y: 13, width: 155, height: 72 });
-    expect(child0ClassName).toEqual(nextIsWrappedClassName);
-    expect(child1BoundingBox).toEqual({ x: 13, y: 95, width: 155, height: 72 });
-    expect(child1ClassName).toEqual(nextIsWrappedClassName);
-    expect(child2BoundingBox).toEqual({ x: 13, y: 177, width: 155, height: 72 });
-    expect(child2ClassName).toEqual('');
+  expect(await countries.nth(0).boundingBox()).toEqual({
+    x: 13,
+    y: 13,
+    width: 44,
+    height: 72
+  });
+  await expect(countries.nth(0)).toHaveClass(['']);
 
-    expect(await page.screenshot()).toMatchImageSnapshot();
-  }
+  expect(await countries.nth(1).boundingBox()).toEqual({
+    x: 67,
+    y: 13,
+    width: 194,
+    height: 72
+  });
+  await expect(countries.nth(1)).toHaveClass(['next-is-wrapped']);
+
+  expect(await countries.nth(2).boundingBox()).toEqual({ x: 13, y: 95, width: 248, height: 72 });
+  await expect(countries.nth(2)).toHaveClass(['']);
+
+  // 3
+  await page.setViewportSize({ width: 171, height });
+
+  expect(await page.screenshot()).toMatchSnapshot('minimal-3.png');
+
+  await expect(parent.locator('.next-is-wrapped')).toHaveCount(2);
+  await expect(parent).toHaveClass('wrap-children has-child-wrapped');
+
+  expect(await countries.nth(0).boundingBox()).toEqual({ x: 13, y: 13, width: 145, height: 72 });
+  await expect(countries.nth(0)).toHaveClass(['next-is-wrapped']);
+
+  expect(await countries.nth(1).boundingBox()).toEqual({ x: 13, y: 95, width: 145, height: 72 });
+  await expect(countries.nth(1)).toHaveClass(['next-is-wrapped']);
+
+  expect(await countries.nth(2).boundingBox()).toEqual({ x: 13, y: 177, width: 145, height: 72 });
+  await expect(countries.nth(2)).toHaveClass(['']);
 });

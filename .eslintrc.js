@@ -6,7 +6,7 @@ const config = {
   parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
-    'plugin:jest-playwright/recommended',
+    'plugin:playwright/playwright-test',
     'plugin:jest/recommended',
     'plugin:unicorn/recommended',
     'airbnb',
@@ -15,7 +15,7 @@ const config = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort', 'react-hooks', 'jest-playwright'],
+  plugins: ['simple-import-sort', 'react-hooks'],
   env: {
     browser: true
   },
@@ -119,6 +119,9 @@ const config = {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/require-default-props': 'off',
     'react/prop-types': 'off',
+    // FIXME https://github.com/yannickcr/eslint-plugin-react/issues/3114#issuecomment-951725512
+    'react/jsx-no-bind': 'off',
+    'react/function-component-definition': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'
