@@ -1,3 +1,9 @@
+## 0.10.2 (2021/12/15)
+
+- Update npm packages
+- Switch from jest-playwright to @playwright/test
+- Rewrite end-to-end tests
+
 ## 0.10.1 (2021/05/08)
 
 - Update npm packages
