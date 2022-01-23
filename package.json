@@ -17,7 +17,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf dist examples/build",
+    "clean": "rm -rf dist examples/build coverage",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json examples/node_modules examples/package-lock.json",
     "build:esnext": "tsc --project tsconfig.dist.json --outDir dist --declaration true",
     "build:cjs": "tsc --project tsconfig.dist.json --outDir dist/cjs",
