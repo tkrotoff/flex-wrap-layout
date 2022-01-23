@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/no-await-expression-member, jest/no-done-callback, playwright/missing-playwright-await */
 
 import { expect, test } from '@playwright/test';
-import path from 'path';
+import path from 'node:path';
 
 test('resize', async ({ page }) => {
   await page.goto(`file:${path.join(__dirname, 'build/Bootstrap.html')}`);

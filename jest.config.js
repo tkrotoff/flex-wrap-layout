@@ -17,7 +17,7 @@ const config = {
     }
   },
 
-  setupFiles: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['./jest.setup.ts'],
   coveragePathIgnorePatterns: [...defaults.coveragePathIgnorePatterns, './jest.setup.ts'],
 
   // By default Jest allows for __tests__/*.js, *.spec.js and *.test.js
