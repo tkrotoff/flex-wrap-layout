@@ -1,4 +1,4 @@
-/* eslint-disable jest/no-done-callback, playwright/missing-playwright-await */
+/* eslint-disable jest/no-standalone-expect */
 
 import { expect, test } from '@playwright/test';
 import path from 'node:path';

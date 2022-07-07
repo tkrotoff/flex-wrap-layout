@@ -22,7 +22,7 @@ const config = {
   globals: {},
 
   rules: {
-    'no-console': 'off',
+    'no-console': ['error', { allow: ['error'] }],
     'no-underscore-dangle': 'off',
     'no-prototype-builtins': 'off',
     'no-plusplus': 'off',
