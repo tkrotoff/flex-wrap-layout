@@ -18,7 +18,7 @@ test('resize', async ({ page }) => {
   // 1
   await page.setViewportSize({ width: 1068, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-1.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-1.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill',
@@ -31,7 +31,7 @@ test('resize', async ({ page }) => {
   // 2
   await page.setViewportSize({ width: 1067, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-2.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-2.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill',
@@ -44,7 +44,7 @@ test('resize', async ({ page }) => {
   // 3
   await page.setViewportSize({ width: 761, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-3.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-3.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill',
@@ -57,7 +57,7 @@ test('resize', async ({ page }) => {
   // 4
   await page.setViewportSize({ width: 559, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-4.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-4.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill',
@@ -70,7 +70,7 @@ test('resize', async ({ page }) => {
   // 5
   await page.setViewportSize({ width: 433, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-5.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-5.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill next-is-wrapped',
@@ -83,7 +83,7 @@ test('resize', async ({ page }) => {
   // 6
   await page.setViewportSize({ width: 350, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-6.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-6.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill next-is-wrapped',
@@ -96,7 +96,7 @@ test('resize', async ({ page }) => {
   // 7
   await page.setViewportSize({ width: 343, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('bootstrap-7.png');
+  //expect(await page.screenshot()).toMatchSnapshot('bootstrap-7.png');
 
   await expect(inputs).toHaveClass([
     'floating-label mb-3 me-2 flex-fill next-is-wrapped',

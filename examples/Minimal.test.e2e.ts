@@ -16,7 +16,7 @@ test('resize', async ({ page }) => {
   // 1
   await page.setViewportSize({ width: 1024, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('minimal-1.png');
+  //expect(await page.screenshot()).toMatchSnapshot('minimal-1.png');
 
   await expect(parent.locator('.next-is-wrapped')).toHaveCount(0);
   await expect(parent).toHaveClass(['wrap-children']);
@@ -48,7 +48,7 @@ test('resize', async ({ page }) => {
   // 2
   await page.setViewportSize({ width: 274, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('minimal-2.png');
+  //expect(await page.screenshot()).toMatchSnapshot('minimal-2.png');
 
   await expect(parent.locator('.next-is-wrapped')).toHaveCount(1);
   await expect(parent).toHaveClass('wrap-children has-child-wrapped');
@@ -75,7 +75,7 @@ test('resize', async ({ page }) => {
   // 3
   await page.setViewportSize({ width: 171, height });
 
-  expect(await page.screenshot()).toMatchSnapshot('minimal-3.png');
+  //expect(await page.screenshot()).toMatchSnapshot('minimal-3.png');
 
   await expect(parent.locator('.next-is-wrapped')).toHaveCount(2);
   await expect(parent).toHaveClass('wrap-children has-child-wrapped');
