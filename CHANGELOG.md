@@ -1,3 +1,9 @@
+## 0.11.0 (2022/07/08)
+
+- Just ship CommonJS
+- Update npm packages
+- Remove all Playwright screenshots: too fragile
+
 ## 0.10.2 (2021/12/15)
 
 - Update npm packages
