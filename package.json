@@ -1,6 +1,6 @@
 {
   "name": "flex-wrap-layout",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "description": "Experiments with flexbox layout",
   "repository": "github:tkrotoff/flex-wrap-layout",
   "license": "MIT",
