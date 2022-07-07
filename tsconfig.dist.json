@@ -5,9 +5,7 @@
 
     // Nullish coalescing operator (??) needs to be transpiled by TypeScript to support Node.js 12
     // https://stackoverflow.com/a/59787575
-    "target": "es2019",
-
-    "module": "commonjs"
+    "target": "es2019"
   },
   "files": ["src/index.ts"]
 }

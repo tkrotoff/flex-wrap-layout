@@ -8,8 +8,7 @@
     "flexbox",
     "flex-wrap"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/",
@@ -19,9 +18,9 @@
   "scripts": {
     "clean": "rm -rf dist examples/build coverage",
     "clean:all": "npm run clean && rm -rf node_modules package-lock.json examples/node_modules examples/package-lock.json",
-    "build:esnext": "tsc --project tsconfig.dist.json --outDir dist --declaration true",
-    "build:cjs": "tsc --project tsconfig.dist.json --outDir dist/cjs",
-    "build": "npm run clean && npm run build:esnext && npm run build:cjs",
+    "build": "npm run clean && npm run build:dts && npm run build:cjs",
+    "build:dts": "tsc --project tsconfig.dist.json --declaration --emitDeclarationOnly --outDir dist",
+    "build:cjs": "tsc --project tsconfig.dist.json --removeComments --module commonjs --outDir dist",
     "npm:install:examples": "cd examples && npm install",
     "build:examples": "cd examples && ./node_modules/.bin/webpack --mode=development",
     "test": "NODE_ENV=test jest --verbose",
@@ -32,7 +31,7 @@
     "lint": "npm run tsc && eslint . '**/*.{js,ts,tsx}' && stylelint '**/*.scss'",
     "prepare": "husky install",
     "precommit": "lint-staged --verbose",
-    "prepush": "npm run build:esnext && npm run build:examples && npm run test && npm run test:examples",
+    "prepush": "npm run build:cjs && npm run build:examples && npm run test && npm run test:examples",
     "prepublishOnly": "npm run clean && npm run build",
     "publish:beta": "npm version 0.10.0-beta.1 && npm publish --tag next --dry-run",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
