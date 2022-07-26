@@ -1,8 +1,8 @@
 import 'core-js';
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './Minimal.html';
 import './Minimal.scss';
@@ -27,4 +27,5 @@ function MyComponent() {
   );
 }
 
-ReactDOM.render(<MyComponent />, document.getElementById('app'));
+const root = createRoot(document.getElementById('app')!);
+root.render(<MyComponent />);

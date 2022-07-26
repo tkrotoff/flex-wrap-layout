@@ -25,8 +25,7 @@ This allows for responsive UIs without hardcoded CSS (width, min-width, media qu
 `npm install flex-wrap-layout`
 
 ```JS
-import React, { useRef } from 'react';
-import ReactDOM from 'react-dom';
+import { useRef } from 'react';
 
 import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
 import 'flex-wrap-layout/src/detectWrappedElements.scss';
@@ -50,8 +49,6 @@ function MyComponent() {
     </div>
   );
 }
-
-ReactDOM.render(<MyComponent />, document.getElementById('app'));
 ```
 
 ## Examples

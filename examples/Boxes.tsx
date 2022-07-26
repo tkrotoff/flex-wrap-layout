@@ -1,8 +1,8 @@
 import 'core-js';
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { DevTools, useDevTools, wrapChildrenClassName } from 'flex-wrap-layout';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './Boxes.html';
 import './Boxes.scss';
@@ -43,4 +43,5 @@ function Boxes() {
   );
 }
 
-ReactDOM.render(<Boxes />, document.getElementById('app'));
+const root = createRoot(document.getElementById('app')!);
+root.render(<Boxes />);

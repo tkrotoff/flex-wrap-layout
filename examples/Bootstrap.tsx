@@ -1,13 +1,13 @@
 import 'core-js';
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   DevTools,
   forceDetectWrappedElements,
   useDevTools,
   wrapChildrenClassName
 } from 'flex-wrap-layout';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './Bootstrap.html';
 import './Bootstrap.scss';
@@ -325,10 +325,10 @@ function VelvetUnderground() {
   );
 }
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('app')!);
+root.render(
   <div className="container-fluid">
     <Beatles />
     <VelvetUnderground />
-  </div>,
-  document.getElementById('app')
+  </div>
 );

@@ -4,7 +4,7 @@ import { expect, test } from '@playwright/test';
 import path from 'node:path';
 
 test('resize', async ({ page }) => {
-  await page.goto(`file:${path.join(__dirname, 'build/Boxes.html')}`);
+  await page.goto(`file:${path.resolve('build/Boxes.html')}`);
 
   const height = 768;
 

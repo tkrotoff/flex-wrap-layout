@@ -20,7 +20,7 @@ module.exports = (_webpackEnv, _argv) => {
     },
 
     output: {
-      path: path.join(__dirname, 'build')
+      path: path.resolve('build')
     },
 
     devtool: 'source-map',
@@ -31,7 +31,7 @@ module.exports = (_webpackEnv, _argv) => {
       extensions: ['.js', '.ts', '.tsx'],
 
       // https://stackoverflow.com/q/31169760
-      alias: { react: path.resolve(__dirname, 'node_modules/react') }
+      alias: { react: path.resolve('node_modules/react') }
     },
 
     module: {

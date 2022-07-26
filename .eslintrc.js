@@ -117,6 +117,8 @@ const config = {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/require-default-props': 'off',
     'react/prop-types': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     // FIXME https://github.com/yannickcr/eslint-plugin-react/issues/3114#issuecomment-951725512
     'react/jsx-no-bind': 'off',
     'react/function-component-definition': 'off',
