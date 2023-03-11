@@ -11,7 +11,7 @@ const path = require('node:path');
 module.exports = (_webpackEnv, _argv) => {
   // https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
 
-  /** @type import('webpack').Configuration */
+  /** @type {import('webpack').Configuration} */
   const config = {
     entry: {
       Bootstrap: './Bootstrap.tsx',
