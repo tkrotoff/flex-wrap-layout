@@ -1,5 +1,3 @@
-import 'core-js';
-
 import { useRef } from 'react';
 import { useDetectWrappedElements, wrapChildrenClassName } from 'flex-wrap-layout';
 import { createRoot } from 'react-dom/client';

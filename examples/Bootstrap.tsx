@@ -1,5 +1,3 @@
-import 'core-js';
-
 import { useEffect, useRef, useState } from 'react';
 import {
   DevTools,
