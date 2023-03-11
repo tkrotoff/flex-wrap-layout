@@ -57,10 +57,6 @@ function MyComponent() {
 - [Boxes example](examples/Boxes.tsx)
 - [Bootstrap example](examples/Bootstrap.tsx): https://codesandbox.io/s/github/tkrotoff/flex-wrap-layout/tree/codesandbox.io/examples
 
-## Supported browsers
-
-IE 11 and evergreen browsers
-
 ## Limitations
 
 This will cause reflows (layout thrashing): https://gist.github.com/paulirish/5d52fb081b3570c81e3a

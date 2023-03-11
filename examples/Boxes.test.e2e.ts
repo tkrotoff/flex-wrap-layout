@@ -17,7 +17,7 @@ test('resize', async ({ page }) => {
   //expect(await page.screenshot()).toMatchSnapshot('boxes-1.png');
 
   await expect(children).toHaveClass([
-    'wrap-children',
+    'wrap-children ',
     'wrap-children',
     'box blue',
     'box grey flex-fill',

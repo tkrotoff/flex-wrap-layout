@@ -1,7 +1,7 @@
 // [jQuery.position() equivalent is wrong](https://github.com/HubSpot/youmightnotneedjquery/issues/172)
 function getTopPosition(el: Element) {
   const { top } = el.getBoundingClientRect();
-  const { marginTop } = window.getComputedStyle(el);
+  const { marginTop } = getComputedStyle(el);
   return top - parseInt(marginTop, 10);
 }
 
@@ -52,8 +52,5 @@ export function detectWrappedElements(
   const containsChildNextIsWrapped =
     rootElement.getElementsByClassName(nextIsWrappedClassName).length > 0;
 
-  // IE does not support toggle() second argument
-  // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Browser_compatibility
-  //rootEl.classList.toggle(hasChildWrappedClassName, containsChildNextIsWrapped);
-  rootElement.classList[containsChildNextIsWrapped ? 'add' : 'remove'](hasChildWrappedClassName);
+  rootElement.classList.toggle(hasChildWrappedClassName, containsChildNextIsWrapped);
 }
