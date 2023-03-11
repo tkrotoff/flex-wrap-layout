@@ -1,3 +1,7 @@
+## 0.13.0 (2023/03/11)
+
+- Drop old browsers support
+
 ## 0.12.0 (2022/07/08)
 
 - Ship again ESM modules, https://github.com/rollup/rollup/wiki/pkg.module
